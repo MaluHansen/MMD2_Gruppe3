@@ -27,16 +27,31 @@
     --tekstStrDesktop: 1rem;
     --tekstStrMobil: 0.75rem;
     --breadCrumbs: 1rem;
+
+    --paddingSectionsDesktop: 6.25rem;
+    --paddingSectionsMobile: 3.125rem;
+
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--broedFont);
 }
 
-nav h1{
-    font-family: var(--broedFont);
-    font-weight: 500;
-    color: var(--tekstFarve);
-    font-size: var(--h4); 
+nav{
+    background-color: var(--pink);
+    padding:25px 50px;
+    position: relative;
 }
-nav p{
-    font-family: var(--broedFont);
-    font-size: var(--tekstStrDesktop);
+.logo{
+    width: 7.5rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
-
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
