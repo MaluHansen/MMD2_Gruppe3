@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://use.typekit.net/fdc7bql.css");
+
+:root{
+    --broedFont: 'roboto';
+    --h1Font: 'active', sans-serif;
+    --menuKortFont: 'roboto Slab';
+
+    --pink: #EFA1D0;
+    --moerkPink: #933E65;
+    --groen: #BEF2C9;
+    --lysGul: #FAF7D2;
+    --lysBlaa: #E9E8ED;
+    --tekstFarve: #080808;
+
+    --h1Desktop: 5.5rem;
+    --h1Mobile: 3rem;
+
+    --h2Desktop: 2.5rem;
+    --h2Mobile: 1.12rem;
+
+    --h3MenuKort: 1.75rem;
+    --h3MenukortWeight: 300;
+
+    --h4: 1.5rem;
+
+    --tekstStrDesktop: 1rem;
+    --tekstStrMobil: 0.75rem;
+    --breadCrumbs: 1rem;
+}
+
+nav h1{
+    font-family: var(--broedFont);
+    font-weight: 500;
+    color: var(--tekstFarve);
+    font-size: var(--h4); 
+}
+nav p{
+    font-family: var(--broedFont);
+    font-size: var(--tekstStrDesktop);
+}
+
