@@ -40,11 +40,11 @@
 
 nav{
     background-color: var(--pink);
-    padding:25px 50px;
+    padding: 35px 50px;
     position: relative;
 }
 .logo{
-    width: 7.5rem;
+    width: 10rem;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -55,3 +55,16 @@ nav ul{
     justify-content: flex-end;
     gap: 2rem;
 }
+nav a{
+    text-decoration: none;
+    color: var(--tekstFarve);
+}
+nav a:hover{
+    border-bottom: solid 2px #933E65;
+    transition: 0.2s
+}
+.activeNavA{
+    border-bottom: solid 2px #933E65;
+}
+
+
