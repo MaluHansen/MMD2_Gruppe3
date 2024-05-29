@@ -57,14 +57,28 @@ nav ul{
 }
 nav a{
     text-decoration: none;
+    border-bottom: #EFA1D0;
     color: var(--tekstFarve);
-}
-nav a:hover{
-    border-bottom: solid 2px #933E65;
-    transition: 0.2s
+    position: relative;
 }
 .activeNavA{
     border-bottom: solid 2px #933E65;
 }
 
+/* linje under punkterne i nav*/
+nav a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: var(--moerkPink);
 
+    transform: scale(0, 1);
+    transition: 0.3s ease;
+}
+nav a:hover::after{
+    transform: scale(1, 1);
+}
+/*--------------------------------------*/
