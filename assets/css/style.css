@@ -37,7 +37,10 @@
     box-sizing: border-box;
     font-family: var(--broedFont);
 }
+/*__________________Generel styling_______________*/
+/*________________________________________________*/
 
+/*______________________NAV________________________*/
 nav{
     background-color: var(--pink);
     padding: 35px 50px;
@@ -62,7 +65,11 @@ nav a{
     position: relative;
 }
 .activeNavA{
-    border-bottom: solid 2px #933E65;
+    text-decoration: underline;
+    color: var(--moerkPink);
+    text-underline-position: under;
+    text-underline-offset: -2px;
+    text-decoration-thickness: 2px;
 }
 
 /* linje under punkterne i nav*/
@@ -82,3 +89,9 @@ nav a:hover::after{
     transform: scale(1, 1);
 }
 /*--------------------------------------*/
+/*______________________NAV SLUT________________________*/
+
+/*_______________________FOOTER_______________________*/
+footer{
+    background-color: var(--pink);
+}
