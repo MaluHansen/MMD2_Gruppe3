@@ -94,4 +94,33 @@ nav a:hover::after{
 /*_______________________FOOTER_______________________*/
 footer{
     background-color: var(--pink);
+    padding: 35px 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
+.kontakt p, .aabningstider p{
+  margin-bottom: 1rem;
+}
+.aabningstiderContainer{
+    display: flex;
+    gap: 1rem;
+}
+.andetInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#socialeMedier p, #smiley p{
+    margin-bottom: 1rem;
+}
+#email, #mobil, #lokation{
+    display: flex;
+    gap: 1rem;
+}
+.fa{
+    margin-right: 1rem;
+}
+
