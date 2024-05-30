@@ -12,6 +12,7 @@
     --lysGul: #FAF7D2;
     --lysBlaa: #E9E8ED;
     --tekstFarve: #080808;
+    --baggrund: #FDFBEF;
 
     --h1Desktop: 5.5rem;
     --h1Mobile: 3rem;
@@ -38,6 +39,44 @@
     font-family: var(--broedFont);
 }
 /*__________________Generel styling_______________*/
+main{
+    background-color: var(--baggrund);
+    padding: 6rem 8rem;
+}
+.btn{
+    background-color: var(--moerkPink);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+}
+
+
+
+.menuImgContainer{
+    width: 40%;
+    height: 30vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.stortImg{
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    grid-row: 1 / end;
+}
+.lilleImg1{
+    max-width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.lilleImg2{
+    max-width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
 /*________________________________________________*/
 
 /*______________________NAV________________________*/
@@ -89,13 +128,36 @@ nav a:hover::after{
     transform: scale(1, 1);
 }
 /*--------------------------------------*/
+
+/*------------Sub Nav-------------------*/
+.subNavContent{
+    float: left;
+    overflow: hidden;
+    background-color: var(--pink);
+    display: none;
+    z-index: 1;
+    position: absolute;
+    padding: 0.5rem 0;
+    font-size: 14px;
+}
+.subNav:hover .subNavContent{
+    display: block;
+    display: flex;
+}
+#subNavActive{
+    display: block;
+    display: flex;
+}
+
+/*--------------------------------------*/
+
 /*______________________NAV SLUT________________________*/
 
 /*_______________________FOOTER_______________________*/
 footer{
     background-color: var(--pink);
     padding: 35px 50px;
-
+margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -123,4 +185,5 @@ footer{
 .fa{
     margin-right: 1rem;
 }
+/*_______________________FOOTER SLUT_______________________*/
 
