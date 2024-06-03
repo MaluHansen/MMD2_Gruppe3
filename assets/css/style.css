@@ -18,14 +18,16 @@
     --h1Mobile: 3rem;
 
     --h2Desktop: 2.5rem;
-    --h2Mobile: 1.12rem;
+    --h2Mobile: 1.125rem;
 
     --h3MenuKort: 1.75rem;
-    --h3MenukortWeight: 300;
+    --h3MenukortWeight: 500;
 
-    --h4: 1.5rem;
+    --h4MenuKort: 1.6rem
 
-    --tekstStrDesktop: 1rem;
+    --h5: 1.5rem;
+
+    --tekstStrDesktop: 1.125rem;
     --tekstStrMobil: 0.75rem;
     --breadCrumbs: 1rem;
 
@@ -38,11 +40,36 @@
     box-sizing: border-box;
     font-family: var(--broedFont);
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
+    }
+}
 /*__________________Generel styling_______________*/
+body{
+    height: 100svh;
+}
 main{
     background-color: var(--baggrund);
     padding: 6rem 8rem;
 }
+main p{
+    font-size: var(--tekstStrDesktop);
+    max-width: 75ch;
+    text-wrap: pretty;
+}
+
+img,
+video,
+picture,
+svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+}
+ 
 .btn{
     background-color: var(--moerkPink);
     color: white;
@@ -52,31 +79,22 @@ main{
     border-radius: 50px;
 }
 
+/*-----------IKONER-------------*/
+.card{
+    color: red;
+    font-weight: 100;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
+}
+/*---------------------------*/
 
 
-.menuImgContainer{
-    width: 40%;
-    height: 30vh;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-.stortImg{
-    max-width: 100%;
-    height: 100%;
-    object-fit: contain;
-    grid-row: 1 / end;
-}
-.lilleImg1{
-    max-width: 100%;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-.lilleImg2{
-    max-width: 100%;
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
 /*________________________________________________*/
 
 /*______________________NAV________________________*/
@@ -111,7 +129,7 @@ nav a{
     text-decoration-thickness: 2px;
 }
 
-/* linje under punkterne i nav*/
+/*---------linje under punkterne i nav------------*/
 nav a::after{
     content: '';
     position: absolute;
@@ -141,11 +159,9 @@ nav a:hover::after{
     font-size: 14px;
 }
 .subNav:hover .subNavContent{
-    display: block;
     display: flex;
 }
 #subNavActive{
-    display: block;
     display: flex;
 }
 
@@ -161,6 +177,10 @@ margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.footerTitle{
+    font-weight: 700;
 }
 
 .kontakt p, .aabningstider p{
@@ -182,8 +202,62 @@ margin-top: 100px;
     display: flex;
     gap: 1rem;
 }
-.fa{
+#socialeMedier a{
+    color: var(--tekstFarve);
+    font-size: 36px;
     margin-right: 1rem;
 }
+
 /*_______________________FOOTER SLUT_______________________*/
 
+/*______________________FORSIDE__________________________*/
+/*______________________FORSIDE SLUT__________________________*/
+
+/*______________________BOOKBORD___________________________*/
+/*______________________BOOKBORD SLUT___________________________*/
+
+
+/*______________________EVENTS___________________________*/
+/*______________________EVENTS SLUT___________________________*/
+
+/*______________________GAVEKORT__________________________*/
+/*______________________GAVEKORT SLUT__________________________*/
+
+/*______________________KONTAKT__________________________*/
+/*______________________KONTAKT SLUT__________________________*/
+
+/*______________________MAD UD__________________________*/
+/*______________________MAD UD SLUT__________________________*/
+
+/*______________________MENU__________________________*/
+/*______________________MENU SLUT__________________________*/
+
+/*______________________MENU AFTEN__________________________*/
+/*______________________MENU AFTEN SLUT__________________________*/
+
+/*______________________MENU COCKTAILS__________________________*/
+/*______________________MENU COCKTAILS SLUT__________________________*/
+
+/*______________________MENU DRIKKE__________________________*/
+/*______________________MENU DRIKKE SLUT__________________________*/
+
+/*______________________MENU MIDDAG__________________________*/
+/*______________________MENU MIDDAG SLUT__________________________*/
+
+/*______________________MENU MORGEN__________________________*/
+/*______________________MENU MORGEN SLUT__________________________*/
+
+/*______________________MENU OEL__________________________*/
+/*______________________MENU OEL SLUT__________________________*/
+
+/*______________________MENU SOEDESAGER__________________________*/
+/*______________________MENU SOEDESAGER SLUT__________________________*/
+
+/*______________________MENU VIN__________________________*/
+/*______________________MENU VIN SLUT__________________________*/
+
+/*______________________MENU SELSKABER__________________________*/
+/*______________________MENU SELSKABER SLUT__________________________*/
+
+
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm
