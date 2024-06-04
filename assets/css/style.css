@@ -312,6 +312,42 @@ footer{
 /*______________________MENU VIN SLUT__________________________*/
 
 /*______________________MENU SELSKABER__________________________*/
+#personalePåUlla {
+    width: 1106px;
+    height: 532px;
+}
+
+.containerSelskaber {
+    display: flex;
+    margin: 40px 100px;
+    height: 333px;
+}
+
+.imgSelskaber {
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.containerSelskaber picture {
+    width: 30%;
+}
+
+.blaaSektionSelskaber {
+    background-color: var(--lysBlaa);
+    padding: 40px;
+}
+
+.blaaSektionSelskaber h2 {
+    margin-bottom: 20px;
+}
+
+.blaaSektionSelskaber a {
+    color: var(--tekstFarve);
+    font-size: 1.125rem;;
+    line-height: 1.7rem;
+}
+
 /*______________________MENU SELSKABER SLUT__________________________*/
 
 
