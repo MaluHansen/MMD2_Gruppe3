@@ -290,6 +290,139 @@ footer{
     font-weight: 800;
 }
 
+.menuContainer {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+flex-wrap: wrap;
+gap: 2rem;
+margin-bottom: 2rem;
+
+
+}
+
+.menuContainer a {
+    text-decoration: none;
+    font-family: var(--h3Menukort);
+    font-size: var(--h3MenukortWeight);
+    color: var(--baggrund);
+    padding-bottom: 2rem;
+
+}
+
+.menuContainer a:hover {
+
+
+
+}
+
+#morgenMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background: linear-gradient( to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+#middagMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+#aftenMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+#soedeSagerMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+#cocktailMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+#drikkeMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+#oelMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+#vinMenu {
+    background-image: url("/assets/img/Til Menukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 398px;
+    height: 380px;
+}
+
+
 /*______________________MENU SLUT__________________________*/
 
 /*______________________MENU AFTEN__________________________*/
