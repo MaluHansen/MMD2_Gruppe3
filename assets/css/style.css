@@ -270,26 +270,51 @@ footer{
 
 /*______________________BOOKBORD___________________________*/
 
-.madUdAfHuset{
+.boookbordContainer{
     display: flex;
-    gap
+}
+.bookBordTekstContent a{
+    text-decoration: none;
+}
+.bookBordTekstContent h1{
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+}
+.bookBordTekstContent p{
+    margin: 2rem 4rem 2rem 0rem;
+
 }
 
 .bookbordVideo{
-    width: 300px; 
-    height: 300px;
-    position: absolute;
+    width: 100%;
+    min-height: 80%;
     object-fit: cover;
+    position: absolute;
+}
+.videoContainer{
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .videoOverlay{
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    min-height: 80%;
     opacity: 0.4;
     background: #933E65;
+    position: absolute;
 }
 .videoTekst{
     z-index: 2;
     color: var(--moerkPink);
+    text-align: center;
+    font-family: var(--h1Font);
+    font-size: 2rem;
+    background-color: rgba(253, 251, 239, 69%);
+    position: absolute;
+    padding: 1rem 1rem;
 }
 
 /*______________________BOOKBORD SLUT___________________________*/
