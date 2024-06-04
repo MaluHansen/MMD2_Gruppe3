@@ -62,7 +62,7 @@ main p{
 }
 
 img,
-video,
+
 picture,
 svg {
     height: auto;
@@ -269,6 +269,29 @@ footer{
 /*______________________FORSIDE SLUT__________________________*/
 
 /*______________________BOOKBORD___________________________*/
+
+.madUdAfHuset{
+    display: flex;
+    gap
+}
+
+.bookbordVideo{
+    width: 300px; 
+    height: 300px;
+    position: absolute;
+    object-fit: cover;
+}
+.videoOverlay{
+    width: 300px;
+    height: 300px;
+    opacity: 0.4;
+    background: #933E65;
+}
+.videoTekst{
+    z-index: 2;
+    color: var(--moerkPink);
+}
+
 /*______________________BOOKBORD SLUT___________________________*/
 
 
