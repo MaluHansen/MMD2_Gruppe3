@@ -1,31 +1,36 @@
 const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100"
 const hvidvinVarianterEl = document.querySelector(".hvidvinVarianter")
 const rodvinVarianterEl = document.querySelector(".rodvinVarianter")
-const alkoholfriEl = document.querySelector(".alkoholfri")
-const vincocktailsEl = document.querySelector(".vincocktails")
-const roséEl = document.querySelector(".rosé")
-const naturvinEl = document.querySelector(".naturvin")
-const kirsebaerlikorEl = document.querySelector(".kirsebaerlikor")
-const portvinEl = document.querySelector(".portvin")
-const boblerEl = document.querySelector(".bobler")
+const alkoholfrieVinVarianterEl = document.querySelector(".alkoholfrieVinVarianter")
+const vincocktailsVarianterEl = document.querySelector(".vincocktailsVarianter")
+const roséVarianterEl = document.querySelector(".roséVarianter")
+const naturvinVarianterEl = document.querySelector(".naturvinVarianter")
+const kirsebaerlikorVarianterEl = document.querySelector(".kirsebaerlikorVarianter")
+const portvinVarianterEl = document.querySelector(".portvinVarianter")
+const bobleVarianterEl = document.querySelector(".bobleVarianter")
 
 let drinkData;
 
-
+// Vi opretter en funktion som kan hente drikkevarer ud fra et specifik ID som sættes som et parameter. 
 function getDrinksByID(Id) {
+    // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i dette tilfælde en query parameter som hedder &type-af-drikkevarer= + vores Id. Url'en vil derfor se således ud: https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100&type-af-drikkevarer=(Indsat Id)
     return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
+        // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt til et JavaScript-objekt. 
         .then((res) => res.json())
+        // Når ovenstående er færdig så gemmer vi vores data i en variabel som er deklaret uden for funktionen. Vi kan dermed bruge vores data andre steder i scriptet. Hvis dette skulle blive nødvendigt. 
         .then((drinks) => {
             drinkData = drinks;
             return (drinks);
         })
-        .catch(err => console.log("Fejl", err));
+        // I tilfælde af fejl under vores fetch vil der blive logget en besked i konsollen.
+        .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
 }
 
 function renderDrinksWithAnyPrice(containerToFill, drinks) {
-    // Funktion til at tælle antallet af priser som gør at vi kan stille dem op senere efter hvor meget priser de enkelte øl har. 
+    // Funktion der tæller antallet af priser som gør at vi kan stille dem op senere efter hvor mange priser de enkelte drikkevare har. 
     function countPrices(drink) {
         let count = 0;
+        // Hvis der befinder sig noget i stien - så læg 1 til count.(Gælder alle if statements)
         if (drink.acf.pris_for_lille_storrelse) count++;
         if (drink.acf.pris_for_mellem_storrelse) count++;
         if (drink.acf.pris_for_stor_storrelse) count++;
@@ -34,30 +39,40 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         return count;
     }
 
-    // Sorter øllerne efter antallet af priser i faldende rækkefølge. dvs. dem med flest priser først.
+    // Sorter drikkevare efter antallet af priser i faldende rækkefølge. dvs. dem med flest priser først og hvis nogle har lige mange priser så skal de sorteres efter alfabetisk rækkefølge ud fra deres titel
     drinks.sort((a, b) => {
+        // Beregn forskellen i antallet af priser mellem drikkevare 'b' og 'a'
         const priceCountDiff = countPrices(b) - countPrices(a);
+
+        // Hvis priceCountDiff IKKE er lig med 0 så vil det være true og dermed return priceCountDiff. (dvs. der må ikke være forskel i antal priser hvis de skal sortere efter priser.)
         if (priceCountDiff !== 0) {
             return priceCountDiff;
         }
+
+        //Hvis ovenstående er false - så skal der sorteres efter deres navne i alfabetisk rækkefølge.
         return a.acf.navn_pa_drik.localeCompare(b.acf.navn_pa_drik);
     });
 
-    // Opdel vores øl-array i to halvdele
+    // Opdel vores array i to halvdele ved først at finde halvdelen af vores array. Det sker ved at dividere vores array med 2. Math.ceil runder op til nærmeste hele tal. 
     const midIndex = Math.ceil(drinks.length / 2);
+    // Vi danner nu et nyt array ved at sige det skal indeholde alle drikkevare der er placeret fra index 0 til vores midIndex tal. 
     const firstHalf = drinks.slice(0, midIndex);
+    // // Vi danner nu et andet array ved at sige det skal indeholde alle drikkevare der er placeret i de index der går fra vores midIndex og op efter. 
     const secondHalf = drinks.slice(midIndex);
 
+    // Opretter 2 nye elementer med innerHTML. 
     containerToFill.innerHTML = `
         <div class="drinksHalf1"></div>
         <div class="drinksHalf2"></div>
     `;
 
-    const drinksHalf1El = document.querySelector(".drinksHalf1")
-    const drinksHalf2El = document.querySelector(".drinksHalf2")
+    // Fanger vores nye elementer så vi kan referer til dem med JS. 
+    const drinksHalf1El = containerToFill.querySelector(".drinksHalf1")
+    const drinksHalf2El = containerToFill.querySelector(".drinksHalf2")
 
-    // Render første halvdel i første kolonne
+    // Indsætter første del af vores array i første kolonne. Til at starte med undersøger vi hvilke data vi har i de forskellige stier. Alt efter om der befinder sig noget eller ej så gemmes det i en variabel. 
     firstHalf.forEach(drink => {
+        // Eks. Her undersøger vi om der befinder sig noget i pris_for_lille_storrelse hvis der gør det så skal det gemmes i en variable sammen med ",-/" hvis der ikke er noget. Så gemmer vi intet i vores variabel. 
         let prisLille = drink.acf.pris_for_lille_storrelse ? `${drink.acf.pris_for_lille_storrelse},-/` : '';
         let prisMellem = drink.acf.pris_for_mellem_storrelse ? `${drink.acf.pris_for_mellem_storrelse},-/` : '';
         let prisStor = drink.acf.pris_for_stor_storrelse ? `${drink.acf.pris_for_stor_storrelse},-` : '';
@@ -66,7 +81,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
         let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}` : '';
 
-
+        // Vi ændre vores HTML (DOM-MANIPULATION) med InnerHTML. Her placere vi navnet på drikkevaren og vores variabler. 
         drinksHalf1El.innerHTML += `
         <div class="drinkEnhed">
             <div class="titelOgPris">
@@ -78,7 +93,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
    `;
     });
 
-    // Render anden halvdel i anden kolonne
+    // Her sker nøjagtig det samme som for den første del af vores array. Nu sker det bare for det andet array. 
     secondHalf.forEach(drink => {
         let prisLille = drink.acf.pris_for_lille_storrelse ? `${drink.acf.pris_for_lille_storrelse},-/` : '';
         let prisMellem = drink.acf.pris_for_mellem_storrelse ? `${drink.acf.pris_for_mellem_storrelse},-/` : '';
@@ -100,6 +115,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     });
 }
 
+// Ved hjælp af .then metoden sikre vi os at det hele sker asynkront. Dvs. vores renderDrinksWithAnyPrices ikke går i gang før getDrinksByID er færdig. Der bliver herunder hentet drikkevare med forskellige id'er som placeres i forskellige containere. 
 getDrinksByID(14)
     .then(drinks => renderDrinksWithAnyPrice(hvidvinVarianterEl, drinks))
     .catch(err => console.error("Fejl:", err));
@@ -108,92 +124,31 @@ getDrinksByID(12)
     .then(drinks => renderDrinksWithAnyPrice(rodvinVarianterEl, drinks))
     .catch(err => console.error("Fejl:", err));
 
-// function getDrinksByID(Id) {
-//     return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
-//         .then((res) => res.json())
-//         .then((drinks) => {
-//             drinkData = drinks;
-//             return (drinks);
-//         })
-//         .catch(err => console.log("Fejl", err));
-// }
+getDrinksByID(17)
+    .then(drinks => renderDrinksWithAnyPrice(alkoholfrieVinVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
 
-// function renderDrinksWithTwoPrices(containerToFill, drinks) {
-//     drinks.sort((a, b) => a.acf.pris_pr_flaske - b.acf.pris_pr_flaske);
-//     // Sortere drinks efter pris_pr_flaske - Laveste pris først.
+getDrinksByID(19)
+    .then(drinks => renderDrinksWithAnyPrice(bobleVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
 
-//     drinks.forEach(drink => {
-//         let prisPrGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-` : '-';
-//         // Der tjekkes om drink.acf.pris_pr_glas har en "sand" værdi. Hvis pris_pr_glas ikke har noget data, erstattes det med "-" og gemmes i en variabel. Hvis den er "sand" dvs. at der er noget data. Så gemmes ${drink.acf.pris_pr_glas},- i variablen. 
-//         let prisPrFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '-';
-//         // Der tjekkes om drink.acf.pris_pr_flaske har en "sand" eller "falsk" værdi. Hvis pris_pr_flaske ikke har noget data, erstattes det med "-" og gemmes i en variabel. Hvis den er "sand" dvs. at der er noget data. Så gemmes ${drink.acf.pris_pr_flaske},- i variablen. 
+getDrinksByID(16)
+    .then(drinks => renderDrinksWithAnyPrice(roséVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
 
-//         containerToFill.innerHTML += `<div class="drinkEnhed">
-//         <div class="titelOgPris">
-//             <p class="drinkTitle">${drink.acf.navn_pa_drik}</p>
-//             <p>${prisPrGlas}/${prisPrFlaske}</p>
-//         </div>
-//         <p class="drinkBeskrivelse">${drink.acf.detaljerbeskrivelse_om_drikkevaren}</p>
-//     </div>
-//     `
-//         // Indsætter ovenstående html i den agivet container for hver drink. 
-//     });
-// }
+getDrinksByID(15)
+    .then(drinks => renderDrinksWithAnyPrice(naturvinVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
 
-// function renderDrinksWithOnePrice(containerToFill, drinks) {
-//     drinks.sort((a, b) => a.acf.pris_pr_glas.localeCompare(b.acf.pris_pr_glas));
-//     // Sortere drinks efter pris_pr_glas - Laveste pris først.
-//     drinks.forEach(drink => {
-//         containerToFill.innerHTML += `<div class="drinkEnhed">
-//         <div class="titelOgPris">
-//             <p>${drink.acf.navn_pa_drik}</p>
-//             <p>${drink.acf.pris_pr_glas},-</p>
-//         </div>
-//         <p class="drinkBeskrivelse">${drink.acf.detaljerbeskrivelse_om_drikkevaren}</p>
-//     </div>
-//     `
-//         // Indsætter ovenstående html i den agivet container for hver drink. 
-//     });
-// }
+getDrinksByID(20)
+    .then(drinks => renderDrinksWithAnyPrice(vincocktailsVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
 
+getDrinksByID(18)
+    .then(drinks => renderDrinksWithAnyPrice(portvinVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
 
-
-// getDrinksByID(14)
-//     .then(drinks => renderDrinksWithTwoPrices(hvidvinEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-// // Sørger for at funktionerne køre asyncront. Det vil sige at den næste funktion ikke foretages før den foregående er ovre.
-
-// getDrinksByID(12)
-//     .then(drinks => renderDrinksWithTwoPrices(rodvinEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-// getDrinksByID(17)
-//     .then(drinks => renderDrinksWithTwoPrices(alkoholfriEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-// getDrinksByID(19)
-//     .then(drinks => renderDrinksWithTwoPrices(boblerEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-// getDrinksByID(16)
-//     .then(drinks => renderDrinksWithTwoPrices(roséEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-// getDrinksByID(15)
-//     .then(drinks => renderDrinksWithTwoPrices(naturvinEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-// getDrinksByID(18)
-//     .then(drinks => renderDrinksWithTwoPrices(portvinEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-// getDrinksByID(33)
-//     .then(drinks => renderDrinksWithOnePrice(vincocktailsEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-// getDrinksByID(21)
-//     .then(drinks => renderDrinksWithOnePrice(kirsebaerlikorEl, drinks))
-//     .catch(err => console.error("Fejl:", err));
-
-
+getDrinksByID(21)
+    .then(drinks => renderDrinksWithAnyPrice(kirsebaerlikorVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
 
