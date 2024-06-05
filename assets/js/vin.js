@@ -22,12 +22,18 @@ function getDrinksByID(Id) {
 }
 
 function renderDrinksWithTwoPrices(containerToFill, drinks) {
-    drinks.sort((a, b) => a.acf.pris_pr_flaske.localeCompare(b.acf.pris_pr_flaske));
+    // Sorter drinks efter pris_pr_flaske som tal
+    drinks.sort((a, b) => a.acf.pris_pr_flaske - b.acf.pris_pr_flaske);
+
     drinks.forEach(drink => {
+        // Hvis pris_pr_glas ikke har noget data, erstat det med "nej". Denne betingelse tjekker om drink.acf.pris_pr_glas har en "sand" værdi.
+        let prisPrGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-` : '-';
+        let prisPrFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '-';
+
         containerToFill.innerHTML += `<div class="vinEnhed">
         <div class="titelOgPris">
             <p class="drinkTitle">${drink.acf.navn_pa_drik}</p>
-            <p>${drink.acf.pris_pr_glas}/${drink.acf.pris_pr_flaske},-</p>
+            <p>${prisPrGlas}/${prisPrFlaske}</p>
         </div>
         <p class="vinBeskrivelse">${drink.acf.detaljerbeskrivelse_om_drikkevaren}</p>
     </div>
