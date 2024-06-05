@@ -1,6 +1,6 @@
 const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100"
 const hvidvinVarianterEl = document.querySelector(".hvidvinVarianter")
-const rodvinEl = document.querySelector(".rodvin")
+const rodvinVarianterEl = document.querySelector(".rodvinVarianter")
 const alkoholfriEl = document.querySelector(".alkoholfri")
 const vincocktailsEl = document.querySelector(".vincocktails")
 const roséEl = document.querySelector(".rosé")
@@ -102,6 +102,10 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
 
 getDrinksByID(14)
     .then(drinks => renderDrinksWithAnyPrice(hvidvinVarianterEl, drinks))
+    .catch(err => console.error("Fejl:", err));
+
+getDrinksByID(12)
+    .then(drinks => renderDrinksWithAnyPrice(rodvinVarianterEl, drinks))
     .catch(err => console.error("Fejl:", err));
 
 // function getDrinksByID(Id) {
