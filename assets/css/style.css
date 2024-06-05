@@ -355,7 +355,6 @@ footer{
     padding-bottom: 2rem;
 }
 
-
 #morgenMenu {
     background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/morgenmad.jpeg");
     /* KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
@@ -469,11 +468,8 @@ footer{
 }
 
 .groenSektionMenu {
-    height: 80vh;
-}
-
-.groenSektionTakeaway {
-  padding: 4rem 2rem;
+    height: 90vh;
+    margin-bottom: 2px;
 }
 
 .groenSektionTakeaway {
@@ -487,36 +483,30 @@ footer{
     font-size: var(--h2Desktop);
 }
 
-.groenSektionTakeaway p {
-    padding: 0.8rem 0rem;
-}
-
 #kaffeToGo {
+    width: 100%;
     height: 100%;
-    width:100%;
-    position: relative;
-    /* bottom: -15px; */
-}
-
-#imgKaffe {
-overflow: hidden;
 }
 
 .btnTakeaway {
     width: 14rem;
     height: 3rem;
+    margin-top: 1rem;
 }
 
-@media screen and (max-width: 600px) {
 
-
-
+@media screen and (max-width: 1920px) {
+.groenSektionMenu {
+    height: 60vh;
 }
+
+.groenSektionTakeaway {
+    margin: 1rem 5rem;
+}
+}
+
 
 @media screen and (max-width: 900px) {
-
-    
-    
     .descriptionContainer {
         margin-right: 0;
         margin-bottom: 1rem;
@@ -530,38 +520,39 @@ overflow: hidden;
     .menuContainer {
         grid-template-columns: repeat(3, 1fr);
     }
-
+    
     .menuContainer h3 {
-    font-size: var(--h3MenuKort);
-    padding-bottom: 1rem;
+        font-size: var(--h3MenuKort);
+        padding-bottom: 1rem;
+    }
+    
+    .groenSektionMenu {
+        height: 50vh;
+    }
+    .groenSektionTakeaway {
+        margin: 3rem 5rem;
+        padding: 0;
     }
 
     .groenSektionTakeaway h2 {
         font-size: var(--h2Mobile);
     }
-
+    
     .groenSektionTakeaway p {
         font-size: var(--tekstStrMobil);
     }
-
+    
     .btnTakeaway {
-        width: 10rem;
-        height: 2.5rem;
         font-size: var(--tekstStrMobil);
     }
+}
 
-    #kaffeToGo {
-        height: 400px;
-        left: 0;
-        bottom: 0;
-    }
+@media screen and (max-width: 600px) {
+
+
 
 }
 
-
-@media screen and (max-width: 1920px) {
-
-}
 /*______________________MENU SLUT__________________________*/
 
 /*______________________MENU AFTEN__________________________*/
