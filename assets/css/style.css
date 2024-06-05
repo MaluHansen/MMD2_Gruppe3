@@ -288,6 +288,28 @@ footer{
 .kontaktMain h4{
     font-size: 1.3rem;
     font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.kontaktIntro{
+    margin: 3rem 0rem;
+}
+
+.kontaktContent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 3rem;
+}
+.firma{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+.kontaktKort{
+    background-color: #933E65;
+    grid-column: 2 / 4;
+    grid-row: 2 / 5;
+
+    height: 400px;
 }
 
 /*______________________KONTAKT SLUT__________________________*/
