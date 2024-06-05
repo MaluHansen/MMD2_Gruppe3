@@ -263,6 +263,7 @@ footer{
     margin-right: 1rem;
 }
 
+
 /*_______________________FOOTER SLUT_______________________*/
 
 /*______________________FORSIDE__________________________*/
@@ -285,6 +286,23 @@ footer{
 /*______________________MAD UD SLUT__________________________*/
 
 /*______________________MENU__________________________*/
+
+.breadcrumbs {
+    list-style-type: none;
+    display: flex;
+    font-size: var(--breadCrumbs);
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--tekstFarve);
+}
+
+.breadcrumbs li {
+    padding: 3px;
+}
 
 .fatOne {
     font-weight: 800;
@@ -425,17 +443,64 @@ margin-bottom: 2rem;
 
 .menu {
     margin-top: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .groenSektionMenu {
-  height: 50vh;
-}
-#kaffeToGo {
-    width: 18vw;
-    height: 45vh;
+  height: 530px;
+  padding: 4rem 2rem;
 }
 
+.groenSektionTakeaway {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5rem 8rem;
+}
+
+.groenSektionTakeaway h2 {
+    font-size: var(--h2Desktop);
+}
+
+.groenSektionTakeaway p {
+    padding: 0.8rem 0rem;
+}
+
+#kaffeToGo {
+    position: relative;
+    height: 530px;
+    left: 3rem;
+    bottom: 95px;
+}
+
+.btnTakeaway {
+    width: 14rem;
+    height: 3rem;
+}
+
+@media screen and (min-width: 600px) {
+
+
+
+}
+
+@media screen and (min-width: 900px) {
+
+
+
+}
+
+@media screen and (min-width: 1400px) {
+
+
+
+}
+
+@media screen and (min-width: 1920px) {
+
+
+
+}
 
 /*______________________MENU SLUT__________________________*/
 
