@@ -304,24 +304,51 @@ footer{
     padding: 3px;
 }
 
+.descriptionContainer {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    "title menuImg"
+    "descriptionTxt menuImg";
+    grid-template-rows: min-content 1fr;
+    margin-right: 15rem;
+    
+}
+
+.titleMenu {
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+    grid-area: title;
+}
+
+.description {
+    grid-area: descriptionTxt;
+}
+
+.menukortImg {
+    grid-area: menuImg;
+    height: 60vh;
+}
+
 .fatOne {
     font-weight: 800;
+    margin-bottom: 2rem;
 }
 
 .menuContainer {
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-gap: 2rem;
-margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 .menuContainer a {
     text-decoration: none;
     font-family: var(--h3Menukort);
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--baggrund);
+    text-align: center;
 }
 
 .menuContainer h3 {
@@ -338,9 +365,9 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
+    aspect-ratio: 1/1;
 }
 
 #middagMenu {
@@ -352,9 +379,9 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
+    aspect-ratio: 1/1;
 }
 
 #aftenMenu {
@@ -366,9 +393,9 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
+    aspect-ratio: 1/1;
 }
 
 #soedeSagerMenu {
@@ -380,9 +407,9 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
+    aspect-ratio: 1/1;
 }
 
 #cocktailMenu {
@@ -394,9 +421,9 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
+    aspect-ratio: 1/1;
 }
 
 #drikkeMenu {
@@ -408,9 +435,9 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
+    aspect-ratio: 1/1;
 }
 
 #oelMenu {
@@ -422,9 +449,9 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
+    aspect-ratio: 1/1;
 }
 
 #vinMenu {
@@ -436,18 +463,16 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
-    width: 20vw;
-    height: 40vh;
+    align-items: center;
     border-radius: 20px;
-}
-
-.menu {
-    margin-top: 30px;
-    margin-bottom: 80px;
+    aspect-ratio: 1/1;
 }
 
 .groenSektionMenu {
-  height: 530px;
+    height: 80vh;
+}
+
+.groenSektionTakeaway {
   padding: 4rem 2rem;
 }
 
@@ -467,10 +492,14 @@ margin-bottom: 2rem;
 }
 
 #kaffeToGo {
+    height: 100%;
+    width:100%;
     position: relative;
-    height: 530px;
-    left: 3rem;
-    bottom: 95px;
+    /* bottom: -15px; */
+}
+
+#imgKaffe {
+overflow: hidden;
 }
 
 .btnTakeaway {
@@ -478,30 +507,61 @@ margin-bottom: 2rem;
     height: 3rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
 
 
 
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 900px) {
 
+    
+    
+    .descriptionContainer {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        gap: 0;
+    }
+    
+    .fatOne {
+        margin-bottom: 0.5rem;
+    }
+    
+    .menuContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+    .menuContainer h3 {
+    font-size: var(--h3MenuKort);
+    padding-bottom: 1rem;
+    }
+
+    .groenSektionTakeaway h2 {
+        font-size: var(--h2Mobile);
+    }
+
+    .groenSektionTakeaway p {
+        font-size: var(--tekstStrMobil);
+    }
+
+    .btnTakeaway {
+        width: 10rem;
+        height: 2.5rem;
+        font-size: var(--tekstStrMobil);
+    }
+
+    #kaffeToGo {
+        height: 400px;
+        left: 0;
+        bottom: 0;
+    }
 
 }
 
-@media screen and (min-width: 1400px) {
 
-
-
-}
-
-@media screen and (min-width: 1920px) {
-
-
+@media screen and (max-width: 1920px) {
 
 }
-
 /*______________________MENU SLUT__________________________*/
 
 /*______________________MENU AFTEN__________________________*/
