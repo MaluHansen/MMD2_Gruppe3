@@ -317,6 +317,15 @@ footer{
     padding: 1rem 1rem;
 }
 
+.bookingSystemImg{
+    max-width: 60%;
+}
+.bookingSystemContainer{
+    margin-top: var(--paddingSectionsDesktop);
+    display: flex;
+    justify-content: center;
+}
+
 /*______________________BOOKBORD SLUT___________________________*/
 
 
