@@ -82,7 +82,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         let prisGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-/` : '';
         let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
-        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}` : '';
+        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
 
         // Vi ændre vores HTML (DOM-MANIPULATION) med InnerHTML. Her placere vi navnet på drikkevaren og vores variabler. 
         drinksHalf1El.innerHTML += `
@@ -104,7 +104,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         let prisGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-/` : '';
         let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
-        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}` : '';
+        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
 
         drinksHalf2El.innerHTML += `
         <div class="drinkEnhed">
