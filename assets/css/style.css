@@ -567,4 +567,84 @@ footer{
 /*______________________MENU SELSKABER SLUT__________________________*/
 
 
-/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm*/
+
+@media only screen and (max-width: 1400px) {
+    .menukortContainer p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer {
+        margin: 0 35px;
+        margin-bottom: var(--paddingSectionsDesktop);
+    }
+
+    .indledningMenu {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--paddingSectionsMobile);
+
+    }
+
+    .billedeRamme {
+        max-height: 306px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .variantContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .introTekst {
+        min-width: unset;
+    }
+
+    .indledningMenu h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    .genvejSektion {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .groenSektionKontakt,
+    .groenSektionBookbord {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    nav {
+        display: none
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer h3 {
+        font-size: 1.2rem;
+    }
+
+    main>*:not(:last-child) {
+        padding: 1rem 2rem;
+    }
+
+    .groenSektion {
+        padding: 3rem;
+    }
+
+    
+
+}
