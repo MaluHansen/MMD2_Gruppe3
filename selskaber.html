@@ -15,7 +15,11 @@
 <body>
     <header>
         <nav>
-            <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen London Logo">
+            <div class="topNavigation" onclick="toggleMenu()">
+                <a id=logoUlla href="./index.html"></a>
+                <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen London Logo">
+                <i class="fa-solid fa-bars menuIkon"></i>
+            </div>
             <ul>
                 <li><a href="./index.html">Forside</a></li>
                 <div class="subNav">
@@ -41,17 +45,17 @@
         </nav>
     </header>
     <main>
-        <h1>Selskaber</h1>
-        <section>
+        <section class="beskrivelseSelskaber">
+            <h1>Selskaber</h1>
             <h2>Skal din næste fest eller arrangement holdes på Café Ulla Terkelsen London?</h2>
             <p>Café Ulla Terkelsen London byder dig varmt velkommen til en uforglemmelig oplevelse i Aalborg Vestby. Vores hyggelige og lidt skæve atmosfære samt lækre mad kan være med til at gøre din begivenhed helt fantastisk. Vores dygtige personale står klar til at indfri dine ønsker og gøre din dag helt speciel.</p>
         </section>
-        <section>
+        <section class="contentSelskaber">
             <div class="containerSelskaber">
                 <picture>
                     <source media="(min-width: 600px)" srcset="./assets/img/Selskaber/event.jpg">
-                    <img src="./assets/img/små billeder/selskaber/eventLille.jpg" class="imgSelskaber" alt="Billede af event på café Ulla Terkelsen London" loading="lazy">
-                    <!--Kilde: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/3593059944105891/?type=3 -->
+                    <img src="./assets/img/små billeder/selskaber/eventLille.jpg" class="imgSelskaber eventImg" alt="Billede af event på café Ulla Terkelsen London" loading="lazy">
+                    <!--Kilde: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/3593059944105891/?type=3 -->
                 </picture>
                 <div class="blaaSektionSelskaber">
                     <h2>Unik og skæv atmosfære</h2>
@@ -61,8 +65,8 @@
             <div class="containerSelskaber">
                 <picture>
                     <source media="(min-width: 600px)" srcset="./assets/img/Selskaber/selskaber.jpg">
-                    <img src="./assets/img/små billeder/selskaber/selskaber lille.jpg" class="imgSelskaber" alt="Billede af selskab på café Ulla Terkelsen London" loading="lazy">
-                  <!-- Kilde: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/4035364129875468/?type=3 -->
+                    <img src="./assets/img/små billeder/selskaber/selskaber lille.jpg" class="imgSelskaber selskabImg" alt="Billede af selskab på café Ulla Terkelsen London" loading="lazy">
+                  <!-- Kilde: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/4035364129875468/?type=3 -->
                 </picture>
                 <div class="blaaSektionSelskaber">
                     <h2>Skræddersyede arrangementer</h2>
@@ -72,20 +76,20 @@
             <div class="containerSelskaber">
                 <picture>
                     <source media="(min-width: 600px)" srcset="./assets/img/Selskaber/brunch.jpg">
-                    <img src="./assets/img/små billeder/selskaber/brunch lille.jpg" class="imgSelskaber" alt="Billede af brunch tallerken på café Ulla Terkelsen London" loading="lazy">
-                <!-- Kilde: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/3989326677812547/?type=3 -->
+                    <img src="./assets/img/små billeder/selskaber/brunch lille.jpg" class="imgSelskaber brunchImg" alt="Billede af brunch tallerken på café Ulla Terkelsen London" loading="lazy">
+                <!-- Kilde: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/3989326677812547/?type=3 -->
                 </picture>
                 <div class="blaaSektionSelskaber">
                     <h2>Lækker mad og drikke</h2>
                     <p>Vores kokken leverer altid friske og velsmagende retter. Vi forsøger altid at anvende lokale råvarer og spare miljøet for unødig stress. Vores bar byder på et bredt udvalg af vine, cocktails og specialøl samt alkoholfrie drikke til dem der ønsker det. Hvis du ønsker at holde din fest derhjemme så kan vi også sagtens hjælpe dig. Vi leverer mad ud ad huset efter aftale. </p>
                 </div>
             </div>
-                <div class="containerSelskaber">
-                    <picture>
-                        <source media="(min-width: 600px)" srcset="./assets/img/Selskaber/facade.jpg">
-                        <img src="./assets/img/små billeder/selskaber/facade lille.jpg" class="imgSelskaber" alt="Billede af facaden på café Ulla Terkelsen London" loading="lazy">
-                    <!-- Kilde: Cafe Ulla Terkelsen London. Instagram. Meta 2024. Accessed 4/6/2024. URL: https://www.instagram.com/p/Cr0MdgdsXL2/?img_index=1 -->
-                    </picture>
+            <div class="containerSelskaber">
+                <picture>
+                    <source media="(min-width: 600px)" srcset="./assets/img/Selskaber/facade.jpg">
+                    <img src="./assets/img/små billeder/selskaber/facade lille.jpg" class="imgSelskaber facadeImg" alt="Billede af facaden på café Ulla Terkelsen London" loading="lazy">
+                <!-- Kilde: Cafe Ulla Terkelsen London. Instagram.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.instagram.com/p/Cr0MdgdsXL2/?img_index=1 -->
+                </picture>
                 <div class="blaaSektionSelskaber">
                     <h2>Central beliggenhed</h2>
                     <p>Vores hyggelige lille café ligger centralt i Aalborg Vestby inden for gåafstand til centrum, hvilket gør det nemt for dine gæster at komme til og fra arrangementet. Offentlig transport og parkeringsmuligheder er lige i nærheden.</p>
@@ -95,8 +99,8 @@
             <div class="containerSelskaber">
                 <picture>
                     <source media="(min-width: 600px)" srcset="./assets/img/Selskaber/medarbejder.jpg">
-                    <img src="./assets/img/små billeder/selskaber/medarbejder lille.jpg" class="imgSelskaber" alt="Billede af medarbejder på café Ulla Terkelsen London" loading="lazy">
-                <!-- Kilde: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/4404538829624661/?type=3 -->
+                    <img src="./assets/img/små billeder/selskaber/medarbejder lille.jpg" class="imgSelskaber medarbejderImg" alt="Billede af medarbejder på café Ulla Terkelsen London" loading="lazy">
+                <!-- Kilde: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/4404538829624661/?type=3 -->
                 </picture>
                 <div class="blaaSektionSelskaber">
                     <h2>Professionel service</h2>
@@ -104,19 +108,19 @@
                 </div>
             </div>
         </section>
-        <section class="groenSektion">
-            <div class="groenSektionKontakt">
+        <section>
+            <div class="groenSelskaberContainer">
                 <h2>Lad os holde din fest</h2>
                 <p>Kontakt os for mulighederne for private arrangementer eller mad ud af huset. 
                     Vi viser gerne vores skønne og festlige lokaler frem hvis du kunne være interesseret. 
                     Oplev, hvordan Ulla Terkelsen London kan gøre din fest til noget helt særligt!</p>
-                <button class="btn">Kontakt os</button>
-            </div>
-                <picture>
+                <button class="btn btnSelskaber">Kontakt os</button>
+                <picture class="personaleImg">
                     <source media="(min-width: 600px)" srcset="./assets/img/små billeder/Selskaber/personale.jpg">
-                    <img src="./assets/img/små billeder/selskaber/personale lille.jpg"  id="personalePåUlla" alt="Billede af personalet på Café Ulla Terkelsen London" loading="lazy">
-                    <!-- Kilde: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL:https://www.facebook.com/photo.php?fbid=763521145815691&set=pb.100064734366849.-2207520000&type=3 -->
+                    <img src="./assets/img/små billeder/selskaber/personale lille.jpg"  id="personalePaaUlla" alt="Billede af personalet på Café Ulla Terkelsen London" loading="lazy">
+                    <!-- Kilde: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL:https://www.facebook.com/photo.php?fbid=763521145815691&set=pb.100064734366849.-2207520000&type=3 -->
                 </picture>
+            </div>
         </section>
     </main>
     <footer>

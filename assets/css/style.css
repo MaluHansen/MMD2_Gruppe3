@@ -312,34 +312,69 @@ footer{
 /*______________________MENU VIN SLUT__________________________*/
 
 /*______________________MENU SELSKABER__________________________*/
-#personalePåUlla {
-    width: 1106px;
-    height: 532px;
+
+.beskrivelseSelskaber {
+    margin-bottom: 4rem;
+}
+
+.beskrivelseSelskaber h1 {
+    font-size: var(--h1Desktop);
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+}
+
+.beskrivelseSelskaber h2, .groenSelskaberContainer h2 {
+    font-size: var(--h2Desktop);
+    color: var(--tekstFarve);
+    margin-bottom: 2rem;
+}
+
+.contentSelskaber {
+    margin-bottom: 5rem;
 }
 
 .containerSelskaber {
     display: flex;
-    margin: 40px 100px;
-    height: 333px;
+    height: 40vh;
+    margin-bottom: 2rem;
 }
 
 .imgSelskaber {
     border-radius: 20px 0px 0px 20px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center top;
+    aspect-ratio: 2/1;
 }
 
-.containerSelskaber picture {
-    width: 30%;
+.eventImg {
+    object-position: center;
+}
+
+.selskabImg {
+    object-position: left center;
+}
+
+.brunchImg {
+    object-position: center 80%;
+}
+
+.facadeImg {
+    object-position: 10% 60%;
+}
+
+.medarbejderImg {
+    object-position: 10% 10%;
 }
 
 .blaaSektionSelskaber {
     background-color: var(--lysBlaa);
-    padding: 40px;
+    padding: 1rem 4rem;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .blaaSektionSelskaber h2 {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .blaaSektionSelskaber a {
@@ -347,6 +382,138 @@ footer{
     font-size: 1.125rem;;
     line-height: 1.7rem;
 }
+
+.groenSelskaberContainer {
+    display: grid;
+    padding-left: 8rem;
+    background-color: var(--groen);
+    width: 100vw;
+    height: 465px;
+    grid-template-areas: 
+    "overskrift personaleImg"
+    "tekstafsnitGroen personaleImg"
+    "groenKnap personaleImg";
+    grid-template-columns: 1fr 2fr;
+}
+
+.personaleImg {
+    grid-area: personaleImg;
+}
+
+#personalePaaUlla {
+    width: 100%;
+    height: 465px;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.groenSelskaberContainer h2 {
+    grid-area: overskrift;
+    padding-top: 4rem;
+    padding-right: 4rem;
+    margin: 0;
+}
+
+.groenSelskaberContainer p {
+    grid-area: tekstafsnitGroen;
+    padding-right: 8rem;
+}
+
+.btnSelskaber {
+    grid-area: groenKnap;
+    height: 3rem;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .contentSelskaber {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        max-width: 70vw;
+    }
+
+    .containerSelskaber {
+        flex-direction: column;
+        margin-bottom: 0;
+        height: 55vh;
+    }
+
+    .imgSelskaber {
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .containerSelskaber picture {
+        max-height: 20rem;
+    }
+
+    .blaaSektionSelskaber {
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    /* .groenSelskaberContainer {
+        padding-left: 4rem;
+    } */
+
+    .groenSelskaberContainer h2 {
+        font-size: var(--h3MenuKort);
+    }
+    
+    .groenSelskaberContainer p {
+        padding-right: 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    .beskrivelseSelskaber h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    main p {
+        font-size: var(--tekstStrMobil);
+        line-height: 1rem;
+    }
+    /* ÔBS SLETTES INDEN MECH */
+
+    .beskrivelseSelskaber h2, .blaaSektionSelskaber h2, .groenSelskaberContainer h2 {
+        font-size: var(--h2Mobile);
+        margin-bottom: 0.5rem;
+    }
+
+    .blaaSektionSelskaber a {
+        font-size: var(--tekstStrMobil);
+    }
+
+    .containerSelskaber {
+        margin-bottom: 10rem;
+    }
+
+
+
+    .imgSelskaber {
+        max-width: 70vw;
+        max-height: 40vh;
+    }
+
+
+    .personaleImg {
+        display: none;
+    }
+
+    .groenSelskaberContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
 
 /*______________________MENU SELSKABER SLUT__________________________*/
 
