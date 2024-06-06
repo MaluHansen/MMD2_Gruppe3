@@ -11,15 +11,14 @@ const bobleVarianterEl = document.querySelector(".bobleVarianter");
 const spinnerEl = document.querySelector(".spinner");
 const wineGlassEl = document.querySelector(".wineGlass");
 const burgerEl = document.querySelector(".burger");
-const utensilsEl = document.querySelector(".utensils");
 
 let drinkData;
 
 // Vi opretter en funktion som kan hente drikkevarer ud fra et specifik ID som sættes som et parameter. 
 function getDrinksByID(Id) {
-    burgerEl.classList.add("show"); // Vis spinneren
-    wineGlassEl.classList.add("show"); // Vis spinneren
-    spinnerEl.classList.add("show"); // Vis spinneren
+    burgerEl.classList.add("show"); // Tilføj klassen "show" til burgerEl
+    wineGlassEl.classList.add("show"); // Tilføj klassen "show" til wineGlassEl
+    spinnerEl.classList.add("show"); // Tilføj klassen "show" til spinnerEl
     // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i dette tilfælde en query parameter som hedder &type-af-drikkevarer= + vores Id. Url'en vil derfor se således ud: https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100&type-af-drikkevarer=(Indsat Id)
     return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
         // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt til et JavaScript-objekt. 
@@ -123,14 +122,16 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
 }
 
 function fetchAndRenderDrinks(containerToFill, id) {
+    // Henter drikkevarer med funktionen "getDrinksByID" og returnere et array med drikkevarer.
     getDrinksByID(id).then(drinks => {
+        // Der anvendes setTimeout metode der forsinker funktionen med 2 sekunder. Den funktion der forsinkes er "renderDrinksWithAnyPrice", samt at burgerEl, wineGlassEl og spinnerEl skjules.
         setTimeout(() => {
             renderDrinksWithAnyPrice(containerToFill, drinks);
             burgerEl.classList.remove("show");
             wineGlassEl.classList.remove("show");
             spinnerEl.classList.remove("show");
-            // Skjul spinneren efter renderingen
-        }, 2000); // Forsinkelse på 5 sekunder
+            // Skjul burgerEl, wineGlassEl og spinnerEl ved at fjerne klassen "show"
+        }, 2000);
     }).catch(err => console.error("Fejl:", err));
 }
 

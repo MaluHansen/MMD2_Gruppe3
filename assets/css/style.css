@@ -55,6 +55,9 @@ body {
 
 main {
     background-color: var(--baggrund);
+}
+
+main>*:not(:last-child) {
     padding: 6rem 8rem;
 }
 
@@ -113,18 +116,22 @@ svg {
 /*--------------Groen Sektion-----------------*/
 .groenSektion {
     background-color: var(--groen);
+    padding: 5rem;
+    position: relative;
+
+}
+
+.genvejSektion {
     display: flex;
-    width: 100vw;
-    margin-left: -8rem;
-    margin-bottom: -8rem;
+    justify-content: space-between;
 }
 
 .groenSektionKontakt,
 .groenSektionBookbord {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 5rem;
+    gap: 0.5rem;
+    max-width: 40%;
 }
 
 .groenSektionKontakt,
@@ -140,10 +147,9 @@ svg {
 
 
 .engleUlla {
-    aspect-ratio: 2/3;
-
-    position: relative;
-    left: -80px;
+    position: absolute;
+    top: -100px;
+    right: 20px;
 }
 
 #engleUllaImg {
@@ -250,10 +256,9 @@ nav a:hover::after {
 /*_______________________FOOTER_______________________*/
 footer {
     background-color: var(--pink);
-    padding: 35px 50px;
+    padding: 35px 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .footerTitle {
@@ -347,8 +352,6 @@ footer {
     display: flex;
     gap: 138px;
     justify-content: space-between;
-    margin-right: 138px;
-    margin-bottom: var(--paddingSectionsDesktop);
 }
 
 .indledningMenu h1 {
@@ -398,7 +401,7 @@ footer {
 .billedeRamme .img-2 img {
     border-radius: 0 40px 0 0;
     width: 100%;
-    height: 270px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -452,7 +455,7 @@ footer {
 .overskrift {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
     margin-top: 2rem;
 }
 
@@ -601,4 +604,70 @@ footer {
 /*______________________MENU SELSKABER SLUT__________________________*/
 
 
-/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
+
+@media only screen and (max-width: 1400px) {
+    .menukortContainer p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer {
+        margin: 0 35px;
+    }
+
+    .indledningMenu {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--paddingSectionsMobile);
+        margin: var(--paddingSectionsMobile) 0;
+    }
+
+    .billedeRamme {
+        max-height: 306px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .variantContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .introTekst {
+        min-width: unset;
+    }
+
+    .indledningMenu h1 {
+        font-size: var(--h1Mobile);
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    nav {
+        display: none
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer h3 {
+        font-size: 1.2rem;
+    }
+
+    .groenSektion {
+        flex-direction: column;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+}
+
+;
