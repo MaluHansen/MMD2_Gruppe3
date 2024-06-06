@@ -1,18 +1,25 @@
-const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100"
-const hvidvinVarianterEl = document.querySelector(".hvidvinVarianter")
-const rodvinVarianterEl = document.querySelector(".rodvinVarianter")
-const alkoholfrieVinVarianterEl = document.querySelector(".alkoholfrieVinVarianter")
-const vincocktailsVarianterEl = document.querySelector(".vincocktailsVarianter")
-const roséVarianterEl = document.querySelector(".roséVarianter")
-const naturvinVarianterEl = document.querySelector(".naturvinVarianter")
-const kirsebaerlikorVarianterEl = document.querySelector(".kirsebaerlikorVarianter")
-const portvinVarianterEl = document.querySelector(".portvinVarianter")
-const bobleVarianterEl = document.querySelector(".bobleVarianter")
+const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100";
+const hvidvinVarianterEl = document.querySelector(".hvidvinVarianter");
+const rodvinVarianterEl = document.querySelector(".rodvinVarianter");
+const alkoholfrieVinVarianterEl = document.querySelector(".alkoholfrieVinVarianter");
+const vincocktailsVarianterEl = document.querySelector(".vincocktailsVarianter");
+const roséVarianterEl = document.querySelector(".roséVarianter");
+const naturvinVarianterEl = document.querySelector(".naturvinVarianter");
+const kirsebaerlikorVarianterEl = document.querySelector(".kirsebaerlikorVarianter");
+const portvinVarianterEl = document.querySelector(".portvinVarianter");
+const bobleVarianterEl = document.querySelector(".bobleVarianter");
+const spinnerEl = document.querySelector(".spinner");
+const wineGlassEl = document.querySelector(".wineGlass");
+const burgerEl = document.querySelector(".burger");
+const utensilsEl = document.querySelector(".utensils");
 
 let drinkData;
 
 // Vi opretter en funktion som kan hente drikkevarer ud fra et specifik ID som sættes som et parameter. 
 function getDrinksByID(Id) {
+    burgerEl.classList.add("show"); // Vis spinneren
+    wineGlassEl.classList.add("show"); // Vis spinneren
+    spinnerEl.classList.add("show"); // Vis spinneren
     // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i dette tilfælde en query parameter som hedder &type-af-drikkevarer= + vores Id. Url'en vil derfor se således ud: https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100&type-af-drikkevarer=(Indsat Id)
     return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
         // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt til et JavaScript-objekt. 
@@ -79,7 +86,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         let prisGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-/` : '';
         let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
-        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}` : '';
+        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
 
         // Vi ændre vores HTML (DOM-MANIPULATION) med InnerHTML. Her placere vi navnet på drikkevaren og vores variabler. 
         drinksHalf1El.innerHTML += `
@@ -101,7 +108,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         let prisGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-/` : '';
         let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
-        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}` : '';
+        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
 
         drinksHalf2El.innerHTML += `
         <div class="drinkEnhed">
@@ -115,40 +122,62 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     });
 }
 
+function fetchAndRenderDrinks(containerToFill, id) {
+    getDrinksByID(id).then(drinks => {
+        setTimeout(() => {
+            renderDrinksWithAnyPrice(containerToFill, drinks);
+            burgerEl.classList.remove("show");
+            wineGlassEl.classList.remove("show");
+            spinnerEl.classList.remove("show");
+            // Skjul spinneren efter renderingen
+        }, 2000); // Forsinkelse på 5 sekunder
+    }).catch(err => console.error("Fejl:", err));
+}
+
+fetchAndRenderDrinks(rodvinVarianterEl, 14);
+fetchAndRenderDrinks(hvidvinVarianterEl, 12);
+fetchAndRenderDrinks(alkoholfrieVinVarianterEl, 17);
+fetchAndRenderDrinks(bobleVarianterEl, 19);
+fetchAndRenderDrinks(roséVarianterEl, 16);
+fetchAndRenderDrinks(naturvinVarianterEl, 15);
+fetchAndRenderDrinks(vincocktailsVarianterEl, 20);
+fetchAndRenderDrinks(portvinVarianterEl, 18);
+fetchAndRenderDrinks(kirsebaerlikorVarianterEl, 21);
+
 // Ved hjælp af .then metoden sikre vi os at det hele sker asynkront. Dvs. vores renderDrinksWithAnyPrices ikke går i gang før getDrinksByID er færdig. Der bliver herunder hentet drikkevare med forskellige id'er som placeres i forskellige containere. 
-getDrinksByID(14)
-    .then(drinks => renderDrinksWithAnyPrice(hvidvinVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(14)
+//     .then(drinks => renderDrinksWithAnyPrice(hvidvinVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(12)
-    .then(drinks => renderDrinksWithAnyPrice(rodvinVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(12)
+//     .then(drinks => renderDrinksWithAnyPrice(rodvinVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(17)
-    .then(drinks => renderDrinksWithAnyPrice(alkoholfrieVinVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(17)
+//     .then(drinks => renderDrinksWithAnyPrice(alkoholfrieVinVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(19)
-    .then(drinks => renderDrinksWithAnyPrice(bobleVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(19)
+//     .then(drinks => renderDrinksWithAnyPrice(bobleVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(16)
-    .then(drinks => renderDrinksWithAnyPrice(roséVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(16)
+//     .then(drinks => renderDrinksWithAnyPrice(roséVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(15)
-    .then(drinks => renderDrinksWithAnyPrice(naturvinVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(15)
+//     .then(drinks => renderDrinksWithAnyPrice(naturvinVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(20)
-    .then(drinks => renderDrinksWithAnyPrice(vincocktailsVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(20)
+//     .then(drinks => renderDrinksWithAnyPrice(vincocktailsVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(18)
-    .then(drinks => renderDrinksWithAnyPrice(portvinVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(18)
+//     .then(drinks => renderDrinksWithAnyPrice(portvinVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 
-getDrinksByID(21)
-    .then(drinks => renderDrinksWithAnyPrice(kirsebaerlikorVarianterEl, drinks))
-    .catch(err => console.error("Fejl:", err));
+// getDrinksByID(21)
+//     .then(drinks => renderDrinksWithAnyPrice(kirsebaerlikorVarianterEl, drinks))
+//     .catch(err => console.error("Fejl:", err));
 

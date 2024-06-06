@@ -480,6 +480,121 @@ footer {
     margin-bottom: 20px;
 }
 
+.spinnerContainer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.burger,
+.wineGlass {
+    display: none;
+    font-size: 2rem;
+    /* Gør ikonet øverst */
+}
+
+
+.burger {
+    position: absolute;
+    z-index: 3;
+    animation: iconAnimation0 1.5s infinite;
+}
+
+.wineGlass {
+    position: absolute;
+    z-index: 2;
+    animation: iconAnimation1 1.5s infinite;
+}
+
+
+.spinner {
+    display: none;
+    /* Skjult som standard */
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--pink);
+    border-top: 5px solid var(--moerkPink);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes iconAnimation0 {
+    0% {
+        display: none;
+    }
+
+    20% {
+        display: flex;
+    }
+
+    40% {
+        display: none;
+    }
+
+    60% {
+        display: none;
+    }
+
+    80% {
+        display: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes iconAnimation1 {
+    0% {
+        display: none;
+    }
+
+    20% {
+        display: none;
+    }
+
+    40% {
+        display: none;
+    }
+
+    60% {
+        display: none;
+    }
+
+    80% {
+        display: flex;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+.show {
+    display: flex;
+    /* Vises, når klassen "show" tilføjes */
+}
+
 /*______________________MENU VIN SLUT__________________________*/
 
 /*______________________MENU SELSKABER__________________________*/
