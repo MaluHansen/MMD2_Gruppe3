@@ -422,7 +422,7 @@ footer {
 .menukortContainer {
     background-color: var(--lysGul);
     padding: 2% 7%;
-    margin: 0 138px;
+    margin: 0px 138px;
     border-radius: 12px;
     margin-bottom: var(--paddingSectionsDesktop);
 }
@@ -612,7 +612,7 @@ footer {
     }
 
     .menukortContainer {
-        margin: 0 35px;
+        margin: var(--paddingSectionsDesktop) 35px;
     }
 
     .indledningMenu {
