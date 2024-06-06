@@ -17,7 +17,11 @@
 <body>
     <header>
         <nav>
-            <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen London Logo">
+            <div class="topNavigation" onclick="toggleMenu()">
+                <a id=logoUlla href="./index.html"></a>
+                <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen London Logo">
+                <i class="fa-solid fa-bars menuIkon"></i>
+            </div>
             <ul>
                 <li><a href="./index.html">Forside</a></li>
                 <div class="subNav">
@@ -43,48 +47,48 @@
         </nav>
     </header>
     <main>
+        <div class="containerContent">
+            <section>
+                <ul class="breadcrumbs">
+                    <li><a href="/index.html">Forside > </a></li>
+                    <li><a href="/menu.html">Menu</a></li>
+                </ul>
+            </section>
+            <section class="descriptionContainer">
+                <h1 class="titleMenu">Menu</h1>
+                <div class="description">
+                    <p>Vi tilbyder et dynamisk menukort der varierer efter sæson og humør.</p>
+                    <p>Har du ønsker om at minimere indholdet af kød i dine retter, så er vi caféen for dig.</p>
+                    <p>Hos os kan du nyde plantebaseret eller vegansk mad med fokus på lokale råvarer.</p>
+                    <p>Veganske retter er markeret med et <span class="material-symbols-outlined">eco</span>- blad så du hurtig kan finde dem.</p>
+                </div>
+                <img src="./assets/img/tilMenukort/menukort_stor.png" alt="Menukort" class="menukortImg" loading="lazy">
+                <!-- KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/photo/?fbid=811175558961024&set=a.811175472294366 -->
+            </section>
+            <section>
+                <p class="fatOne">Herunder kan du se de gældende menukort:</p>
+                <div class="menuContainer">
+                    <a href="./menuMorgen.html"><div id="morgenMenu"><h3>Morgen menu</h3></div></a>
+                    <a href="./menuMiddag.html"><div id="middagMenu"><h3>Middags menu</h3></div></a>
+                    <a href="./menuAften.html"><div id="aftenMenu"><h3>Aften menu</h3></div></a>
+                    <a href="./menuSoedeSager.html"><div id="soedeSagerMenu"><h3>Søde sager</h3></div></a>
+                    <a href="./menuCocktails.html"><div id="cocktailMenu"><h3>Cocktail menu</h3></div></a>
+                    <a href="./menuDrikke.html"><div id="drikkeMenu"><h3>Kolde & Varme Drikke</h3></div></a>
+                    <a href="./menuOel.html"><div id="oelMenu"><h3>Øl menu</h3></div></a>
+                    <a href="./menuVin.html"><div id="vinMenu"><h3>Vin menu</h3></div></a>
+                </div>
+            </section>
+        </div>
         <section>
-            <ul class="breadcrumbs">
-                <li><a href="/index.html">Forside > </a></li>
-                <li><a href="/menu.html">Menu</a></li>
-            </ul>
-        </section>
-        <section class="descriptionContainer">
-            <h1 class="titleMenu">Menu</h1>
-            <div class="description">
-                <p>Vi tilbyder et dynamisk menukort der varierer efter sæson og humør.</p>
-                <p>Har du ønsker om at minimere indholdet af kød i dine retter, så er vi caféen for dig.</p>
-                <p>Hos os kan du nyde plantebaseret eller vegansk mad med fokus på lokale råvarer.</p>
-                <p>Veganske retter er markeret med et <span class="material-symbols-outlined">eco</span>- blad så du hurtig kan finde dem.</p>
-            </div>
-            <img src="./assets/img/tilMenukort/menukort_stor.png" alt="Menukort" class="menukortImg" loading="lazy">
-            <!-- KILDE: Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/photo/?fbid=811175558961024&set=a.811175472294366 -->
-        </section>
-        <section>
-            <p class="fatOne">Herunder kan du se de gældende menukort:</p>
-            <div class="menuContainer">
-                <a href="./menuMorgen.html"><div id="morgenMenu"><h3>Morgen menu</h3></div></a>
-                <a href="./menuMiddag.html"><div id="middagMenu"><h3>Middags menu</h3></div></a>
-                <a href="./menuAften.html"><div id="aftenMenu"><h3>Aften menu</h3></div></a>
-                <a href="./menuSoedeSager.html"><div id="soedeSagerMenu"><h3>Søde sager</h3></div></a>
-                <a href="./menuCocktails.html"><div id="cocktailMenu"><h3>Cocktail menu</h3></div></a>
-                <a href="./menuDrikke.html"><div id="drikkeMenu"><h3>Kolde & Varme Drikke</h3></div></a>
-                <a href="./menuOel.html"><div id="oelMenu"><h3>Øl menu</h3></div></a>
-                <a href="./menuVin.html"><div id="vinMenu"><h3>Vin menu</h3></div></a>
-            </div>
-        </section>
-        <section class="groenSektion groenSektionMenu">
-            <div class="groenSektionTakeaway">
+            <div class="groenSektionMenuTxt">
                 <h2>Få oplevelsen af vores menu med dig!</h2>
                 <p>Prøv vores lækre mad og drikke som take away. 
                     Vi har sammensæt et udvalg som du kan nyde, uanset om vil hjem i trygge rammer eller hvis du vil tage oplevelsen med dig på farten.</p>
                 <button class="btn btnTakeaway">Gå til Mad Ud Af Huset</button>
-            </div>
-            <div class="imgKaffe">
-                <picture>
+                <picture class="imgKaffe">
                     <source media="(min-width: 600px)" srcset="/assets/img/tilMenukort/takeaway_stor.png">
                     <img src="./assets/img/tilMenukort/takeaway_lille.png" id="kaffeToGo" alt="Kvinde med kaffe to-go fra Ulla Terkelsen London" loading="lazy">
-                <!-- KILDE: Cafe Ulla Terkelsen London. Instagram. Meta 2024. Accessed 4/6/2024. URL: https://www.instagram.com/p/CpATJ1IMLDs/ -->
+                <!-- KILDE: Cafe Ulla Terkelsen London. instagram.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.instagram.com/p/CpATJ1IMLDs/ -->
                 </picture>
             </div>
         </section>
@@ -132,14 +136,14 @@
             <div id="smiley">
                 <p class="footerTitle">Fødevarestyrelsens<br>smiley-ordning</p>
                 <img src="./assets/img/smileyRapport.png" alt="Fødevarestyrelsens kontrolrapport logo">
-                <!-- KILDE: VirkSide. Ministeriet for Fødevarer, Landbrug og Fiskeri. 2024. Accessed 5/6/2024. URL: https://www.findsmiley.dk/500717 -->
+                <!-- KILDE: VirkSide. findsmiley.dk. Ministeriet for Fødevarer, Landbrug og Fiskeri. 2024. [online] Accessed 5/6/2024. URL: https://www.findsmiley.dk/500717 -->
             </div>
             <div id="socialeMedier">
                 <p class="footerTitle">Følg os her!</p>
                 <a href="https://www.facebook.com/CafeUlla" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-                <!-- KILDE : Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla -->
+                <!-- KILDE : Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online]  Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla -->
                 <a href="https://www.instagram.com/cafeullaterkelsenlondon/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <!-- KILDE: Cafe Ulla Terkelsen London. Instagram. Meta 2024. Accessed 4/6/2024. https://www.instagram.com/cafeullaterkelsenlondon/ -->
+                <!-- KILDE: Cafe Ulla Terkelsen London. Instagram.com. Meta 2024. [online] Accessed 4/6/2024. https://www.instagram.com/cafeullaterkelsenlondon/ -->
             </div>
         </div>
     </footer>
