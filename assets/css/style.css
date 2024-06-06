@@ -58,7 +58,8 @@ main {
 }
 
 main>*:not(:last-child) {
-    padding: 6rem 8rem;
+    padding: 0 8rem;
+    padding-bottom: 6rem;
 }
 
 main p {
@@ -144,8 +145,6 @@ svg {
     padding: 0.8rem 0rem;
 }
 
-
-
 .engleUlla {
     position: absolute;
     top: -100px;
@@ -157,10 +156,6 @@ svg {
     transform: rotate(25deg);
     margin-top: 1rem;
 
-
-    /* position: relative;
-    z-index: 1;
-    left: -40px; */
 }
 
 /*--------------Groen Sektion Slut-----------------*/
@@ -347,6 +342,10 @@ footer {
 /*______________________MENU SOEDESAGER SLUT__________________________*/
 
 /*______________________MENU VIN__________________________*/
+
+.breadcrumbs {
+    padding-top: 6rem;
+}
 
 .indledningMenu {
     display: flex;
@@ -612,14 +611,15 @@ footer {
     }
 
     .menukortContainer {
-        margin: var(--paddingSectionsDesktop) 35px;
+        margin: 0 35px;
+        margin-bottom: var(--paddingSectionsDesktop);
     }
 
     .indledningMenu {
         flex-direction: column;
         align-items: center;
         gap: var(--paddingSectionsMobile);
-        margin: var(--paddingSectionsMobile) 0;
+
     }
 
     .billedeRamme {
@@ -642,6 +642,16 @@ footer {
         font-size: var(--h1Mobile);
     }
 
+    .genvejSektion {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .groenSektionKontakt,
+    .groenSektionBookbord {
+        max-width: 100%;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -653,6 +663,7 @@ footer {
     footer {
         flex-direction: column;
         gap: 2rem;
+        padding: 1rem 2rem;
     }
 
     main p {
@@ -663,11 +674,14 @@ footer {
         font-size: 1.2rem;
     }
 
-    .groenSektion {
-        flex-direction: column;
-        margin-left: 0;
-        margin-bottom: 0;
+    main>*:not(:last-child) {
+        padding: 1rem 2rem;
     }
+
+    .groenSektion {
+        padding: 3rem;
+    }
+
 }
 
 ;
