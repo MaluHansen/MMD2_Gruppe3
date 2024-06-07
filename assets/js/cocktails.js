@@ -66,8 +66,6 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     containerToFill.innerHTML = `
         <div class="drinksHalf1"></div>
         <div class="drinksHalf2"></div>
-
-
     `;
 
     // Fanger vores nye elementer så vi kan referer til dem med JS. 
@@ -91,8 +89,8 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         drinksHalf1El.innerHTML += `
         <div class="drinkEnhed">
             <div class="titelOgPris">
-                <p class="drinkTitle">${drink.acf.navn_pa_drik}</p>
-                <p>${prisGlas}${prisStor}${prisLille}</p>
+                <p class="drinkTitle">${drink.acf.navn_pa_drik}${alkoholProcent}</p>
+                <p>${prisGlas}${prisLille}${prisMellem}${prisStor}${prisFlaske}</p>
             </div>
         <p class="drinkBeskrivelse">${drinkInfo}</p>
         </div>
@@ -102,17 +100,21 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
 
     // Her sker nøjagtig det samme som for den første del af vores array. Nu sker det bare for det andet array. 
     secondHalf.forEach(drink => {
+        let prisLille = drink.acf.pris_for_lille_storrelse ? `${drink.acf.pris_for_lille_storrelse},-/` : '';
+        let prisMellem = drink.acf.pris_for_mellem_storrelse ? `${drink.acf.pris_for_mellem_storrelse},-/` : '';
+        let prisStor = drink.acf.pris_for_stor_storrelse ? `${drink.acf.pris_for_stor_storrelse},-` : '';
         let prisGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-/` : '';
-        ;
+        let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
+        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
         
         drinksHalf2El.innerHTML += `
         <div class="drinkEnhed">
             <div class="titelOgPris">
-                <p class="drinkTitle">${drink.acf.navn_pa_drik}</p>
-                <p>${prisGlas}</p>
-            </div>
-        <p class="drinkBeskrivelse">${drinkInfo}</p>
+            <p class="drinkTitle">${drink.acf.navn_pa_drik}${alkoholProcent}</p>
+            <p>${prisGlas}${prisLille}${prisMellem}${prisStor}${prisFlaske}</p>
+        </div>
+    <p class="drinkBeskrivelse">${drinkInfo}</p>
         </div>
    `;
     });
@@ -133,4 +135,4 @@ function fetchAndRenderDrinks(containerToFill, id) {
 }
 
 fetchAndRenderDrinks(cocktailVarianterEl, 33);
-fetchAndRenderDrinks(kanderVarianterEl, 28);
+
