@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url("https://use.typekit.net/fdc7bql.css");
 
-:root{
+:root {
     --broedFont: 'roboto';
     --h1Font: 'active', sans-serif;
     --menuKortFont: 'roboto Slab';
@@ -35,7 +35,8 @@
     --paddingSectionsMobile: 3.125rem;
 
 }
-*{
+
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: var(--broedFont);
@@ -46,15 +47,22 @@
         scroll-behavior: smooth;
     }
 }
+
 /*__________________Generel styling_______________*/
-body{
+body {
     height: 100svh;
 }
-main{
+
+main {
     background-color: var(--baggrund);
-    padding: 6rem 8rem;
 }
-main p{
+
+main>*:not(:last-child) {
+    padding: 0 8rem;
+    padding-bottom: 6rem;
+}
+
+main p {
     font-size: var(--tekstStrDesktop);
     max-width: 75ch;
     text-wrap: pretty;
@@ -65,12 +73,11 @@ img,
 video,
 picture,
 svg {
-    height: auto;
     vertical-align: middle;
     font-style: italic;
 }
- 
-.btn{
+
+.btn {
     background-color: var(--moerkPink);
     color: white;
     padding: 0.5rem 1rem;
@@ -79,70 +86,78 @@ svg {
     border-radius: 50px;
     width: 10rem;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 16%);
-    
+
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #b54b7c;
     transition: 0.2s ease;
 }
-.btn:active{
+
+.btn:active {
     background-color: var(--moerkPink);
 }
 
 /*-----------ikoner-------------*/
-.card{
+.card {
     color: red;
     font-weight: 100;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 200,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 24
 }
+
 /*-------------ikoner slut--------------*/
 
 /*--------------Groen Sektion-----------------*/
-.groenSektion{
+.groenSektion {
     background-color: var(--groen);
-    display: flex;
-    width: 100vw;
-    margin-left: -8rem;
-    margin-bottom: -8rem;
+    padding: 5rem;
+    position: relative;
+
 }
-.groenSektionKontakt, .groenSektionBookbord{
+
+.genvejSektion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.groenSektionKontakt,
+.groenSektionBookbord {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 5rem;
+    gap: 0.5rem;
+    max-width: 40%;
 }
-.groenSektionKontakt, .groenSektionBookbord h4{
+
+.groenSektionKontakt,
+.groenSektionBookbord h4 {
     font-size: var(--h4MenuKort);
 }
-.groenSektionKontakt p, .groenSektionBookbord p{
+
+.groenSektionKontakt p,
+.groenSektionBookbord p {
     padding: 0.8rem 0rem;
 }
 
-
-
-.engleUlla{
-    aspect-ratio: 2/3;
-    
-    position: relative;
-    left: -80px;
+.engleUlla {
+    position: absolute;
+    top: -100px;
+    right: 20px;
 }
-#engleUllaImg{
+
+#engleUllaImg {
     width: 200px;
     transform: rotate(25deg);
     margin-top: 1rem;
-    
-    
-    /* position: relative;
-    z-index: 1;
-    left: -40px; */
+
 }
+
 /*--------------Groen Sektion Slut-----------------*/
 
 /*____________________Generel styling slut_____________________*/
@@ -152,30 +167,34 @@ svg {
 
 
 /*______________________NAV________________________*/
-nav{
+nav {
     background-color: var(--pink);
     padding: 35px 50px;
     position: relative;
 }
-.logo{
+
+.logo {
     width: 10rem;
     position: absolute;
     top: 10px;
     left: 10px;
 }
-nav ul{
+
+nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     border-bottom: #EFA1D0;
     color: var(--tekstFarve);
     position: relative;
 }
-.activeNavA{
+
+.activeNavA {
     text-decoration: underline;
     color: var(--moerkPink);
     text-underline-position: under;
@@ -184,7 +203,7 @@ nav a{
 }
 
 /*---------linje under punkterne i nav------------*/
-nav a::after{
+nav a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -196,13 +215,15 @@ nav a::after{
     transform: scale(0, 1);
     transition: 0.3s ease;
 }
-nav a:hover::after{
+
+nav a:hover::after {
     transform: scale(1, 1);
 }
+
 /*-------------------Slut-------------------*/
 
 /*------------Sub Nav-------------------*/
-.subNavContent{
+.subNavContent {
     float: left;
     overflow: hidden;
     background-color: var(--pink);
@@ -212,10 +233,12 @@ nav a:hover::after{
     padding: 0.5rem 0;
     font-size: 14px;
 }
-.subNav:hover .subNavContent{
+
+.subNav:hover .subNavContent {
     display: flex;
 }
-#subNavActive{
+
+#subNavActive {
     display: flex;
 }
 
@@ -226,42 +249,52 @@ nav a:hover::after{
 
 
 /*_______________________FOOTER_______________________*/
-footer{
+footer {
     background-color: var(--pink);
-    padding: 35px 50px;
+    padding: 35px 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.footerTitle{
+.footerTitle {
     font-weight: 700;
 }
 
-.kontakt p, .aabningstider p{
-  margin-bottom: 1rem;
+.kontakt p,
+.aabningstider p {
+    margin-bottom: 1rem;
 }
-.aabningstiderContainer{
+
+.aabningstiderContainer {
     display: flex;
     gap: 1rem;
 }
-.andetInfo{
+
+.andetInfo {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-#socialeMedier p, #smiley p{
+
+#socialeMedier p,
+#smiley p {
     margin-bottom: 1rem;
 }
-#email, #mobil, #lokation{
+
+#email,
+#mobil,
+#lokation {
     display: flex;
     gap: 1rem;
 }
-#socialeMedier a{
+
+#socialeMedier a {
     color: var(--tekstFarve);
     font-size: 36px;
     margin-right: 1rem;
 }
+
+
 
 /*_______________________FOOTER SLUT_______________________*/
 
@@ -303,16 +336,132 @@ footer{
 /*______________________MENU MORGEN SLUT__________________________*/
 
 /*______________________MENU OEL__________________________*/
+.breadcrumbs {
+    padding-top: 6rem;
+}
+
+.indledningMenu {
+    display: flex;
+    gap: 138px;
+    justify-content: space-between;
+}
+
+.indledningMenu h2 {
+    font-size: var(--h2Desktop)
+}
+
+.introTekst {
+    max-width: 674px;
+    min-width: 50ch;
+}
+
+.billedeRamme {
+    border-radius: 12px;
+    object-fit: cover;
+    display: grid;
+    max-width: 672px;
+    max-height: 512px;
+    grid-template-columns: 58.2% 41.8%;
+    grid-template-rows: 47.3% 52.7%;
+}
+
+.billedeRamme .img-1 {
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+
 /*______________________MENU OEL SLUT__________________________*/
 
 /*______________________MENU SOEDESAGER__________________________*/
 /*______________________MENU SOEDESAGER SLUT__________________________*/
 
 /*______________________MENU VIN__________________________*/
+
 /*______________________MENU VIN SLUT__________________________*/
 
 /*______________________MENU SELSKABER__________________________*/
 /*______________________MENU SELSKABER SLUT__________________________*/
 
 
-/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
+
+@media only screen and (max-width: 1400px) {
+    .menukortContainer p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer {
+        margin: 0 35px;
+        margin-bottom: var(--paddingSectionsDesktop);
+    }
+
+    .indledningMenu {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--paddingSectionsMobile);
+    }
+
+    .billedeRamme {
+        max-height: 306px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .variantContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .introTekst {
+        min-width: unset;
+    }
+
+    .indledningMenu h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    .genvejSektion {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .groenSektionKontakt,
+    .groenSektionBookbord {
+        max-width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    nav {
+        display: none
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer h3 {
+        font-size: 1.2rem;
+    }
+
+    main>*:not(:last-child) {
+        padding: 1rem 2rem;
+    }
+
+    .groenSektion {
+        padding: 3rem;
+    }
+
+}
+
+;
