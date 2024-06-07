@@ -305,7 +305,6 @@ footer{
     grid-row: 3 / 4;
 }
 .kontaktKort{
-    background-color: #933E65;
     grid-column: 2 / 4;
     grid-row: 2 / 5;
 
