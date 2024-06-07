@@ -16,9 +16,9 @@ let drinkData;
 
 // Vi opretter en funktion som kan hente drikkevarer ud fra et specifik ID som sættes som et parameter. 
 function getDrinksByID(Id) {
+    spinnerEl.classList.add("show"); // Tilføj klassen "show" til spinnerEl
     burgerEl.classList.add("show"); // Tilføj klassen "show" til burgerEl
     wineGlassEl.classList.add("show"); // Tilføj klassen "show" til wineGlassEl
-    spinnerEl.classList.add("show"); // Tilføj klassen "show" til spinnerEl
     // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i dette tilfælde en query parameter som hedder &type-af-drikkevarer= + vores Id. Url'en vil derfor se således ud: https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100&type-af-drikkevarer=(Indsat Id)
     return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
         // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt til et JavaScript-objekt. 
@@ -131,7 +131,7 @@ function fetchAndRenderDrinks(containerToFill, id) {
             wineGlassEl.classList.remove("show");
             spinnerEl.classList.remove("show");
             // Skjul burgerEl, wineGlassEl og spinnerEl ved at fjerne klassen "show"
-        }, 2000);
+        }, 2200);
     }).catch(err => console.error("Fejl:", err));
 }
 
