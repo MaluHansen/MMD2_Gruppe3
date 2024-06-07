@@ -336,12 +336,14 @@ footer {
 /*______________________MENU MORGEN SLUT__________________________*/
 
 /*______________________MENU OEL__________________________*/
+.breadcrumbs {
+    padding-top: 6rem;
+}
+
 .indledningMenu {
     display: flex;
     gap: 138px;
     justify-content: space-between;
-    margin-right: 138px;
-    margin-bottom: var(--paddingSectionsDesktop);
 }
 
 .indledningMenu h1 {
@@ -370,7 +372,6 @@ footer {
     grid-template-rows: 47.3% 52.7%;
 }
 
-
 .billedeRamme .img-1 {
     grid-row: 1 / 3;
     grid-column: 1;
@@ -384,7 +385,6 @@ footer {
     object-position: center;
 }
 
-
 .billedeRamme .img-2 {
     grid-row: 1;
     grid-column: 2;
@@ -393,7 +393,7 @@ footer {
 .billedeRamme .img-2 img {
     border-radius: 0 40px 0 0;
     width: 100%;
-    height: 270px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -413,8 +413,8 @@ footer {
 
 .menukortContainer {
     background-color: var(--lysGul);
-    padding: 2% 10%;
-    margin: 0 138px;
+    padding: 2% 7%;
+    margin: 0px 138px;
     border-radius: 12px;
     margin-bottom: var(--paddingSectionsDesktop);
 }
@@ -425,8 +425,7 @@ footer {
     font-family: var(--menuKortFont);
 }
 
-.fadolFlaskeolVarianter,
-.alkoholfrieOlVarianter {
+.variantContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
@@ -440,10 +439,6 @@ footer {
     gap: 1rem;
 }
 
-/* .olvarianter article {
-    width: 100%;
-} */
-
 .titelOgPris {
     display: flex;
     justify-content: space-between;
@@ -452,12 +447,12 @@ footer {
 .overskrift {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
     margin-top: 2rem;
 }
 
 .drinkTitle {
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .titelOgPris p {
@@ -471,9 +466,130 @@ footer {
     margin: 10px 0;
 }
 
+.drinkBeskrivelse {
+    font-style: italic;
+    max-width: 80%;
+}
+
 .drinkEnhed {
     margin-bottom: 20px;
 }
+
+.spinnerContainer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.burger,
+.wineGlass {
+    display: none;
+    font-size: 2rem;
+    /* Gør ikonet øverst */
+}
+
+
+.burger {
+    position: absolute;
+    z-index: 3;
+    animation: iconAnimation0 1.5s infinite;
+}
+
+.wineGlass {
+    position: absolute;
+    z-index: 2;
+    animation: iconAnimation1 1.5s infinite;
+}
+
+
+.spinner {
+    display: none;
+    /* Skjult som standard */
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--pink);
+    border-top: 5px solid var(--moerkPink);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes iconAnimation0 {
+    0% {
+        display: none;
+    }
+
+    20% {
+        display: flex;
+    }
+
+    40% {
+        display: none;
+    }
+
+    60% {
+        display: none;
+    }
+
+    80% {
+        display: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes iconAnimation1 {
+    0% {
+        display: none;
+    }
+
+    20% {
+        display: none;
+    }
+
+    40% {
+        display: none;
+    }
+
+    60% {
+        display: none;
+    }
+
+    80% {
+        display: flex;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+.show {
+    display: flex;
+    /* Vises, når klassen "show" tilføjes */
+}
+
 
 /*______________________MENU OEL SLUT__________________________*/
 
@@ -488,3 +604,91 @@ footer {
 
 
 /* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm
+
+/*______________________MENU VIN SLUT__________________________*/
+
+/*______________________MENU SELSKABER__________________________*/
+/*______________________MENU SELSKABER SLUT__________________________*/
+
+
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
+
+@media only screen and (max-width: 1400px) {
+    .menukortContainer p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer {
+        margin: 0 35px;
+        margin-bottom: var(--paddingSectionsDesktop);
+    }
+
+    .indledningMenu {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--paddingSectionsMobile);
+    }
+
+    .billedeRamme {
+        max-height: 306px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .variantContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .introTekst {
+        min-width: unset;
+    }
+
+    .indledningMenu h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    .genvejSektion {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .groenSektionKontakt,
+    .groenSektionBookbord {
+        max-width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    nav {
+        display: none
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer h3 {
+        font-size: 1.2rem;
+    }
+
+    main>*:not(:last-child) {
+        padding: 1rem 2rem;
+    }
+
+    .groenSektion {
+        padding: 3rem;
+    }
+
+}
+
+;
