@@ -362,6 +362,11 @@ footer{
     object-position: center;
 }
 
+main>*:not(:last-child) {
+    padding: 0 8rem;
+    padding-bottom: 6rem;
+}
+
 .menukortContainer {
     background-color: var(--lysGul);
     padding: 2% 7%;
