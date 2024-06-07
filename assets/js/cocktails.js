@@ -60,33 +60,39 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     // // Vi danner nu et andet array ved at sige det skal indeholde alle drikkevare der er placeret i de index der går fra vores midIndex og op efter. 
     const secondHalf = drinks.slice(midIndex);
 
+    const kanderHalf1 = drinks.slice(0, midIndex);
+
     // Opretter 2 nye elementer med innerHTML. 
     containerToFill.innerHTML = `
         <div class="drinksHalf1"></div>
         <div class="drinksHalf2"></div>
 
-        <div class="kanderHalf1"></div>
+
     `;
 
     // Fanger vores nye elementer så vi kan referer til dem med JS. 
     const drinksHalf1El = containerToFill.querySelector(".drinksHalf1")
     const drinksHalf2El = containerToFill.querySelector(".drinksHalf2")
 
-    const kanderHalf1El = containerToFill.querySelector(".kanderHalf1")
 
     // Indsætter første del af vores array i første kolonne. Til at starte med undersøger vi hvilke data vi har i de forskellige stier. Alt efter om der befinder sig noget eller ej så gemmes det i en variabel. 
     firstHalf.forEach(drink => {
         // Eks. Her undersøger vi om der befinder sig noget i pris_for_lille_storrelse hvis der gør det så skal det gemmes i en variable sammen med ",-/" hvis der ikke er noget. Så gemmer vi intet i vores variabel. 
        
+        let prisLille = drink.acf.pris_for_lille_storrelse ? `${drink.acf.pris_for_lille_storrelse},-/` : '';
+        let prisMellem = drink.acf.pris_for_mellem_storrelse ? `${drink.acf.pris_for_mellem_storrelse},-/` : '';
+        let prisStor = drink.acf.pris_for_stor_storrelse ? `${drink.acf.pris_for_stor_storrelse},-` : '';
         let prisGlas = drink.acf.pris_pr_glas ? `${drink.acf.pris_pr_glas},-/` : '';
+        let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
+        let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
         
         // Vi ændre vores HTML (DOM-MANIPULATION) med InnerHTML. Her placere vi navnet på drikkevaren og vores variabler. 
         drinksHalf1El.innerHTML += `
         <div class="drinkEnhed">
             <div class="titelOgPris">
                 <p class="drinkTitle">${drink.acf.navn_pa_drik}</p>
-                <p>${prisGlas}</p>
+                <p>${prisGlas}${prisStor}${prisLille}</p>
             </div>
         <p class="drinkBeskrivelse">${drinkInfo}</p>
         </div>
@@ -127,4 +133,4 @@ function fetchAndRenderDrinks(containerToFill, id) {
 }
 
 fetchAndRenderDrinks(cocktailVarianterEl, 33);
-// fetchAndRenderDrinks(kanderVarianterEl, 28);
+fetchAndRenderDrinks(kanderVarianterEl, 28);
