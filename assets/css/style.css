@@ -477,13 +477,10 @@ footer {
 
 .spinnerContainer {
     position: relative;
-    width: 100px;
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding-top: 2rem;
 }
 
 .burger,
