@@ -359,11 +359,6 @@ footer {
     color: var(--moerkPink);
 }
 
-.indledningMenu p {
-    font-family: var(--broedFont);
-    color: var(--tekstFarve);
-}
-
 .introTekst {
     max-width: 674px;
     min-width: 50ch;
