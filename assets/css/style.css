@@ -305,10 +305,13 @@ footer{
     grid-row: 3 / 4;
 }
 .kontaktKort{
+    
     grid-column: 2 / 4;
     grid-row: 2 / 5;
 
     height: 400px;
+
+    /* position: absolute; */
 }
 
 /*______________________KONTAKT SLUT__________________________*/
@@ -347,4 +350,4 @@ footer{
 /*______________________MENU SELSKABER SLUT__________________________*/
 
 
-/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skÃ¦rm
