@@ -619,7 +619,6 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: var(--paddingSectionsMobile);
-
     }
 
     .billedeRamme {
