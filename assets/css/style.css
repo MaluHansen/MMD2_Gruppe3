@@ -331,7 +331,29 @@ footer{
 
 @media screen and (max-width: 900px){
 
-} 
+    .madUdAfHuset{
+        flex-direction: column;
+    }
+    .madUdAfHuset h1{
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+    .madUdTekstContent p{
+        margin: 2rem 0rem 2rem 0rem;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .madUdAfHuset h1{
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+    .madUdTekstContent p{
+        margin: 2rem 0rem 2rem 0rem;
+    }
+}
 
 /*______________________MAD UD SLUT__________________________*/
 
