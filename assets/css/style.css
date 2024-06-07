@@ -306,6 +306,33 @@ footer{
     object-position: 100% 100%;
 }
 
+@media screen and (max-width: 600px){
+    .madUdAfHuset{
+        flex-direction: column;
+    }
+    .madUdAfHuset h1{
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+    .madUdTekstContent p{
+        margin: 2rem 0rem 2rem 0rem;
+    }
+    .madUdImg{
+        
+        margin-left: -8rem;
+        width: 100vw;
+        height: 25rem;
+        border-radius: 0px;
+        object-fit: cover;
+        object-position: 100% 80%;
+    }
+} 
+
+@media screen and (max-width: 900px){
+
+} 
+
 /*______________________MAD UD SLUT__________________________*/
 
 /*______________________MENU__________________________*/
