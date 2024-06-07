@@ -305,13 +305,33 @@ footer{
     grid-row: 3 / 4;
 }
 .kontaktKort{
-    
     grid-column: 2 / 4;
     grid-row: 2 / 5;
-
     height: 400px;
+}
 
-    /* position: absolute; */
+@media screen and (max-width: 600px){
+    .kontaktContent{
+        display: flex;
+        flex-direction: column;
+    }
+    .kontaktMain h1{
+        font-size: var(--h1Mobile);
+    }
+} 
+
+@media screen and (max-width: 900px){
+    .kontaktContent{
+        display: flex;
+        flex-direction: column;
+    }
+    .kontaktMain h1{
+        font-size: var(--h1Mobile);
+    }
+} 
+
+@media screen and (max-width: 1400px){
+
 }
 
 /*______________________KONTAKT SLUT__________________________*/
