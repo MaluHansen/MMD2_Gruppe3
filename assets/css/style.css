@@ -57,7 +57,7 @@ main {
     background-color: var(--baggrund);
 }
 
-main>*:not(:last-child) {
+main>*:not(:last-child, .indexHero) {
     padding: 0 8rem;
     padding-bottom: 6rem;
 }
@@ -171,6 +171,7 @@ nav {
     background-color: var(--pink);
     padding: 35px 50px;
     position: relative;
+    z-index: 2;
 }
 
 .logo {
@@ -228,7 +229,7 @@ nav a:hover::after {
     overflow: hidden;
     background-color: var(--pink);
     display: none;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     padding: 0.5rem 0;
     font-size: 14px;
@@ -339,6 +340,23 @@ footer {
 .breadcrumbs {
     padding-top: 6rem;
 }
+
+.indexHero {
+    position: relative;
+    z-index: 0;
+}
+
+.indexHero img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.fade-out {
+    mask-image: linear-gradient(to bottom, rgba(253, 251, 239, 1) 0%, rgba(253, 251, 239, 1) 40%, rgba(253, 251, 239, 0) 100%);
+    z-index: -1;
+}
+
 
 .indledningMenu {
     display: flex;
