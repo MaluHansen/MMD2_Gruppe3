@@ -42,21 +42,34 @@
         </nav>
     </header>
     <main>
-        <picture class="indexHero">
-            <source class="fade-out" media="(min-width:600px)" srcset="./assets/img/forside/cocktailHero.jpg">
-            <img class="fade-out" src="./assets/img/små billeder/Forside/cocktailHero lille.jpg" alt="Gul drink med sugerør og blomster placeret med en farverig baggrund" loading="lazy">
-            <!-- KILDE: #821, https://www.colourbox.dk/billede/aeldre-dame-restaurant-billede-38786024. Colourbox.dk, 2024 -->
-        </picture>
+        <section class="forsideHero">
+            <picture class="forsideHero">
+                <source class="fade-out" media="(min-width:600px)" srcset="./assets/img/forside/cocktailHero.jpg">
+                <img class="fade-out" src="./assets/img/små billeder/Forside/cocktailHero lille.jpg" alt="Gul drink med sugerør og blomster placeret med en farverig baggrund" loading="lazy">
+                <!-- KILDE: #821, https://www.colourbox.dk/billede/aeldre-dame-restaurant-billede-38786024. Colourbox.dk, 2024 -->
+            </picture>
+            <div class="forsideOverskriftBtn">
+                <h1 class="ForsideOverskrift">CAFE ULLA TERKELSEN LONDON</h1>
+                <a href="./bookBord.html" class="btn centerBtn">Book Bord</a>
+            </div>
+        </section>
         <section>
-            <article class="indledningMenu">
-                <div class="introTekst">
-                    <h3>Velkommen til Café Ulla Terkelsen London</h3>
-                    <p>Få en oplevelse og mærk den gode stemning i behagelige omgivelser</p>
-                    <p>Oplev en verden af smage og farver når du træder ind i vores café. 
-                        Vores personale byder jer varmt velkommen med personlig betjening og med mulighed for at blive serviceret i vores fine lokaler eller i vores skønne gårdhave. Er du på farten, eller vil du nyde vores retter i hjemmets trygge rammer, så har du også mulighed for at bestille din mad og drikke som take-away.</p>
+            <article class="indledningForside">
+                <div class="introTekstForside">
+                    <div class="forordForside">
+                        <h3>Velkommen til Café Ulla Terkelsen London</h3>
+                        <p>Få en oplevelse og mærk den gode stemning i behagelige omgivelser</p>
+                    </div>
+                    <p>
+                        Oplev en verden af smage og farver når du træder ind i vores café. 
+                        Vores personale byder jer varmt velkommen med personlig betjening og med mulighed for at blive serviceret i vores fine lokaler eller i vores skønne gårdhave.
+                    </p>
+                    <p>
+                      Er du på farten, eller vil du nyde vores retter i hjemmets trygge rammer, så har du også mulighed for at bestille din mad og drikke som take-away.
+                    </p>
                 </div>
-                <div class="billedeRamme">
-                    <picture class="img-1">
+                <div class="billedeRammeForside">
+                    <picture>
                         <source media="(min-width:600px)" srcset="./assets/img/forside/cafeIndefra.jpg">
                         <img src="./assets/img/små billeder/Forside/cafeIndefra_lille.jpg" alt="Caféen Ulla Terkelsen Londons lokaler set indefra" loading="lazy">
                         <!-- KILDE: #821, https://www.colourbox.dk/billede/aeldre-dame-restaurant-billede-38786024. Colourbox.dk, 2024 -->
@@ -64,17 +77,45 @@
                 </div>
             </article>
         </section>
+        <section class="forsideEntryPoints">
+            <a class="entryPoint" href="./menuAften.html">
+                <img src="./assets/img/Forside/aftensmadIndex.jpeg" alt="En tallerken med kyllingesalat og brød">
+                <p>Farverig Mad</p>
+                <p>
+                    Vi tilbyder et dynamiske menukort der med brug af lokale råvarer varierer efter sæson og humør. Uanset om du besøger os i caféen eller får maden leveret direkte til døren, garanterer vi smagsoplevelser, du sent vil glemme.
+                </p>
+            </a>
+            <a class="entryPoint" href="./menu.html">
+                <img src="./assets/img/Forside/kaffeIndex.jpg" alt="En tallerken med kyllingesalat og brød">
+                <p>Lækre Drikkevarer</p>
+                <p>
+                    Vi tilbyder drikkevarer for en hver smag. Hvad enten du er til kolde øl, sodavand eller kaffe og the. Vi har byens største udvalg af rød sodavand, og har en bred variation af øl og vin. 
+                </p>
+            </a>
+            <a class="entryPoint" href="./events.html">
+                <img src="./assets/img/Forside/events.jpg" alt="En tallerken med kyllingesalat og brød">
+                <p>Spændende Events</p>
+                <p>
+                    Tag dine venner med ned og få en fælles oplevelse. Hos os kan I opleve live-musik og  spændende events hele året rundt. Vores events dækker alt fra musik til kreative initiativer.
+                </p>
+            </a>
+            <a class="entryPoint" href="./menuCocktails.html">
+                <img src="./assets/img/Forside/cocktailMedFrugt.jpg" alt="En tallerken med kyllingesalat og brød">
+                <p>Festlige Aftener</p>
+                <p>
+                    Fra kl. 21:00 forvandler vores hyggelige café sig fra spisested til et magisk og farverigt fest-univers med god musik. Du kan samtidig nyde vores brede udvalg af eksotiske cocktails og klassiske drinks. Vi har noget for en hver smag.
+                </p>
+            </a>
+        </section>
         <div class="groenSektion">
-            <div class="groenSektionKontakt">
-                <h4>Kan vi hjælpe dig med noget?</h4>
-                <p>Har du spørgsmål til menuen, ingredienser eller allergener, er du velkommen til at kontakte caféens personale. Se kontaktoplysninger via. nedenstående link</p>
-                <button class="btn">Gå til kontakt</button>
+            <div class="groenSektionKontakt sektionUlla">
+                <h4>Ulla elsker Ulla</h4>
+                <p>
+                    Caféens indretning hylder den danske journalist Ulla Terkelsens lange karriere i London. Vores unikke lokaler har en charmerende blanding af vintage og moderne indretning med mange farver, samt en hyggelig og legende atmosfærer.
+                </p>
             </div>
             <div class="groenSektionBookbord">
-                <h4>Er du klar på en unik caféoplevelse?</h4>
-                <p>Vi anbefaler at I reservere bord på forhånd, så I er sikret en plads i vores behagelige og stemningsgivende omgivelser på caféen. 
-                Følg nedenstående link for at få til siden “Book Bord”</p>
-                <button class="btn">Gå til book bord</button>
+                <img src="./assets/img/Forside/UllaTerkelsen.jpg" alt="Et billede af tv-journalisten Ulla Terkelsen fra sine yngre dage">
             </div>
 
             <div class="engleUlla" >
