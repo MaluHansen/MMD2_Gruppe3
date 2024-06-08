@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url("https://use.typekit.net/fdc7bql.css");
 
-:root{
+:root {
     --broedFont: 'roboto';
     --h1Font: 'active', sans-serif;
     --menuKortFont: 'roboto Slab';
@@ -35,7 +35,8 @@
     --paddingSectionsMobile: 3.125rem;
 
 }
-*{
+
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: var(--broedFont);
@@ -46,15 +47,18 @@
         scroll-behavior: smooth;
     }
 }
+
 /*__________________Generel styling_______________*/
-body{
+body {
     height: 100svh;
 }
-main{
+
+main {
     background-color: var(--baggrund);
     padding: 6rem 8rem;
 }
-main p{
+
+main p {
     font-size: var(--tekstStrDesktop);
     max-width: 75ch;
     text-wrap: pretty;
@@ -69,8 +73,8 @@ svg {
     vertical-align: middle;
     font-style: italic;
 }
- 
-.btn{
+
+.btn {
     background-color: var(--moerkPink);
     color: white;
     padding: 0.5rem 1rem;
@@ -79,70 +83,81 @@ svg {
     border-radius: 50px;
     width: 10rem;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 16%);
-    
+
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #b54b7c;
     transition: 0.2s ease;
 }
-.btn:active{
+
+.btn:active {
     background-color: var(--moerkPink);
 }
 
 /*-----------ikoner-------------*/
-.card{
+.card {
     color: red;
     font-weight: 100;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 200,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 24
 }
+
 /*-------------ikoner slut--------------*/
 
 /*--------------Groen Sektion-----------------*/
-.groenSektion{
+.groenSektion {
     background-color: var(--groen);
     display: flex;
     width: 100vw;
     margin-left: -8rem;
     margin-bottom: -8rem;
 }
-.groenSektionKontakt, .groenSektionBookbord{
+
+.groenSektionKontakt,
+.groenSektionBookbord {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 5rem;
 }
-.groenSektionKontakt, .groenSektionBookbord h4{
+
+.groenSektionKontakt,
+.groenSektionBookbord h4 {
     font-size: var(--h4MenuKort);
 }
-.groenSektionKontakt p, .groenSektionBookbord p{
+
+.groenSektionKontakt p,
+.groenSektionBookbord p {
     padding: 0.8rem 0rem;
 }
 
 
 
-.engleUlla{
+.engleUlla {
     aspect-ratio: 2/3;
-    
+
     position: relative;
     left: -80px;
 }
-#engleUllaImg{
+
+#engleUllaImg {
     width: 200px;
     transform: rotate(25deg);
     margin-top: 1rem;
-    
-    
+
+
     /* position: relative;
     z-index: 1;
     left: -40px; */
 }
+
 /*--------------Groen Sektion Slut-----------------*/
 
 /*____________________Generel styling slut_____________________*/
@@ -152,30 +167,34 @@ svg {
 
 
 /*______________________NAV________________________*/
-nav{
+nav {
     background-color: var(--pink);
     padding: 35px 50px;
     position: relative;
 }
-.logo{
+
+.logo {
     width: 10rem;
     position: absolute;
     top: 10px;
     left: 10px;
 }
-nav ul{
+
+nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     border-bottom: #EFA1D0;
     color: var(--tekstFarve);
     position: relative;
 }
-.activeNavA{
+
+.activeNavA {
     text-decoration: underline;
     color: var(--moerkPink);
     text-underline-position: under;
@@ -184,7 +203,7 @@ nav a{
 }
 
 /*---------linje under punkterne i nav------------*/
-nav a::after{
+nav a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -196,13 +215,15 @@ nav a::after{
     transform: scale(0, 1);
     transition: 0.3s ease;
 }
-nav a:hover::after{
+
+nav a:hover::after {
     transform: scale(1, 1);
 }
+
 /*-------------------Slut-------------------*/
 
 /*------------Sub Nav-------------------*/
-.subNavContent{
+.subNavContent {
     float: left;
     overflow: hidden;
     background-color: var(--pink);
@@ -212,10 +233,12 @@ nav a:hover::after{
     padding: 0.5rem 0;
     font-size: 14px;
 }
-.subNav:hover .subNavContent{
+
+.subNav:hover .subNavContent {
     display: flex;
 }
-#subNavActive{
+
+#subNavActive {
     display: flex;
 }
 
@@ -226,7 +249,7 @@ nav a:hover::after{
 
 
 /*_______________________FOOTER_______________________*/
-footer{
+footer {
     background-color: var(--pink);
     padding: 35px 50px;
     display: flex;
@@ -234,30 +257,39 @@ footer{
     justify-content: space-around;
 }
 
-.footerTitle{
+.footerTitle {
     font-weight: 700;
 }
 
-.kontakt p, .aabningstider p{
-  margin-bottom: 1rem;
+.kontakt p,
+.aabningstider p {
+    margin-bottom: 1rem;
 }
-.aabningstiderContainer{
+
+.aabningstiderContainer {
     display: flex;
     gap: 1rem;
 }
-.andetInfo{
+
+.andetInfo {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-#socialeMedier p, #smiley p{
+
+#socialeMedier p,
+#smiley p {
     margin-bottom: 1rem;
 }
-#email, #mobil, #lokation{
+
+#email,
+#mobil,
+#lokation {
     display: flex;
     gap: 1rem;
 }
-#socialeMedier a{
+
+#socialeMedier a {
     color: var(--tekstFarve);
     font-size: 36px;
     margin-right: 1rem;
@@ -323,7 +355,8 @@ footer{
     font-family: var(--h1Font);
 }
 
-.beskrivelseSelskaber h2, .groenSelskaberContainer h2 {
+.beskrivelseSelskaber h2,
+.groenSelskaberContainer h2 {
     font-size: var(--h2Desktop);
     color: var(--tekstFarve);
     margin-bottom: 2rem;
@@ -334,17 +367,17 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 60vw;
 }
 
 .containerSelskaber {
     display: flex;
-    height: 30vh;
-    width: 60vw;
+    max-height: 75vh;
 }
 
 .containerSelskaber picture {
-    width: 40%
-    }
+    width: 40%;
+}
 
 .imgSelskaber {
     border-radius: 20px 0px 0px 20px;
@@ -352,7 +385,6 @@ footer{
     height: 100%;
     object-fit: cover;
 }
-
 
 .eventImg {
     object-position: center;
@@ -375,10 +407,9 @@ footer{
 }
 
 .blaaSektionSelskaber {
-    background-color: var(--lysBlaa);
     padding: 2rem 4rem;
     border-radius: 0px 20px 20px 0px;
-    /* height: 20rem; */
+    background-color: var(--lysBlaa);
 }
 
 .blaaSektionSelskaber h2 {
@@ -387,87 +418,53 @@ footer{
 
 .blaaSektionSelskaber a {
     color: var(--tekstFarve);
-    font-size: 1.125rem;;
+    font-size: 1.125rem;
+    ;
     line-height: 1.7rem;
 }
 
-.groenSelskaberContainer {
-    display: grid;
-    padding-left: 8rem;
-    background-color: var(--groen);
-    width: 100vw;
-    grid-template-areas: 
-    "overskrift personaleImg"
-    "tekstafsnitGroen personaleImg"
-    "groenKnap personaleImg";
-    grid-template-columns: 1fr 2fr;
-}
-
 .personaleImg {
-    grid-area: personaleImg;
+    width: 100%;
 }
 
 #personalePaaUlla {
     width: 100%;
-    height: 465px;
+    height: 70vh;
     object-fit: cover;
     object-position: center 40%;
 }
 
-.groenSelskaberContainer h2 {
-    grid-area: overskrift;
-    padding-top: 1rem;
-    padding-right: 4rem;
-    margin: 0;
+.groenSelskaberContainer {
+    background-color: var(--groen);
+    width: 100vw;
+    max-height: 70vh;
+    display: flex;
+    /* width skal måske ændres ift. padding på main */
 }
 
-.groenSelskaberContainer p {
-    grid-area: tekstafsnitGroen;
-    padding-right: 8rem;
+.groenTxtContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 8rem;
 }
 
 .btnSelskaber {
-    grid-area: groenKnap;
     height: 3rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 
 @media screen and (max-width: 1400px) {
-
-    .containerSelskaber {
-        display: unset;
-        height: 60vh;
-    } 
-
     .contentSelskaber {
-        width: 60vw;
-    }
-
-    .imgSelskaber {
-        border-radius: 20px 20px 0px 0px;
-        height: 30vh;
-        max-width: 85%; 
-    }
-    
-    .containerSelskaber picture {
-        max-height: 20rem;
-    } 
-
-    .blaaSektionSelskaber {
-        border-radius: 0px 0px 20px 20px;
-        max-width: 85%;
+        max-width: 90vw;
     }
 
     .groenSelskaberContainer h2 {
         font-size: var(--h3MenuKort);
     }
-    
-    .groenSelskaberContainer p {
-        padding-right: 2rem;
-    }
-    
 }
+
 
 @media screen and (max-width: 900px) {
     .beskrivelseSelskaber h1 {
@@ -480,67 +477,57 @@ footer{
     }
     /* ÔBS SLETTES INDEN MECH */
 
-    .beskrivelseSelskaber h2, .blaaSektionSelskaber h2, .groenSelskaberContainer h2 {
+    .beskrivelseSelskaber h2,
+    .blaaSektionSelskaber h2,
+    .groenSelskaberContainer h2 {
         font-size: var(--h2Mobile);
         margin-bottom: 0.5rem;
     }
 
-    .containerSelskaber {
-       height: 40vh;
-    } 
-
-    .imgSelskaber {
-        height: 20vh;
-    }
-        
-    .blaaSektionSelskaber {
-        padding: 1rem 2rem;
-    }
-    
     .blaaSektionSelskaber a {
         font-size: var(--tekstStrMobil);
     }
 
-    .personaleImg {
-        display: none;
+    .groenTxtContainer {
+        padding: 1rem 4rem;
     }
 
     .groenSelskaberContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+        max-height: 50vh;
+    }
+
+    #personalePaaUlla {
+        max-height: 50vh;
     }
 
 }
 
 @media screen and (max-width: 600px) {
-    .contentSelskaber {
-    max-width: 100vw;
-    margin-bottom: 3rem;
+    .beskrivelseSelskaber {
+        margin-bottom: 2rem;
     }
 
-    .beskrivelseSelskaber {
-    margin-bottom: 2rem;
+    .containerSelskaber {
+        display: unset;
     }
 
     .imgSelskaber {
-    height: 162px;
+        border-radius: 20px 20px 0px 0px;
+        height: 30vh;
     }
 
-    .blaaSektionSelskaber h2, .blaaSektionSelskaber p, .blaaSektionSelskaber a {
-    margin: 0;
-}
+    .blaaSektionSelskaber {
+        border-radius: 0px 0px 20px 20px;
+        padding: 1rem 2rem;
+    }
 
-.selskabImg {
-    object-position: left;
-}
+    .selskabImg {
+        object-position: left;
+    }
 
-.groenSelskaberContainer h2, .groenSelskaberContainer p {
-    padding-left: 0rem;
-    padding-right: 6rem;
-}
-
+    .personaleImg {
+        display: none;
+    }
 }
 
 
