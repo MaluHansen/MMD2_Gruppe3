@@ -49,15 +49,87 @@
 }
 
 /*__________________Generel styling_______________*/
-body {
+body,
+html {
     height: 100svh;
+    margin: 0;
+    overflow: hidden;
 }
+
+.container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transition: transform 1s ease;
+}
+
+.half img {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) translateY(50%) scale(1);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(50%) scale(1.1);
+    }
+}
+
+.top {
+    top: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.bottom {
+    bottom: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.split .top {
+    transform: translateY(-150%);
+}
+
+.split .bottom {
+    transform: translateY(150%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+
+
+
+/* body {
+    height: 100svh;
+} */
 
 main {
     background-color: var(--baggrund);
 }
 
-main>*:not(.groenSektion, .forsideHero) {
+main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
     padding: 0 8rem;
     padding-bottom: 6rem;
 }
@@ -117,8 +189,6 @@ svg {
 .groenSektion {
     background-color: var(--groen);
     padding: 5rem;
-    position: relative;
-
 }
 
 .genvejSektion {
@@ -132,6 +202,38 @@ svg {
     flex-direction: column;
     gap: 0.5rem;
     max-width: 40%;
+}
+
+.genvejSektionUlla {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.UllaTImg {
+    max-height: 130%;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    object-fit: contain;
+
+}
+
+.groenSektionTekst {
+    width: 50%;
+    padding: var(--paddingSectionsMobile) 0px;
+    padding-left: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.groenSektionUlla {
+    background-color: var(--groen);
+    position: relative;
+    height: 400px;
 }
 
 .groenSektionKontakt,
@@ -177,7 +279,7 @@ nav {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 20;
+    z-index: 9;
 }
 
 nav ul {
@@ -327,9 +429,9 @@ footer {
 }
 
 .indledningForside {
-    display: flex;
-    gap: 10%;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
     margin-top: 5rem;
 }
 
@@ -350,7 +452,7 @@ footer {
 
 .billedeRammeForside {
     border-radius: 12px;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .billedeRammeForside img {
@@ -363,7 +465,7 @@ footer {
 .forsideEntryPoints {
     width: 100%;
     display: flex;
-    margin-bottom: 10rem;
+    margin-bottom: 7rem;
     justify-content: space-between;
 }
 
@@ -405,6 +507,8 @@ footer {
     padding: 1rem;
     transition: opacity 0 ease-in 1s;
     opacity: 0;
+    background-color: var(--lysBlaa);
+    border-radius: 40px;
 }
 
 .entryPoint:hover {
@@ -424,6 +528,7 @@ footer {
     opacity: 100;
     transition: opacity 0.4s ease 0.4s;
 }
+
 
 /*______________________FORSIDE SLUT__________________________*/
 
@@ -478,25 +583,27 @@ footer {
 /* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
 
 @media only screen and (max-width: 1400px) {
-    .menukortContainer p {
-        font-size: 1rem;
+
+    .indledningForside {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .menukortContainer {
-        margin: 0 35px;
-        margin-bottom: var(--paddingSectionsDesktop);
+    .billedeRammeForside {
+        max-width: 100%;
     }
 
-    .indledningMenu {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--paddingSectionsMobile);
+    /* .forsideEntryPoints {
+        display: grid;
+        flex-wrap: wrap;
+        gap: 5rem 2rem;
     }
 
-    .billedeRamme {
-        max-height: 306px;
-    }
 
+    .entryPoint {
+        width: 100%;
+        max-width: 290px;
+    } */
 }
 
 @media only screen and (max-width: 900px) {
@@ -545,7 +652,7 @@ footer {
         font-size: 1.2rem;
     }
 
-    main>*:not(:last-child) {
+    main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
         padding: 1rem 2rem;
     }
 
