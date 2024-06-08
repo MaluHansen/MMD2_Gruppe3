@@ -56,75 +56,6 @@ html {
     overflow: hidden;
 }
 
-.container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    overflow: hidden;
-}
-
-.half {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    transition: transform 1s ease;
-}
-
-.half img {
-    position: relative;
-    width: 400px;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(50%);
-    animation: pulse 1s infinite alternate;
-}
-
-@keyframes pulse {
-    0% {
-        transform: translateX(-50%) translateY(50%) scale(1);
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(50%) scale(1.1);
-    }
-}
-
-.top {
-    top: 0;
-    background-color: var(--pink);
-    transform: translateY(0);
-    z-index: 2;
-}
-
-.bottom {
-    bottom: 0;
-    background-color: var(--pink);
-    transform: translateY(0);
-    z-index: 1;
-}
-
-.split .top {
-    transform: translateY(-150%);
-}
-
-.split .bottom {
-    transform: translateY(150%);
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-
-
-
-
-
-/* body {
-    height: 100svh;
-} */
-
 main {
     background-color: var(--baggrund);
 }
@@ -401,6 +332,68 @@ footer {
 /*_______________________FOOTER SLUT_______________________*/
 
 /*______________________FORSIDE__________________________*/
+
+.container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transition: transform 1s ease;
+}
+
+.half img {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) translateY(50%) scale(1);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(50%) scale(1.1);
+    }
+}
+
+.top {
+    top: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.bottom {
+    bottom: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.split .top {
+    transform: translateY(-150%);
+}
+
+.split .bottom {
+    transform: translateY(150%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
 .forsideHero img {
     width: 100%;
     max-height: 550px;
