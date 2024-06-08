@@ -396,17 +396,6 @@ footer{
     justify-content: space-between;
 }
 
-/* .overskrift {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 2rem;
-} */
-
-/* .drinkTitle {
-    max-width: 70%;
-} */
-
 .titelOgPris p {
     font-family: var(--menuKortFont);
 }
@@ -417,6 +406,58 @@ footer{
     background-color: black;
     margin: 10px 0;
 }
+
+@media screen and (max-width: 900px) {
+    .introTekst {
+        padding-right: 2rem;
+    }
+
+    .billedeRamme .img-1 .img-2 {
+        max-height: 50vh;
+    }
+
+    .billedeRamme .img-2 img {
+        max-height: 50vh;
+        border-radius: 0 40px 40px 0;
+    }
+
+    .billedeRamme .img-3 {
+        display: none;
+    }
+
+    .billedeRamme {
+        display: flex;
+        height: 50vh;
+        width: 150vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .indledningmenu {
+        flex-direction: column;
+
+    }
+
+    .billedeRamme {
+        width: 100vw;
+        height: 40vh;
+        margin: 2rem 0;
+    }
+
+    .billedeRamme .img-1 img, .billedeRamme .img-2 img {
+        border-radius: 0;
+        height: 40vh;
+    }
+
+    .billedeRamme .img-1 {
+        width: 70%;
+    }
+
+    .billedeRamme .img-2 {
+        width: 30%;
+    }
+}
+
 
 /*______________________MENU MORGEN SLUT__________________________*/
 
