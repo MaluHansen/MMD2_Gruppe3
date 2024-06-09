@@ -385,6 +385,10 @@ footer{
     gap: 3rem;
 }
 
+#vegansk{
+    padding-top: 0.5rem;
+}
+
 .middagsretter {
     max-width: 50%;
 }
@@ -393,13 +397,15 @@ footer{
     max-width: 50%;
 }
 
-.titel {
+.titelOgPris {
     display: flex;
     justify-content: space-between;
 }
 
-.titel p {
+.title {
     font-family: var(--menuKortFont);
+    font-size: var(--h4MenuKort);
+    padding-bottom: 0.5rem;
 }
 
 .tyndStreg {
@@ -414,10 +420,21 @@ footer{
     max-width: 80%;
 }
 
-.pris {
+.variationContainer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
+
+.variationer {
+    padding-bottom: 1.5rem;
+}
+
+.middagsmenuContainer {
+    display: flex;
+    gap: 3rem;
+}
+
+
 
 
 /*______________________MENU MIDDAG SLUT__________________________*/
