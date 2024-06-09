@@ -667,9 +667,6 @@ footer {
         font-size: 1.2rem;
     }
 
-    main>*:not(:last-child) {
-        padding: 1rem 2rem;
-    }
 
     .groenSektion {
         padding: 3rem;
