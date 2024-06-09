@@ -303,11 +303,16 @@ footer{
 
 .indledningmenu {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 4rem;
 }
 
 .introTekst {
     padding-right: 12rem;
+}
+
+.topBtn {
+    display: none;
 }
 
 
@@ -381,14 +386,15 @@ footer{
 .morgenmenuContainer {
     display: flex;
     justify-content: space-between;
+    gap: 3rem;
 }
 
-.morgenVarianter,
-.brunchVarianter {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-    gap: 2rem;
+.morgenretter {
+    max-width: 50%;
+}
+
+.brunchretter {
+    max-width: 50%;
 }
 
 .titelOgPris {
@@ -407,36 +413,129 @@ footer{
     margin: 10px 0;
 }
 
-@media screen and (max-width: 900px) {
+.detaljerOgSupplerende {
+    font-style: italic;
+    max-width: 80%;
+}
+
+.pris {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* --- Media queries --- */
+
+@media screen and (max-width: 1400px) {
+
+    .menukortContainer {
+        margin: 2rem 4rem;
+    }
+
+
+    .indledningmenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .introTekst {
-        padding-right: 2rem;
-    }
-
-    .billedeRamme .img-1 .img-2 {
-        max-height: 50vh;
-    }
-
-    .billedeRamme .img-2 img {
-        max-height: 50vh;
-        border-radius: 0 40px 40px 0;
-    }
-
-    .billedeRamme .img-3 {
-        display: none;
+        margin-bottom: 2rem;
     }
 
     .billedeRamme {
-        display: flex;
-        height: 50vh;
-        width: 150vh;
+        max-height: 50vh;
     }
-}
+    
+    
+    
+    @media screen and (max-width: 900px) {
+        .introTekst {
+            padding-right: 2rem;
+        }
+        
+        h1 {
+            font-size: var(--h1Mobile);
+        }
+        
+        .indledningmenu h2 {
+            font-size: var(--h2Mobile);
+        }
+        
+        .overskrift h3 {
+            font-size: var(--h3MenuKort);
+        }
+        /* obs ved merch på disse tre ^^^ */
+        
+        .topBtn {
+            display: block;
+            position: fixed;
+            bottom: 2rem;
+            right: 1.5rem;
+            z-index: 1;
+            padding: 1rem;
+            border: none;
+            background-color: transparent;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .topBtn.active {
+            opacity: 1;
+        }
+
+        .topBtn .material-symbols-outlined {
+            font-size: 4rem;
+        }
+
+        .billedeRamme .img-1 img {
+            height: 50vh;
+        }
+        
+        .billedeRamme .img-2 img {
+            height: 50vh;
+            border-radius: 0 40px 40px 0;
+        }
+        
+        .billedeRamme .img-3 {
+            display: none;
+        }
+        
+        .billedeRamme {
+            display: flex;
+            height: 50vh;
+            width: 150vh;
+        }
+        
+        .morgenmenuContainer {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .morgenVarianter, .brunchVarianter {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .morgenretter {
+            max-width: 100%;
+        }
+
+        .brunchretter {
+            max-width: 100%;
+        }
+
+    }
+    }
 
 @media screen and (max-width: 600px) {
     .indledningmenu {
         flex-direction: column;
-
+        align-items: center;    
     }
+    
+        main p {
+            font-size: var(--tekstStrMobil);
+        }
+        /* obs ved merch ^ */
 
     .billedeRamme {
         width: 100vw;
