@@ -692,25 +692,6 @@ footer {
         padding-bottom: var(--paddingSectionsMobile);
     }
 
-
-    nav {
-        display: none
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 1rem 2rem;
-    }
-
-    main p {
-        font-size: 1rem;
-    }
-
-    .menukortContainer h3 {
-        font-size: 1.2rem;
-    }
-
     main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
         padding: 1rem 2rem;
     }
