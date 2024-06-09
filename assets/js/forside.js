@@ -1,31 +1,39 @@
+// Vi sætter en eventlistener til at lytte efter om alt vores content er indlæst på siden før funktionen skal sættes igang.
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.container');
+    // Fanger vores element i html.
+    const animationsContainerEl = document.querySelector('.animationsContainer');
 
-    // Tjek om animationen allerede er blevet vist i denne session
+    // Tjek om animationen allerede er blevet vist i denne session ved at hente tagget i sessionStorage
     const hasAnimationPlayed = sessionStorage.getItem('hasAnimationPlayed');
+    // Hvis ikke den er blevet vist så udfør denne handling. 
     if (!hasAnimationPlayed) {
 
         // Start animationen efter en kort forsinkelse
         setTimeout(() => {
-            container.classList.add('split');
-        }, 500); // Forsinkelse for at starte animationen
+            // Tilføj klassen split
+            animationsContainerEl.classList.add('split');
+            // Forsinkelse før animationen starter
+        }, 1500);
 
-        // Vent på animationen er færdig
+        // Venter på animationen er færdig og gør følgende
         setTimeout(() => {
-            document.body.style.overflow = 'auto'; // Tillad scrolling efter animationen
-            document.documentElement.style.overflow = 'auto'; // Sikre at <html> også tillader scrolling
-            container.style.zIndex = '-1'; // Ændrer z-index til at ligge bagest
-            // Gem information om, at animationen er blevet vist
+            // Tillad at man kan scrolle efter animationen er færdig. 
+            document.body.style.overflow = 'auto';
+            // Ændrer z-index så vores animation kommer til at ligge bagest
+            animationsContainerEl.style.zIndex = '-1';
+            // Gem information om, at animationen er blevet vist i sessionsStorage
             sessionStorage.setItem('hasAnimationPlayed', 'true');
-            container.remove();
-        }, 1500); // Timer til at matche animationens varighed + lidt ekstra tid
+            // Fjern vores animation
+            animationsContainerEl.remove();
+            // Timer til at matche animationens varighed + lidt ekstra tid
+        }, 2500);
 
-
+        // Hvis animation har været afspillet før
     } else {
-        // Hvis animationen allerede er blevet vist, skjul containeren med det samme
-        container.style.display = 'none'; // Skjul containeren
-        document.body.style.overflow = 'auto'; // Tillad scrolling
-        document.documentElement.style.overflow = 'auto'; // Sikre at <html> også tillader scrolling
+        // Skjul containeren med det samme
+        animationsContainerEl.style.display = 'none';
+        // Tillad scrolling
+        document.body.style.overflow = 'auto';
     }
 });
 
