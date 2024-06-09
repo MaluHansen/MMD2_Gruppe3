@@ -62,7 +62,7 @@ main {
 
 main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
     padding: 0 8rem;
-    padding-bottom: 6rem;
+    padding-bottom: var(--paddingSectionsDesktop);
 }
 
 main p {
@@ -133,38 +133,6 @@ svg {
     flex-direction: column;
     gap: 0.5rem;
     max-width: 40%;
-}
-
-.genvejSektionUlla {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.UllaTImg {
-    max-height: 130%;
-
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    object-fit: contain;
-
-}
-
-.groenSektionTekst {
-    width: 50%;
-    padding: var(--paddingSectionsMobile) 0px;
-    padding-left: 128px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.groenSektionUlla {
-    background-color: var(--groen);
-    position: relative;
-    height: 400px;
 }
 
 .groenSektionKontakt,
@@ -456,71 +424,111 @@ footer {
 }
 
 .forsideEntryPoints {
-    width: 100%;
-    display: flex;
-    margin-bottom: 7rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 5rem;
 }
 
 .entryPoint {
-    width: 22%;
+    position: relative;
+    height: 250px;
+    overflow: hidden;
     text-align: center;
     text-decoration: none;
-    color: var(--tekstFarve);
-    border-radius: 40px;
-    transition: background-color 0.5s;
-    position: relative;
-    margin-top: 2rem;
+    color: var(--baggrund);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: var(--moerkPink);
 }
+
 
 .entryPoint img {
     width: 100%;
-    height: 100%;
-    max-height: 261px;
+    height: 80%;
     object-fit: cover;
-    border-radius: 40px;
-    transition: transform 0.5s, top 0.5s ease-in-out;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p {
+    transition: unset;
+}
+
+.entryPoint p:first-of-type {
+    position: relative;
+    background-color: transparent;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p:last-of-type {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
-}
-
-.entryPoint p:first-of-type {
-    padding: 1rem;
-    font-weight: 600;
-    position: relative;
-    transition: transform 0.5s, top 0.5s ease-in-out;
-    top: 95%;
-}
-
-.entryPoint p:last-of-type {
-    padding: 1rem;
-    transition: opacity 0 ease-in 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-    background-color: var(--lysBlaa);
-    border-radius: 40px;
+    background-color: #f8ecf2;
+    color: var(--tekstFarve);
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint:hover img,
+.entryPoint:hover p:first-of-type {
+    opacity: 0;
 }
 
 .entryPoint:hover {
-    background-color: var(--lysBlaa);
-}
-
-.entryPoint:hover img {
-    transform: scale(0.5);
-    top: -120%;
-}
-
-.entryPoint:hover p:first-of-type {
-    top: 9%;
+    background-color: #f8ecf2;
 }
 
 .entryPoint:hover p:last-of-type {
-    opacity: 100;
-    transition: opacity 0.4s ease 0.4s;
+    opacity: 1;
 }
+
+.UllaTImg {
+    max-height: 130%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    object-fit: contain;
+
+}
+
+.groenSektionTekst {
+    width: 50%;
+    padding: var(--paddingSectionsMobile) 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.groenSektionUlla {
+    background-color: var(--groen);
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+    padding-left: 128px;
+    padding-right: 1rem;
+}
+
 
 
 /*______________________FORSIDE SLUT__________________________*/
@@ -576,56 +584,114 @@ footer {
 /* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
 
 @media only screen and (max-width: 1400px) {
-
-    .indledningForside {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .UllaTImg {
+        max-height: 100%;
+        width: 40%;
     }
 
-    .billedeRammeForside {
-        max-width: 100%;
+    .forsideEntryPoints {
+        margin-bottom: 0;
     }
 
-    /* .forsideEntryPoints {
-        display: grid;
-        flex-wrap: wrap;
-        gap: 5rem 2rem;
+    .groenSektionUlla {
+        height: 300px;
     }
 
-
-    .entryPoint {
-        width: 100%;
-        max-width: 290px;
-    } */
 }
 
 @media only screen and (max-width: 900px) {
-    .variantContainer {
+    .indledningForside {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
 
-    .introTekst {
-        min-width: unset;
+    .billedeRammeForside {
+        grid-row: 1;
     }
 
-    .indledningMenu h1 {
-        font-size: var(--h1Mobile);
+    .forsideEntryPoints {
+        grid-template-columns: 1fr;
     }
 
-    .genvejSektion {
-        flex-direction: column;
-        gap: 3rem;
+    .entryPoint {
+        position: unset;
+        height: fit-content;
     }
 
-    .groenSektionKontakt,
-    .groenSektionBookbord {
-        max-width: 100%;
+    .entryPoint img {
+        height: 200px;
+        border-radius: 10px 10px 0 0;
     }
+
+
+    .entryPoint p:first-of-type {
+        position: unset;
+        opacity: unset;
+        padding-bottom: 0;
+    }
+
+    .entryPoint p:last-of-type {
+        position: unset;
+        opacity: unset;
+        background-color: unset;
+        color: var(--baggrund);
+        padding: 1rem;
+    }
+
+    .entryPoint:hover img,
+    .entryPoint:hover p:first-of-type {
+        opacity: unset;
+    }
+
+    .entryPoint:hover {
+        background-color: var(--moerkPink);
+    }
+
+    .entryPoint:hover p:last-of-type {
+        opacity: unset;
+    }
+
+    .UllaTImg {
+        position: unset;
+        width: 50%;
+    }
+
+    .groenSektionUlla {
+        position: unset;
+        height: unset;
+        padding: var(--paddingSectionsMobile);
+    }
+
+    .groenSektionTekst {
+        width: 100%;
+        padding: 0;
+    }
+
 
 }
 
 @media only screen and (max-width: 600px) {
+
+    .groenSektionUlla {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .groenSektionTekst {
+        padding: 1rem 2rem;
+    }
+
+    .UllaTImg {
+        width: 100%;
+    }
+
+    .indledningssektion {
+        margin-bottom: var(--paddingSectionsMobile);
+    }
+
+    .forsideEntryPoints {
+        padding-bottom: var(--paddingSectionsMobile);
+    }
+
 
     nav {
         display: none
@@ -649,9 +715,6 @@ footer {
         padding: 1rem 2rem;
     }
 
-    .groenSektion {
-        padding: 3rem;
-    }
 
 }
 
