@@ -550,59 +550,63 @@ footer {
 
 /*______________________KONTAKT__________________________*/
 
-.kontaktMain h1{
+.kontaktMain h1 {
     color: var(--moerkPink);
     font-family: var(--h1Font);
     font-size: var(--h1Desktop);
 }
-.kontaktMain h4{
+
+.kontaktMain h4 {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
-.kontaktIntro{
+
+.kontaktIntro {
     margin: 3rem 0rem;
 }
 
-.kontaktContent{
+.kontaktContent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
     gap: 3rem;
 }
-.firma{
+
+.firma {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
 }
-.kontaktKort{
+
+.kontaktKort {
     grid-column: 2 / 4;
     grid-row: 2 / 5;
     height: 400px;
 }
 
-@media screen and (max-width: 600px){
-    .kontaktContent{
+@media screen and (max-width: 600px) {
+    .kontaktContent {
         display: flex;
         flex-direction: column;
     }
-    .kontaktMain h1{
+
+    .kontaktMain h1 {
         font-size: var(--h1Mobile);
     }
-} 
-
-@media screen and (max-width: 900px){
-    .kontaktContent{
-        display: flex;
-        flex-direction: column;
-    }
-    .kontaktMain h1{
-        font-size: var(--h1Mobile);
-    }
-} 
-
-@media screen and (max-width: 1400px){
-
 }
+
+@media screen and (max-width: 900px) {
+    .kontaktContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kontaktMain h1 {
+        font-size: var(--h1Mobile);
+    }
+}
+
+@media screen and (max-width: 1400px) {}
 
 /*______________________KONTAKT SLUT__________________________*/
 
