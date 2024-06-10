@@ -1056,6 +1056,67 @@ footer {
 /*______________________MENU OEL SLUT__________________________*/
 
 /*______________________MENU SOEDESAGER__________________________*/
+.menuTopsektion {
+    padding-bottom: var(--paddingSectionsDesktop);
+    display: flex;
+}
+
+.eventHeading {
+    font-size: var(--h1Desktop);
+    font-style: var(--h1Font);
+    color: #933E65
+}
+
+.topsoedeSagertekst p {
+    margin-bottom: 1rem;
+}
+
+.menuContainersection {
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--paddingSectionsDesktop);
+}
+
+.soedeSagermenuContainer {
+    width: 40rem;
+    max-width: 100%;
+    background-color: var(--lysGul);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.overskrift h3 {
+    font-weight: var(--h3MenukortWeight);
+    font-size: var(--h3MenuKort);
+    font-family: var(--menuKortFont);
+}
+
+.soedesagerMenutop p {
+    padding-bottom: 1rem;
+}
+
+.soedesagerEnhed {
+    display: flex;
+    flex-direction: column;
+}
+
+.soedesagerTitle {
+    display: flex;
+}
+
+.titleOgPris {
+    display: flex;
+    margin: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.soedesagerPris {
+    display: flex;
+    margin-right: 0.5rem;
+}
+
 /*______________________MENU SOEDESAGER SLUT__________________________*/
 
 /*______________________MENU VIN__________________________*/

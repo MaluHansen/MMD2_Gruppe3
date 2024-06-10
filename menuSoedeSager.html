@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ulla Terkelsen I London - Den hyggeligste cafe i Vestbyen. Vi lover en uforglemmelig oplevelse, både morgen, middag og aften!">
-    <title>Ulla Terkelsen London - Forside</title>
+    <meta name="description" content="Ulla Terkelsen London - Forkæl dig selv med en sød smagsoplevelse">
+    <meta name="keywords" content="Ulla Terkelsen London, Cafe, Søde sager, Kage">
+    <title>Ulla Terkelsen London - Søde sager</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://use.typekit.net">
+    <!-- KILDE: Adobe Fonts. Adobe. 2024. Accessed: 10/6/2024. URL: https://use.typekit.net -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- KILDE: Cloudeflare. CDNJS. 2024. Accessed: 10/6/2024. URL: https://cdnjs.cloudflare.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./assets/js/Funktions.js" defer></script>
@@ -15,7 +20,11 @@
 <body>
     <header>
         <nav>
-            <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen I London Logo">
+            <div class="topNavigation">
+                <a id=logoUlla href="./index.html"><img class="logo" src="./assets/img/logoUllaT.svg"
+                        alt="Ulla Terkelsen London Logo"></a>
+                <i class="fa-solid fa-bars menuIkon"></i>
+            </div>
             <ul>
                 <li><a href="./index.html">Forside</a></li>
                 
@@ -43,36 +52,40 @@
         </nav>
     </header>
     <main>
+        <section>
+            <ul class="breadcrumbs">
+                <li><a href="/index.html">Forside > </a></li>
+                <li><a href="/menu.html">Menu > </a></li>
+                <li><a href="/menuSoedeSager.html">Søde Sager</a></li>
+            </ul>
+        </section>
         
 <h1 class="eventHeading">Søde Sager</h1>
-<section class="menuTopsektion">
-   <div class="topsoedeSagertekst">
-       <p>Tag en pause fra hverdagen og forkæl dig selv med en sød oplevelse, der vil bringe et smil på dine læber.</p>
+<article class="indledningmenu">
+    <div class="introTekst">
+        <p>Tag en pause fra hverdagen og forkæl dig selv med en sød oplevelse, der vil bringe et smil på dine læber.</p>
        <p>Hos Café Ulla Terkelsen London tilbyder vi forskellige desserter og søde sager, der kan tilfredsstille den søde tand.</p>
-   </div>
-  
-  <div class="billedGruppe">
-       <div class="aftenMenuBilleder">
-           <picture class="img-1">
-               <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/Kearnemealkshorn.jpeg">
-               <img src="./assets/img/små billeder/menu/Kearnemealkshorn lille.jpeg" alt="Nærbillede af en gidragt" loading="lazy">
-           </picture>
-           
-           <picture class="img-2">
-               <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/dessert.jpeg">
-               <img src="./assets/img/små billeder/menu/dessert lille.jpeg"  alt="Nærbillede af en salatret" loading="lazy">
-           </picture>
-          
-           <picture class="img-3">
-               <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/traerte.jpeg">
-           <img src="./assets/img/små billeder/menu/traerte lille.jpeg" alt="Nærbillede af en gsalatret idragt" loading="lazy">
-           </picture>
-       </div>
-   </div>
-</section>
+    </div>
+    <div class="billedeRamme">
+        <picture class="img-1">
+            <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/Kearnemealkshorn.jpeg">
+            <img src="./assets/img/små billeder/menu/Kearnemealkshorn lille.jpeg" alt="Nærbillede af en gidragt" loading="lazy">
+        </picture>
+        
+        <picture class="img-2">
+            <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/dessert.jpeg">
+            <img src="./assets/img/små billeder/menu/dessert lille.jpeg"  alt="Nærbillede af en salatret" loading="lazy">
+        </picture>
+       
+        <picture class="img-3">
+            <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/traerte.jpeg">
+        <img src="./assets/img/små billeder/menu/traerte lille.jpeg" alt="Nærbillede af en gsalatret idragt" loading="lazy">
+        </picture>
+    </div>
+</article>
 
 <section class="menuContainersection">
-<div class="menuContainer">
+<div class="soedeSagermenuContainer">
    <div class="soedesagerMenutop">
        <p><i class="material-symbols-outlined">eco</i>= Vegansk</p>
        <div class="overskrift">
