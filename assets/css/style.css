@@ -301,7 +301,7 @@ footer {
 
 /*______________________FORSIDE__________________________*/
 
-.animationsContainer {
+/* .animationsContainer {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -359,7 +359,7 @@ footer {
 
 .hidden {
     visibility: hidden;
-}
+} */
 
 
 .forsideHero img {
@@ -870,7 +870,7 @@ footer {
     gap: 3rem;
 }
 
-#vegansk{
+#vegansk {
     padding-top: 0.5rem;
 }
 
@@ -895,7 +895,7 @@ footer {
 
 .tyndStreg {
     border: none;
-    height: 1px;;
+    height: 1px;
     background-color: black;
     margin: 10px 0;
 }
@@ -1033,7 +1033,7 @@ footer {
 
 .tyndStreg {
     border: none;
-    height: 1px;;
+    height: 1px;
     background-color: black;
     margin: 10px 0;
 }
@@ -1048,139 +1048,7 @@ footer {
     justify-content: flex-end;
 }
 
-/* --- Media queries --- */
 
-@media screen and (max-width: 1400px) {
-
-    .menukortContainer {
-        margin: 2rem 4rem;
-    }
-
-
-    .indledningmenu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .introTekst {
-        margin-bottom: 2rem;
-    }
-
-    .billedeRamme {
-        max-height: 50vh;
-    }
-    
-    
-    
-    @media screen and (max-width: 900px) {
-        .introTekst {
-            padding-right: 2rem;
-        }
-        
-        h1 {
-            font-size: var(--h1Mobile);
-        }
-        
-        .indledningmenu h2 {
-            font-size: var(--h2Mobile);
-        }
-        
-        .overskrift h3 {
-            font-size: var(--h3MenuKort);
-        }
-        /* obs ved merch på disse tre ^^^ */
-        
-        .topBtn {
-            display: block;
-            position: fixed;
-            bottom: 2rem;
-            right: 1.5rem;
-            z-index: 1;
-            padding: 1rem;
-            border: none;
-            background-color: transparent;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .topBtn.active {
-            opacity: 1;
-        }
-
-        .topBtn .material-symbols-outlined {
-            font-size: 4rem;
-        }
-
-        .billedeRamme .img-1 img {
-            height: 50vh;
-        }
-        
-        .billedeRamme .img-2 img {
-            height: 50vh;
-            border-radius: 0 40px 40px 0;
-        }
-        
-        .billedeRamme .img-3 {
-            display: none;
-        }
-        
-        .billedeRamme {
-            display: flex;
-            height: 50vh;
-            width: 150vh;
-        }
-        
-        .morgenmenuContainer {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .morgenVarianter, .brunchVarianter {
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .morgenretter {
-            max-width: 100%;
-        }
-
-        .brunchretter {
-            max-width: 100%;
-        }
-
-    }
-    }
-
-@media screen and (max-width: 600px) {
-    .indledningmenu {
-        flex-direction: column;
-        align-items: center;    
-    }
-    
-        main p {
-            font-size: var(--tekstStrMobil);
-        }
-        /* obs ved merch ^ */
-
-    .billedeRamme {
-        width: 100vw;
-        height: 40vh;
-        margin: 2rem 0;
-    }
-
-    .billedeRamme .img-1 img, .billedeRamme .img-2 img {
-        border-radius: 0;
-        height: 40vh;
-    }
-
-    .billedeRamme .img-1 {
-        width: 70%;
-    }
-
-    .billedeRamme .img-2 {
-        width: 30%;
-    }
-}
 
 
 /*______________________MENU MORGEN SLUT__________________________*/
@@ -1240,6 +1108,24 @@ footer {
 
     .groenSektionMenuTxt h2 {
         font-size: var(--h3MenuKort);
+    }
+
+    .menukortContainer {
+        margin: 2rem 4rem;
+    }
+
+
+    .indledningmenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .introTekst {
+        margin-bottom: 2rem;
+    }
+
+    .billedeRamme {
+        max-height: 50vh;
     }
 
 }
@@ -1426,6 +1312,82 @@ footer {
         padding: 0;
     }
 
+    .introTekst {
+        padding-right: 2rem;
+    }
+
+    h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    .indledningmenu h2 {
+        font-size: var(--h2Mobile);
+    }
+
+    .overskrift h3 {
+        font-size: var(--h3MenuKort);
+    }
+
+    /* obs ved merch på disse tre ^^^ */
+
+    .topBtn {
+        display: block;
+        position: fixed;
+        bottom: 2rem;
+        right: 1.5rem;
+        z-index: 1;
+        padding: 1rem;
+        border: none;
+        background-color: transparent;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .topBtn.active {
+        opacity: 1;
+    }
+
+    .topBtn .material-symbols-outlined {
+        font-size: 4rem;
+    }
+
+    .billedeRamme .img-1 img {
+        height: 50vh;
+    }
+
+    .billedeRamme .img-2 img {
+        height: 50vh;
+        border-radius: 0 40px 40px 0;
+    }
+
+    .billedeRamme .img-3 {
+        display: none;
+    }
+
+    .billedeRamme {
+        display: flex;
+        height: 50vh;
+        width: 150vh;
+    }
+
+    .morgenmenuContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .morgenVarianter,
+    .brunchVarianter {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .morgenretter {
+        max-width: 100%;
+    }
+
+    .brunchretter {
+        max-width: 100%;
+    }
 
 }
 
@@ -1515,6 +1477,37 @@ footer {
 
     #vinMenu {
         background-position: 90% 20%;
+    }
+
+    .indledningmenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main p {
+        font-size: var(--tekstStrMobil);
+    }
+
+    /* obs ved merch ^ */
+
+    .billedeRamme {
+        width: 100vw;
+        height: 40vh;
+        margin: 2rem 0;
+    }
+
+    .billedeRamme .img-1 img,
+    .billedeRamme .img-2 img {
+        border-radius: 0;
+        height: 40vh;
+    }
+
+    .billedeRamme .img-1 {
+        width: 70%;
+    }
+
+    .billedeRamme .img-2 {
+        width: 30%;
     }
 }
 

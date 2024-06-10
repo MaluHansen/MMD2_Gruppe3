@@ -12,14 +12,14 @@ function fetchMiddagsdata() {
         .then(res => res.json())
         .then(data => showMiddagsData(data))
         .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
-    }
-    console.log(baseUrl + `&type-af-maltid=` + 24);
-    
-    fetchMiddagsdata();
-    
-    // Funktion til at vise middags-data i HTML'en
-    function showMiddagsData(data) {
-        middagsmenuEl.innerHTML += `
+}
+
+
+fetchMiddagsdata();
+
+// Funktion til at vise middags-data i HTML'en
+function showMiddagsData(data) {
+    middagsmenuEl.innerHTML += `
         `;
 
 
