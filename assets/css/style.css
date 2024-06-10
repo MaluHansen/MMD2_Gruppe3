@@ -568,6 +568,7 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     padding-bottom: var(--paddingSectionsDesktop);
+    gap: 2rem;
 }
 
 
