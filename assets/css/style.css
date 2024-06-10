@@ -121,6 +121,8 @@ svg {
 .groenSektion {
     background-color: var(--groen);
     padding: 5rem;
+    position: relative;
+
 }
 
 .genvejSektion {
@@ -158,6 +160,8 @@ svg {
     margin-top: 1rem;
 
 }
+
+
 
 /*--------------Groen Sektion Slut-----------------*/
 
