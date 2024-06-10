@@ -307,13 +307,15 @@ footer{
 
 .eventCard img{
     object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     width: 100%;
     height: 60%;
 }
 
 .eventCard{
     background-color: var(--lysBlaa);
-    border-radius: 8px; 
+    border-radius: 15px; 
     max-width: 30%;
     max-height: 100%;
     margin-top: 20px;
@@ -363,7 +365,6 @@ footer{
 @media screen and (max-width: 1920px) {
     .eventCard{
         background-color: var(--lysBlaa);
-        border-radius: 8px; 
         max-width: 30%;
         margin: 20px;
         height: 500px;
@@ -393,7 +394,6 @@ footer{
 
     .eventCard{
         background-color: var(--lysBlaa);
-        border-radius: 8px; 
         margin: 20px;
         min-height: 400px;
         min-width: 340px;
@@ -425,7 +425,6 @@ footer{
 
     .eventCard{
         background-color: var(--lysBlaa);
-        border-radius: 8px; 
         min-width: 100%;
         height: 340px;
     }
@@ -465,8 +464,7 @@ main {
 
 
     .eventCard{
-        background-color: var(--lysBlaa);
-        border-radius: 8px; 
+        background-color: var(--lysBlaa); 
         max-width: 30%;
         height: 100%;
     }
