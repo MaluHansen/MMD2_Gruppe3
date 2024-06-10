@@ -53,7 +53,6 @@ body,
 html {
     height: 100svh;
     margin: 0;
-    overflow: hidden;
 }
 
 main {
@@ -301,7 +300,7 @@ footer {
 
 /*______________________FORSIDE__________________________*/
 
-/* .animationsContainer {
+.animationsContainer {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -359,7 +358,7 @@ footer {
 
 .hidden {
     visibility: hidden;
-} */
+}
 
 
 .forsideHero img {
