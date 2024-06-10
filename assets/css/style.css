@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url("https://use.typekit.net/fdc7bql.css");
 
-:root{
+:root {
     --broedFont: 'roboto';
     --h1Font: 'active', sans-serif;
     --menuKortFont: 'roboto Slab';
@@ -35,7 +35,8 @@
     --paddingSectionsMobile: 3.125rem;
 
 }
-*{
+
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: var(--broedFont);
@@ -46,15 +47,24 @@
         scroll-behavior: smooth;
     }
 }
+
 /*__________________Generel styling_______________*/
-body{
+body,
+html {
     height: 100svh;
+    margin: 0;
 }
-main{
+
+main {
     background-color: var(--baggrund);
-    padding: 6rem 8rem;
 }
-main p{
+
+main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
+    padding: 0 8rem;
+    padding-bottom: var(--paddingSectionsDesktop);
+}
+
+main p {
     font-size: var(--tekstStrDesktop);
     max-width: 75ch;
     text-wrap: pretty;
@@ -65,12 +75,11 @@ img,
 video,
 picture,
 svg {
-    height: auto;
     vertical-align: middle;
     font-style: italic;
 }
- 
-.btn{
+
+.btn {
     background-color: var(--moerkPink);
     color: white;
     padding: 0.5rem 1rem;
@@ -79,70 +88,75 @@ svg {
     border-radius: 50px;
     width: 10rem;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 16%);
-    
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #b54b7c;
     transition: 0.2s ease;
 }
-.btn:active{
+
+.btn:active {
     background-color: var(--moerkPink);
 }
 
 /*-----------ikoner-------------*/
-.card{
+.card {
     color: red;
     font-weight: 100;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 200,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 24
 }
+
 /*-------------ikoner slut--------------*/
 
 /*--------------Groen Sektion-----------------*/
-.groenSektion{
+.groenSektion {
     background-color: var(--groen);
-    display: flex;
-    width: 100vw;
-    margin-left: -8rem;
-    margin-bottom: -8rem;
+    padding: 5rem;
 }
-.groenSektionKontakt, .groenSektionBookbord{
+
+.genvejSektion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.groenSektionKontakt,
+.groenSektionBookbord {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 5rem;
+    gap: 0.5rem;
+    max-width: 40%;
 }
-.groenSektionKontakt, .groenSektionBookbord h4{
+
+.groenSektionKontakt,
+.groenSektionBookbord h4 {
     font-size: var(--h4MenuKort);
 }
-.groenSektionKontakt p, .groenSektionBookbord p{
+
+.groenSektionKontakt p,
+.groenSektionBookbord p {
     padding: 0.8rem 0rem;
 }
 
-
-
-.engleUlla{
-    aspect-ratio: 2/3;
-    
-    position: relative;
-    left: -80px;
+.engleUlla {
+    position: absolute;
+    top: -100px;
+    right: 20px;
 }
-#engleUllaImg{
+
+#engleUllaImg {
     width: 200px;
     transform: rotate(25deg);
     margin-top: 1rem;
-    
-    
-    /* position: relative;
-    z-index: 1;
-    left: -40px; */
+
 }
+
 /*--------------Groen Sektion Slut-----------------*/
 
 /*____________________Generel styling slut_____________________*/
@@ -152,30 +166,35 @@ svg {
 
 
 /*______________________NAV________________________*/
-nav{
+nav {
     background-color: var(--pink);
     padding: 35px 50px;
     position: relative;
 }
-.logo{
+
+.logo {
     width: 10rem;
     position: absolute;
     top: 10px;
     left: 10px;
+    z-index: 9;
 }
-nav ul{
+
+nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     border-bottom: #EFA1D0;
     color: var(--tekstFarve);
     position: relative;
 }
-.activeNavA{
+
+.activeNavA {
     text-decoration: underline;
     color: var(--moerkPink);
     text-underline-position: under;
@@ -184,7 +203,7 @@ nav a{
 }
 
 /*---------linje under punkterne i nav------------*/
-nav a::after{
+nav a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -196,13 +215,15 @@ nav a::after{
     transform: scale(0, 1);
     transition: 0.3s ease;
 }
-nav a:hover::after{
+
+nav a:hover::after {
     transform: scale(1, 1);
 }
+
 /*-------------------Slut-------------------*/
 
 /*------------Sub Nav-------------------*/
-.subNavContent{
+.subNavContent {
     float: left;
     overflow: hidden;
     background-color: var(--pink);
@@ -212,10 +233,12 @@ nav a:hover::after{
     padding: 0.5rem 0;
     font-size: 14px;
 }
-.subNav:hover .subNavContent{
+
+.subNav:hover .subNavContent {
     display: flex;
 }
-#subNavActive{
+
+#subNavActive {
     display: flex;
 }
 
@@ -226,46 +249,287 @@ nav a:hover::after{
 
 
 /*_______________________FOOTER_______________________*/
-footer{
+footer {
     background-color: var(--pink);
-    padding: 35px 50px;
+    padding: 35px 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.footerTitle{
+.footerTitle {
     font-weight: 700;
 }
 
-.kontakt p, .aabningstider p{
-  margin-bottom: 1rem;
+.kontakt p,
+.aabningstider p {
+    margin-bottom: 1rem;
 }
-.aabningstiderContainer{
+
+.aabningstiderContainer {
     display: flex;
     gap: 1rem;
 }
-.andetInfo{
+
+.andetInfo {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-#socialeMedier p, #smiley p{
+
+#socialeMedier p,
+#smiley p {
     margin-bottom: 1rem;
 }
-#email, #mobil, #lokation{
+
+#email,
+#mobil,
+#lokation {
     display: flex;
     gap: 1rem;
 }
-#socialeMedier a{
+
+#socialeMedier a {
     color: var(--tekstFarve);
     font-size: 36px;
     margin-right: 1rem;
 }
 
+
+
 /*_______________________FOOTER SLUT_______________________*/
 
 /*______________________FORSIDE__________________________*/
+
+.animationsContainer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transition: transform 1s ease;
+}
+
+.half img {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) translateY(50%) scale(1);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(50%) scale(1.1);
+    }
+}
+
+.top {
+    top: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.bottom {
+    bottom: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.split .top {
+    transform: translateY(-150%);
+}
+
+.split .bottom {
+    transform: translateY(150%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+.forsideHero img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+.ForsideOverskrift {
+    text-align: center;
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+    color: var(--moerkPink);
+}
+
+.fade-out {
+    mask-image: linear-gradient(to bottom, rgba(253, 251, 239, 1) 0%, rgba(253, 251, 239, 1) 40%, rgba(253, 251, 239, 0) 100%);
+}
+
+.forsideOverskriftBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centerBtn {
+    text-align: center;
+}
+
+.indledningForside {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
+    margin-top: 5rem;
+}
+
+.introTekstForside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 75ch;
+}
+
+.forordForside h3 {
+    font-size: var(--h3MenuKort)
+}
+
+.forordForside p {
+    font-weight: 600;
+}
+
+.billedeRammeForside {
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+.billedeRammeForside img {
+    max-width: 100%;
+    border-radius: 40px;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.forsideEntryPoints {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 5rem;
+}
+
+.entryPoint {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: var(--baggrund);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: var(--moerkPink);
+}
+
+
+.entryPoint img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p {
+    transition: unset;
+}
+
+.entryPoint p:first-of-type {
+    position: relative;
+    background-color: transparent;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p:last-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: #f8ecf2;
+    color: var(--tekstFarve);
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint:hover img,
+.entryPoint:hover p:first-of-type {
+    opacity: 0;
+}
+
+.entryPoint:hover {
+    background-color: #f8ecf2;
+}
+
+.entryPoint:hover p:last-of-type {
+    opacity: 1;
+}
+
+.UllaTImg {
+    max-height: 130%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    object-fit: contain;
+
+}
+
+.groenSektionTekst {
+    width: 50%;
+    padding: var(--paddingSectionsMobile) 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.groenSektionUlla {
+    background-color: var(--groen);
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+    padding-left: 128px;
+    padding-right: 1rem;
+}
+
+
+
 /*______________________FORSIDE SLUT__________________________*/
 
 /*______________________BOOKBORD___________________________*/
@@ -285,13 +549,236 @@ footer{
 /*______________________MAD UD SLUT__________________________*/
 
 /*______________________MENU__________________________*/
+.breadcrumbs {
+    list-style-type: none;
+    display: flex;
+    font-size: var(--breadCrumbs);
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--tekstFarve);
+}
+
+.breadcrumbs li {
+    padding: 3px;
+}
+
+.descriptionContainer {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "title menuImg"
+        "descriptionTxt menuImg";
+    grid-template-rows: min-content 1fr;
+    margin-right: 15rem;
+}
+
+.titleMenu {
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+    grid-area: title;
+}
+
+.description {
+    grid-area: descriptionTxt;
+}
+
+.menukortImg {
+    grid-area: menuImg;
+    height: 60vh;
+}
+
+.fatOne {
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.menuContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.menuContainer a {
+    text-decoration: none;
+    font-family: var(--h3Menukort);
+    font-size: 1.8rem;
+    color: var(--baggrund);
+    text-align: center;
+}
+
+.menuContainer h3 {
+    font-size: var(--h3MenuKort);
+    padding-bottom: 2rem;
+}
+
+#morgenMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#middagMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/burger.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#aftenMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/aftensmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/4376756692402875/?type=3 */
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#soedeSagerMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/dessert.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Instagram.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.instagram.com/p/CDvFVwBjq9B/ */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#cocktailMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/cocktail.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5079860502092487/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#drikkeMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/kakao.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/1622773511134554/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#oelMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/ol.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/photo.php?fbid=605207891647018&set=pb.100064734366849.-2207520000&type=3 */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#vinMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/vin1.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/photo.php?fbid=641191611381979&set=pb.100064734366849.-2207520000&type=3 */
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+.groenSektionMenuTxt {
+    display: grid;
+    grid-template-areas:
+        "headline img"
+        "content img"
+        "button img";
+    height: 465px;
+    background-color: var(--groen);
+    grid-template-columns: 1fr 1fr;
+}
+
+.groenSektionMenuTxt h2 {
+    font-size: var(--h2Desktop);
+    grid-area: headline;
+    padding-left: 8rem;
+    padding-top: 4rem;
+}
+
+.groenSektionMenuTxt p {
+    grid-area: content;
+    padding-left: 8rem;
+}
+
+#kaffeToGo {
+    max-height: 465px;
+    object-fit: cover;
+}
+
+.imgKaffe {
+    grid-area: img;
+    max-height: 465px;
+}
+
+.btnTakeaway {
+    width: 14rem;
+    height: 3rem;
+    grid-area: button;
+    margin-left: 8rem;
+}
+
 /*______________________MENU SLUT__________________________*/
 
 /*______________________MENU AFTEN__________________________*/
 /*______________________MENU AFTEN SLUT__________________________*/
 
 /*______________________MENU COCKTAILS__________________________*/
-/*______________________MENU COCKTAILS SLUT__________________________*/
+.breadcrumbs {
+    padding-top: 6rem;
+}
+
 
 /*______________________MENU DRIKKE__________________________*/
 
@@ -548,29 +1035,659 @@ footer{
 
 /*______________________MENU DRIKKE SLUT__________________________*/
 
+
+.indledningMenu h1 {
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+    color: var(--moerkPink);
+}
+
+.introTekst {
+    max-width: 674px;
+    min-width: 50ch;
+}
+
+.billedeRamme {
+    border-radius: 12px;
+    object-fit: cover;
+    display: grid;
+    max-width: 672px;
+    max-height: 512px;
+    grid-template-columns: 58.2% 41.8%;
+    grid-template-rows: 47.3% 52.7%;
+}
+
+.billedeRamme .img-1 {
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+.billedeRamme .img-1 img {
+    border-radius: 40px 0 0 40px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.billedeRamme .img-2 {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.billedeRamme .img-2 img {
+    border-radius: 0 40px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.billedeRamme .img-3 {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.billedeRamme .img-3 img {
+    border-radius: 0 0 40px 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.menukortContainer {
+    background-color: var(--lysGul);
+    padding: 2% 7%;
+    margin: 0px 138px;
+    border-radius: 12px;
+    margin-bottom: var(--paddingSectionsDesktop);
+}
+
+.menukortContainer h3 {
+    font-weight: var(--h3MenukortWeight);
+    font-size: var(--h3MenuKort);
+    font-family: var(--menuKortFont);
+}
+
+.variantContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 2rem;
+}
+
+.drinksHalf1,
+.drinksHalf2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.titelOgPris {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overskrift {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 2rem;
+}
+
+.drinkTitle {
+    max-width: 80%;
+}
+
+.titelOgPris p {
+    font-family: var(--menuKortFont);
+}
+
+.tyndStreg {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.drinkBeskrivelse {
+    font-style: italic;
+    max-width: 80%;
+}
+
+.drinkEnhed {
+    margin-bottom: 20px;
+}
+
+.spinnerContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.burger,
+.wineGlass {
+    display: none;
+    font-size: 2rem;
+    /* Gør ikonet øverst */
+}
+
+
+.burger {
+    position: absolute;
+    z-index: 3;
+    animation: iconAnimation0 1.5s infinite;
+}
+
+.wineGlass {
+    position: absolute;
+    z-index: 2;
+    animation: iconAnimation1 1.5s infinite;
+}
+
+
+.spinner {
+    display: none;
+    /* Skjult som standard */
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--pink);
+    border-top: 5px solid var(--moerkPink);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes iconAnimation0 {
+    0% {
+        display: none;
+    }
+
+    20% {
+        display: flex;
+    }
+
+    40% {
+        display: none;
+    }
+
+    60% {
+        display: none;
+    }
+
+    80% {
+        display: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes iconAnimation1 {
+    0% {
+        display: none;
+    }
+
+    20% {
+        display: none;
+    }
+
+    40% {
+        display: none;
+    }
+
+    60% {
+        display: none;
+    }
+
+    80% {
+        display: flex;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+.show {
+    display: flex;
+    /* Vises, når klassen "show" tilføjes */
+}
+
+/*______________________MENU COCKTAILS SLUT__________________________*/
+
+/*______________________MENU DRIKKE__________________________*/
+/*______________________MENU DRIKKE SLUT__________________________*/
+
 /*______________________MENU MIDDAG__________________________*/
+
+.indledningmenu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+
+.introTekst {
+    padding-right: 12rem;
+}
+
+.topBtn {
+    display: none;
+}
+
+/* --- billeder ---  */
+
+.billedeRamme {
+    border-radius: 12px;
+    object-fit: cover;
+    display: grid;
+    max-width: 672px;
+    max-height: 512px;
+    grid-template-columns: 58.2% 41.8%;
+    grid-template-rows: 47.3% 52.7%;
+}
+
+.billedeRamme .img-1 {
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+.billedeRamme .img-1 img {
+    border-radius: 40px 0 0 40px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.billedeRamme .img-2 {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.billedeRamme .img-2 img {
+    border-radius: 0 40px 0 0;
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.billedeRamme .img-3 {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.billedeRamme .img-3 img {
+    border-radius: 0 0 40px 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --- menukort --- */
+
+.menukortContainer {
+    background-color: var(--lysGul);
+    padding: 2% 10%;
+    margin: 0 138px;
+    border-radius: 12px;
+    margin-bottom: var(--paddingSectionsDesktop);
+}
+
+.menukortContainer h3 {
+    font-weight: var(--h3MenukortWeight);
+    font-size: var(--h3MenuKort);
+    font-family: var(--menuKortFont);
+}
+
+.morgenmenuContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+#vegansk {
+    padding-top: 0.5rem;
+}
+
+.middagsretter {
+    max-width: 50%;
+}
+
+.snackretter {
+    max-width: 50%;
+}
+
+.titelOgPris {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: var(--menuKortFont);
+    font-size: var(--h4MenuKort);
+    padding-bottom: 0.5rem;
+}
+
+.tyndStreg {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.detaljerOgSupplerende {
+    font-style: italic;
+    max-width: 80%;
+}
+
+.variationContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.variationer {
+    padding-bottom: 1.5rem;
+}
+
+.middagsmenuContainer {
+    display: flex;
+    gap: 3rem;
+}
+
+
+
+
 /*______________________MENU MIDDAG SLUT__________________________*/
 
 /*______________________MENU MORGEN__________________________*/
+
+.indledningmenu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+
+.introTekst {
+    padding-right: 12rem;
+}
+
+.topBtn {
+    display: none;
+}
+
+
+/* --- billeder ---  */
+
+.billedeRamme {
+    border-radius: 12px;
+    object-fit: cover;
+    display: grid;
+    max-width: 672px;
+    max-height: 512px;
+    grid-template-columns: 58.2% 41.8%;
+    grid-template-rows: 47.3% 52.7%;
+}
+
+.billedeRamme .img-1 {
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+.billedeRamme .img-1 img {
+    border-radius: 40px 0 0 40px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.billedeRamme .img-2 {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.billedeRamme .img-2 img {
+    border-radius: 0 40px 0 0;
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.billedeRamme .img-3 {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.billedeRamme .img-3 img {
+    border-radius: 0 0 40px 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --- menukort --- */
+
+.menukortContainer {
+    background-color: var(--lysGul);
+    padding: 2% 10%;
+    margin: 0 138px;
+    border-radius: 12px;
+    margin-bottom: var(--paddingSectionsDesktop);
+}
+
+.menukortContainer h3 {
+    font-weight: var(--h3MenukortWeight);
+    font-size: var(--h3MenuKort);
+    font-family: var(--menuKortFont);
+}
+
+.morgenmenuContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.morgenretter {
+    max-width: 50%;
+}
+
+.brunchretter {
+    max-width: 50%;
+}
+
+.titelOgPris {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titelOgPris p {
+    font-family: var(--menuKortFont);
+}
+
+.tyndStreg {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.detaljerOgSupplerende {
+    font-style: italic;
+    max-width: 80%;
+}
+
+.pris {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
 /*______________________MENU MORGEN SLUT__________________________*/
 
 /*______________________MENU OEL__________________________*/
 /*______________________MENU OEL SLUT__________________________*/
 
 /*______________________MENU SOEDESAGER__________________________*/
+.menuTopsektion {
+    padding-bottom: var(--paddingSectionsDesktop);
+    display: flex;
+}
+
+.eventHeading {
+    font-size: var(--h1Desktop);
+    font-style: var(--h1Font);
+    color: #933E65
+}
+
+.topsoedeSagertekst p {
+    margin-bottom: 1rem;
+}
+
+.menuContainersection {
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--paddingSectionsDesktop);
+}
+
+.soedeSagermenuContainer {
+    width: 40rem;
+    max-width: 100%;
+    background-color: var(--lysGul);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.overskrift h3 {
+    font-weight: var(--h3MenukortWeight);
+    font-size: var(--h3MenuKort);
+    font-family: var(--menuKortFont);
+}
+
+.soedesagerMenutop p {
+    padding-bottom: 1rem;
+}
+
+.soedesagerEnhed {
+    display: flex;
+    flex-direction: column;
+}
+
+.soedesagerTitle {
+    display: flex;
+}
+
+.titleOgPris {
+    display: flex;
+    margin: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.soedesagerPris {
+    display: flex;
+    margin-right: 0.5rem;
+}
+
 /*______________________MENU SOEDESAGER SLUT__________________________*/
 
 /*______________________MENU VIN__________________________*/
+
 /*______________________MENU VIN SLUT__________________________*/
 
 /*______________________MENU SELSKABER__________________________*/
 /*______________________MENU SELSKABER SLUT__________________________*/
 
 
-/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm*/
+
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
+@media screen and (max-width: 1920px) {
+    .menukortImg {
+        display: none;
+    }
+
+    .menuContainer a {
+        font-size: 1.2rem;
+    }
+
+    .menuContainer h3 {
+        padding-bottom: 1rem;
+    }
+
+    #kaffeToGo {
+        padding-right: 0.5rem;
+    }
+
+}
+
 
 @media only screen and (max-width: 1400px) {
-    .menukortContainer p {
+    .UllaTImg {
+        max-height: 100%;
+        width: 40%;
+    }
+
+    .forsideEntryPoints {
+        margin-bottom: 0;
+    }
+
+    .groenSektionUlla {
+        height: 300px;
+    }
+
+    #kaffeToGo {
+        height: 100%;
+    }
+
+    .groenSektionMenuTxt h2 {
+        font-size: var(--h3MenuKort);
+    }
+
+    .menukortContainer {
+        margin: 2rem 4rem;
+    }
+
+
+    .indledningmenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .introTekst {
+        margin-bottom: 2rem;
+    }
+
+    .billedeRamme {
+        max-height: 50vh;
+    }
+   .menukortContainer p {
         font-size: 1rem;
     }
 
@@ -587,12 +1704,12 @@ footer{
     }
 
     .billedeRamme {
-        max-height: 306px;
-    }
+      max-height: 306px;}
 
 }
 
 @media only screen and (max-width: 900px) {
+
     .variantContainer {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -613,6 +1730,263 @@ footer{
 
     .groenSektionKontakt,
     .groenSektionBookbord {
+        max-width: 100%;
+    }
+    /* main p {
+        font-size: var(--tekstStrMobil);
+    } */
+
+    i.menuIkon {
+        display: inline;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .descriptionContainer {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        gap: 0;
+    }
+
+    .descriptionContainer h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    .fatOne {
+        margin-bottom: 0.5rem;
+    }
+
+    .menuContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .menuContainer h3 {
+        font-size: 20px;
+        padding-bottom: 1rem;
+    }
+
+    #morgenMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/morgenmadLille.jpeg");
+    }
+
+    #middagMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/burgerLille.jpeg");
+    }
+
+    #aftenMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/aftensmadLille.jpeg");
+    }
+
+    #soedeSagerMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/dessertLille.jpeg");
+    }
+
+    #cocktailMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/cocktailLille.jpeg");
+    }
+
+    #drikkeMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/kakaoLille.jpeg");
+    }
+
+    #oelMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/olLille.jpeg");
+    }
+
+    #vinMenu {
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaaBilleder/menu/vinLille.jpeg");
+    }
+
+    .groenSektionMenuTxt {
+        grid-template-areas:
+            "headline"
+            "content"
+            "img"
+            "button";
+        gap: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .groenSektionMenuTxt h2 {
+        font-size: var(--h2Mobile);
+        margin-bottom: 0.5rem;
+        padding-top: 2rem;
+    }
+
+    .btnTakeaway {
+        font-size: var(--tekstStrMobil);
+        margin-left: 10rem;
+        margin-bottom: 3rem;
+    }
+
+    .imgKaffe {
+        width: 184px;
+        height: 215px;
+        margin-left: 10rem;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footerTitle {
+        font-size: var(--h2Mobile);
+        padding-top: 1rem;
+    }
+
+    .kontakt p,
+    .aabningstider p {
+        font-size: var(--tekstStrMobil);
+    }
+
+    #socialeMedier p,
+    #smiley p {
+        font-size: var(--tekstStrMobil);
+        margin-bottom: 0;
+    }
+
+    .indledningForside {
+        grid-template-columns: 1fr;
+    }
+
+    .billedeRammeForside {
+        grid-row: 1;
+    }
+
+    .forsideEntryPoints {
+        grid-template-columns: 1fr;
+    }
+
+    .entryPoint {
+        position: unset;
+        height: fit-content;
+    }
+
+    .entryPoint img {
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+    }
+
+
+    .entryPoint p:first-of-type {
+        position: unset;
+        opacity: unset;
+        padding-bottom: 0;
+    }
+
+    .entryPoint p:last-of-type {
+        position: unset;
+        opacity: unset;
+        background-color: unset;
+        color: var(--baggrund);
+        padding: 1rem;
+    }
+
+    .entryPoint:hover img,
+    .entryPoint:hover p:first-of-type {
+        opacity: unset;
+    }
+
+    .entryPoint:hover {
+        background-color: var(--moerkPink);
+    }
+
+    .entryPoint:hover p:last-of-type {
+        opacity: unset;
+    }
+
+    .UllaTImg {
+        position: unset;
+        width: 50%;
+    }
+
+    .groenSektionUlla {
+        position: unset;
+        height: unset;
+        padding: var(--paddingSectionsMobile);
+    }
+
+    .groenSektionTekst {
+        width: 100%;
+        padding: 0;
+    }
+
+    .introTekst {
+        padding-right: 2rem;
+    }
+
+    h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    .indledningmenu h2 {
+        font-size: var(--h2Mobile);
+    }
+
+    .overskrift h3 {
+        font-size: var(--h3MenuKort);
+    }
+
+    /* obs ved merch på disse tre ^^^ */
+
+    .topBtn {
+        display: block;
+        position: fixed;
+        bottom: 2rem;
+        right: 1.5rem;
+        z-index: 1;
+        padding: 1rem;
+        border: none;
+        background-color: transparent;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .topBtn.active {
+        opacity: 1;
+    }
+
+    .topBtn .material-symbols-outlined {
+        font-size: 4rem;
+    }
+
+    .billedeRamme .img-1 img {
+        height: 50vh;
+    }
+
+    .billedeRamme .img-2 img {
+        height: 50vh;
+        border-radius: 0 40px 40px 0;
+    }
+
+    .billedeRamme .img-3 {
+        display: none;
+    }
+
+    .billedeRamme {
+        display: flex;
+        height: 50vh;
+        width: 150vh;
+    }
+
+    .morgenmenuContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .morgenVarianter,
+    .brunchVarianter {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .morgenretter {
+        max-width: 100%;
+    }
+
+    .brunchretter {
         max-width: 100%;
     }
 }
@@ -648,3 +2022,123 @@ footer{
     
 
 }
+    .groenSektionUlla {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .groenSektionTekst {
+        padding: 1rem 2rem;
+    }
+
+    .UllaTImg {
+        width: 100%;
+    }
+
+    .indledningssektion {
+        margin-bottom: var(--paddingSectionsMobile);
+    }
+
+    .forsideEntryPoints {
+        padding-bottom: var(--paddingSectionsMobile);
+    }
+
+    main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
+        padding: 1rem 2rem;
+    }
+
+    /* main {
+    padding:0;
+} */
+    /* ^OBS VED MERCHING */
+
+    .logo {
+        width: 6rem;
+    }
+
+    .containerContent {
+        padding: 0 1rem;
+    }
+
+    .menuContainer h3 {
+        padding-bottom: 1rem;
+    }
+
+    .breadcrumbs {
+        font-size: var(--tekstStrMobil);
+        margin-top: 2.5rem;
+        margin-left: 1rem;
+    }
+
+    .titleMenu {
+        font-size: var(--h1Mobile);
+        margin-left: 1rem;
+    }
+
+    .descriptionContainer p {
+        margin-left: 1rem;
+    }
+
+    .fatOne {
+        margin-left: 1rem;
+    }
+
+    .menukortImg {
+        display: none;
+    }
+
+    .menuContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #morgenMenu,
+    #middagMenu,
+    #aftenMenu,
+    #soedeSagerMenu,
+    #cocktailMenu,
+    #drikkeMenu,
+    #oelMenu,
+    #vinMenu {
+        aspect-ratio: 2/1;
+    }
+
+    #vinMenu {
+        background-position: 90% 20%;
+    }
+
+    .indledningmenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main p {
+        font-size: var(--tekstStrMobil);
+    }
+
+    /* obs ved merch ^ */
+
+    .billedeRamme {
+        width: 100vw;
+        height: 40vh;
+        margin: 2rem 0;
+    }
+
+    .billedeRamme .img-1 img,
+    .billedeRamme .img-2 img {
+        border-radius: 0;
+        height: 40vh;
+    }
+
+    .billedeRamme .img-1 {
+        width: 70%;
+    }
+
+    .billedeRamme .img-2 {
+        width: 30%;
+    }
+}
+
+;
+
