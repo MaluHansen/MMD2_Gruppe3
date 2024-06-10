@@ -273,6 +273,203 @@ footer{
 
 
 /*______________________EVENTS___________________________*/
+
+.eventHeading{
+ font-size: var(--h1Desktop);
+ font-style: var(--h1Font);
+ color:#933E65
+}
+
+.eventVideoSection{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: var(--paddingSectionsDesktop)
+}
+
+.eventVideoSection video{
+  max-width: 100%; 
+  max-height: auto; 
+}
+
+.eventCardsection{
+    
+}
+
+.eventCardcontainer{
+    display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+}
+
+
+.eventCard img{
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+}
+
+.eventCard{
+    background-color: var(--lysBlaa);
+    border-radius: 8px; 
+    max-width: 30%;
+    max-height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.eventCard h4{
+    margin: 0.5rem;
+}
+
+.eventCardinfo{
+    display: flex;
+    font-size: 20px;
+    margin: 1.5rem;
+    justify-content: space-between;
+}
+
+.eventCardinfo .material-symbols-outlined{
+   margin-left: 1rem;
+}
+
+.eventCard p {
+    display: flex;
+    margin: 1rem;
+   
+}
+
+.eventCard h4{
+    margin-left: 2rem;
+}
+
+/*---------------------EVENTS MEDIA QUERIES---------------------*/
+@media screen and (max-width: 1920px) {
+    .eventCard{
+        background-color: var(--lysBlaa);
+        border-radius: 8px; 
+        max-width: 30%;
+        margin: 20px;
+        height: 500px;
+    }
+
+    .eventCard img{
+        object-fit: cover;
+        width: 100%;
+        max-height: 50%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .eventVideoSection video{ 
+       width: 600px;
+    }
+
+    .eventCardcontainer{
+        justify-content: center;
+    }
+
+    .eventCard img{
+        object-fit: cover;
+        width: 100%;
+        min-height: 40%;
+    }
+
+    .eventCard{
+        background-color: var(--lysBlaa);
+        border-radius: 8px; 
+        margin: 20px;
+        min-height: 400px;
+        min-width: 340px;
+    }
+
+     }
+
+
+@media screen and (max-width: 900px) {
+  
+    .eventVideoSection video{ 
+        width: 100%;
+    }
+
+    .eventVideoSection{
+        display:flex;
+        flex-direction:column;
+        padding-bottom: var( --paddingSectionsDesktop);
+        padding-top: 0;
+    }
+
+    .eventCardSection{
+        justify-content: center;
+    }
+    .eventCardcontainer{
+        display: flex;
+         flex-direction: column;
+     }
+
+    .eventCard{
+        background-color: var(--lysBlaa);
+        border-radius: 8px; 
+        min-width: 100%;
+        height: 340px;
+    }
+
+    .eventCard img{
+        object-fit: cover;
+        width: 100%;
+        max-width: 100%;
+        height: 150px;
+        max-height: 40%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+main {
+
+    .eventVideoSection{
+        display:flex;
+        padding-bottom: var(--paddingSectionsMobile);
+    }
+
+    .eventVideoSection p{ 
+        font-size: var(--tekstStrMobil);
+    }
+
+    .eventVideoSection video{
+        display: block;
+        display: none;
+    }
+
+    .eventHeading{
+        font-size: var(--h1Mobile);
+        font-style: var(--h1Font);
+        color:#933E65
+    }
+
+
+    .eventCard{
+        background-color: var(--lysBlaa);
+        border-radius: 8px; 
+        max-width: 30%;
+        height: 100%;
+    }
+
+    .eventCard h4{
+        margin: 0.5rem;
+    }
+
+    .eventCard p {
+        display: flex;
+        font-size: var(--tekstStrMobil);
+        margin: 1rem;
+       
+    }
+    
+}}
+
+/*---------------------EVENTS MEDIA QUERIES SLUT---------------------*/
 /*______________________EVENTS SLUT___________________________*/
 
 /*______________________GAVEKORT__________________________*/
@@ -288,6 +485,42 @@ footer{
 /*______________________MENU SLUT__________________________*/
 
 /*______________________MENU AFTEN__________________________*/
+
+.aftenMenuTopsektion{
+    display: flex;
+    padding-bottom: var(--paddingSectionsDesktop);
+}
+
+.topAftentekst h2{
+padding-bottom: 1.5rem;
+}
+
+.aftenmenuContainer{
+    width: 40rem;
+    max-width: 100%;
+    background-color: var(--lysGul);
+    border-radius: 15px;
+    display: flex;
+}
+
+.aftenEnhed{
+    display:flex;
+    flex-direction: column;
+}
+
+.aftenOverskrift h3{            
+padding-top: 1rem;
+}
+.aftenMenutitle{
+    display: flex;
+}
+
+.aftenMenupris{
+display: flex;
+}
+
+
+
 /*______________________MENU AFTEN SLUT__________________________*/
 
 /*______________________MENU COCKTAILS__________________________*/
@@ -306,6 +539,69 @@ footer{
 /*______________________MENU OEL SLUT__________________________*/
 
 /*______________________MENU SOEDESAGER__________________________*/
+
+.menuTopsektion{
+    padding-bottom: var(--paddingSectionsDesktop);
+    display: flex;
+}
+    
+.eventHeading{
+    font-size: var(--h1Desktop);
+    font-style: var(--h1Font);
+    color:#933E65
+        
+}
+
+.topsoedeSagertekst p{
+margin-bottom: 1rem;
+}
+
+.menuContainersection{
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--paddingSectionsDesktop);
+}
+
+.menuContainer{
+    width: 40rem;
+    max-width: 100%;
+    background-color: var(--lysGul);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.overskrift h3{
+    font-weight: var(--h3MenukortWeight);
+    font-size: var(--h3MenuKort);
+    font-family: var(--menuKortFont);
+}
+
+.soedesagerMenutop p{
+padding-bottom: 1rem;
+}
+
+.soedesagerEnhed{
+display: flex;
+flex-direction: column;
+}
+
+.soedesagerTitle{
+    display: flex;
+}
+
+.titleOgPris{
+    display: flex;
+    margin: 1rem;
+    justify-content: space-between;
+    gap:1.5rem;
+}
+
+.soedesagerPris{
+    display: flex;
+    margin-right: 0.5rem;    
+}
+
 /*______________________MENU SOEDESAGER SLUT__________________________*/
 
 /*______________________MENU VIN__________________________*/
