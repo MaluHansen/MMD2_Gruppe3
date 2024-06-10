@@ -1,100 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ulla Terkelsen I London - Den hyggeligste cafe i Vestbyen. Vi lover en uforglemmelig oplevelse, både morgen, middag og aften!">
-    <title>Ulla Terkelsen London - Forside</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="./assets/js/Funktions.js" defer></script>
-    <link rel="icon" href="./assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
-</head>
-<body>
-    <header>
-        <nav>
-            <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen I London Logo">
-            <ul>
-                <li><a href="./index.html">Forside</a></li>
-                
-                <div class="subNav">
-                    <li class="activeNavA"><a href="./menu.html">Menu</a></li>
-                    <ul class="subNavContent" id="subNavActive">
-                        <li><a href="./menuMorgen.html">Morgen</a></li>
-                        <li><a href="./menuMiddag.html">Middag</a></li>
-                        <li class="activeNavA"><a href="./menuAften.html">Aften</a></li>
-                        <li><a href="./menuSoedeSager.html">Søde Sager</a></li>
-                        <li><a href="./menuCocktails.html">Cocktails</a></li>
-                        <li><a href="./menuDrikke.html">Kolde & Varme drikke</a></li>
-                        <li><a href="./menuOel.html">Øl</a></li>
-                        <li><a href="./menuVin.html">Vin</a></li>
-                    </ul>
-                </div>
-
-                <li><a href="./events.html">Events</a></li>
-                <li><a href="./selskaber.html">Selskaber</a></li>
-                <li><a href="./madUdAfHuset.html">Mad ud af huset</a></li>
-                <li><a href="./bookBord.html">Book bord</a></li>
-                <li><a href="./gavekort.html">Gavekort</a></li>
-                <li><a href="./kontakt.html">Kontakt</a></li>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Ulla Terkelsen I London - Den hyggeligste cafe i Vestbyen. Vi lover en uforglemmelig oplevelse, både morgen, middag og aften!">
+        <title>Ulla Terkelsen London - Forside</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="./assets/js/Funktions.js" defer></script>
+        <script src="./assets/js/aften.js" defer></script>
+        <link rel="icon" href="./assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen I London Logo">
+                <ul>
+                    <li><a href="./index.html">Forside</a></li>
+                    
+                    <div class="subNav">
+                        <li class="activeNavA"><a href="./menu.html">Menu</a></li>
+                        <ul class="subNavContent" id="subNavActive">
+                            <li><a href="./menuMorgen.html">Morgen</a></li>
+                            <li><a href="./menuMiddag.html">Middag</a></li>
+                            <li class="activeNavA"><a href="./menuAften.html">Aften</a></li>
+                            <li><a href="./menuSoedeSager.html">Søde Sager</a></li>
+                            <li><a href="./menuCocktails.html">Cocktails</a></li>
+                            <li><a href="./menuDrikke.html">Kolde & Varme drikke</a></li>
+                            <li><a href="./menuOel.html">Øl</a></li>
+                            <li><a href="./menuVin.html">Vin</a></li>
+                        </ul>
+                    </div>
+    
+                    <li><a href="./events.html">Events</a></li>
+                    <li><a href="./selskaber.html">Selskaber</a></li>
+                    <li><a href="./madUdAfHuset.html">Mad ud af huset</a></li>
+                    <li><a href="./bookBord.html">Book bord</a></li>
+                    <li><a href="./gavekort.html">Gavekort</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <ul class="breadcrumbs">
+                <li><a href="/index.html">Forside > </a></li>
+                <li><a href="/menu.html">Menu > </a></li>
+                <li><a href="/menuAften.html">Aften menu</a></li>
             </ul>
-        </nav>
-    </header>
-    <main></main>
-    <footer>
-        <div class="kontakt">
-            <p class="footerTitle">Kontakt</p>
-            <div id="email">
-            <i class="material-symbols-outlined">mail</i>
-            <p>Cafeullaterkelsenlondon@gmail.com</p>
-            </div>
-            <div id="mobil">
-            <i class="material-symbols-outlined">phone_iphone</i>
-            <p>+45 98 15 90 00</p>
-            </div>
-            <div id="lokation">
-            <i class="material-symbols-outlined">place</i>
-            <p>Kastetvej 36, 9000 Aalborg</p>
-            </div>
-        </div>
-        <div class="aabningstider">
-            <p class="footerTitle">Åbningstider</p>
-            <div class="aabningstiderContainer">
-                <div id="dage">
-                <p>Mandag</p>
-                <p>Tirsdag</p>
-                <p>Onsdag</p>
-                <p>Torsdag</p>
-                <p>Fredag</p>
-                <p>Lørdag</p>
-                <p>Søndag</p>
+            <section>
+                <h1 class="eventHeading">Aften Menu</h1>
+                <article class="indledningMenu">
+                    <div class="introTekst">
+                        <h2>Hver aften mellem kl. 16:30-21:00</h2>
+                        <p>Vores kokke har hentet inspiration fra hele verden til at skabe retter, der ikke kun tilfredsstiller smagsløgene, men også vækker dine sanser. Uanset om du er til krydret eksotisk mad, klassiske retter eller innovative fusionsretter, kan du finde noget, der overrasker og glæder. Vores farverige ingredienser og omhyggeligt udvalgte råvarer sikrer, at hver bid er en oplevelse i sig selv.</p>
+                    </div>
+                    <div class="billedeRamme">
+                        <picture class="img-1">
+                            <source media="(min-width: 600px)" srcset="./assets/img/tilMenukort/aftensmadMousse.jpeg">
+                            <img src="./assets/img/små billeder/menu/aftensmadMousse lille.jpeg" alt="Nærbillede af laksemousse" loading="lazy">
+                        </picture>
+                        
+                        <picture class="img-2">
+                            <source media="(min-width: 600px)" srcset="./assets/img/tilMenukort/aftensmad.jpeg">
+                            <img src="./assets/img/små billeder/menu/aftensmad lille.jpeg"  alt="Nærbillede af en salatret" loading="lazy">
+                        </picture>
+                       
+                        <picture class="img-3">
+                            <source media="(min-width: 600px)" srcset="./assets/img/tilMenukort/aftensmadKartoffelsalat.jpeg">
+                            <img src="./assets/img/små billeder/menu/aftensmadKartoffelsalat lille.jpeg" alt="Nærbillede af en kartoffelsalat" loading="lazy">
+                        </picture>
+                    </div>
+                </article>
+            </section>
+                    <section class="menuContainersection">
+                        <div class="menukortContainer">
+                            <div class="aftenMenutop">
+                                <p><i class="material-symbols-outlined">eco</i>= Vegansk</p>
+                                <div class="aftenOverskrift">
+                                    <h3>Aften retter</h3>
+                                </div>
+                                    <hr class="tyndstreg">
+                                
+                                <div class="aftenEnhed"></div>
+                            </div>
+                           
+                        </div>
+                      </section>
+    
+    
+            <section class="groenSektion">
+                <div class="groenSektionKontakt">
+                    <h4>Kan vi hjælpe dig med noget?</h4>
+                    <p>Har du spørgsmål til menuen, ingredienser eller allergener, er du velkommen til at kontakte caféens personale. Se kontaktoplysninger via. nedenstående link</p>
+                    <button class="btn">Gå til kontakt</button>
                 </div>
-                <div id="tidsrum">
-                <p>Lukket</p>
-                <p>11.00 - 23.00</p>
-                <p>11.00 - 23.00</p>
-                <p>11.00 - 23.00</p>
-                <p>11.00 - 02.00</p>
-                <p>11.00 - 02.00</p>
-                <p>Lukket</p>
+                <div class="groenSektionBookbord">
+                    <h4>Er du klar på en unik caféoplevelse?</h4>
+                    <p>Vi anbefaler at I reservere bord på forhånd, så I er sikret en plads i vores behagelige og stemningsgivende omgivelser på caféen. 
+                    Følg nedenstående link for at få til siden “Book Bord”</p>
+                    <button class="btn">Gå til book bord</button>
+                </div>
+                <div class="engleUlla" >
+                <img id="engleUllaImg" src="./assets/img/tilMenukort/Engel Ulla.png" alt="Ulla T på et udklip af en engel">
+                <!-- KILDE: Cafe Ulla Terkelsen London, 25/12/2022. Instagram.com, Meta 2024. [online] Accessed 4/6/2024. URL:  https://www.instagram.com/p/CmmIM1wsXXl/. -->
+                </div>
+            </section>
+    
+    
+                        
+    
+        </main>
+        <footer>
+            <div class="kontakt">
+                <p class="footerTitle">Kontakt</p>
+                <div id="email">
+                <i class="material-symbols-outlined">mail</i>
+                <p>Cafeullaterkelsenlondon@gmail.com</p>
+                </div>
+                <div id="mobil">
+                <i class="material-symbols-outlined">phone_iphone</i>
+                <p>+45 98 15 90 00</p>
+                </div>
+                <div id="lokation">
+                <i class="material-symbols-outlined">place</i>
+                <p>Kastetvej 36, 9000 Aalborg</p>
                 </div>
             </div>
-        </div>
-        <div class="andetInfo">
-            <div id="smiley">
-                <p class="footerTitle">Fødevarestyrelsens<br>smiley-ordning</p>
-                <img src="./assets/img/smileyRapport.png" alt="Fødevarestyrelsens kontrolrapport logo">
+            <div class="aabningstider">
+                <p class="footerTitle">Åbningstider</p>
+                <div class="aabningstiderContainer">
+                    <div id="dage">
+                    <p>Mandag</p>
+                    <p>Tirsdag</p>
+                    <p>Onsdag</p>
+                    <p>Torsdag</p>
+                    <p>Fredag</p>
+                    <p>Lørdag</p>
+                    <p>Søndag</p>
+                    </div>
+                    <div id="tidsrum">
+                    <p>Lukket</p>
+                    <p>11.00 - 23.00</p>
+                    <p>11.00 - 23.00</p>
+                    <p>11.00 - 23.00</p>
+                    <p>11.00 - 02.00</p>
+                    <p>11.00 - 02.00</p>
+                    <p>Lukket</p>
+                    </div>
+                </div>
             </div>
-            <div id="socialeMedier">
-                <p class="footerTitle">Følg os her!</p>
-
-                <a href="https://www.facebook.com/CafeUlla" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-
-                <a href="https://www.instagram.com/cafeullaterkelsenlondon/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                
+            <div class="andetInfo">
+                <div id="smiley">
+                    <p class="footerTitle">Fødevarestyrelsens<br>smiley-ordning</p>
+                    <img src="./assets/img/smileyRapport.png" alt="Fødevarestyrelsens kontrolrapport logo">
+                </div>
+                <div id="socialeMedier">
+                    <p class="footerTitle">Følg os her!</p>
+    
+                    <a href="https://www.facebook.com/CafeUlla" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+    
+                    <a href="https://www.instagram.com/cafeullaterkelsenlondon/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    
+                </div>
             </div>
-        </div>
-    </footer>
-</body>
-</html>
+        </footer>
+    </body>
+    </html>
