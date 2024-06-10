@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ulla Terkelsen I London - Den hyggeligste cafe i Vestbyen. Vi lover en uforglemmelig oplevelse, både morgen, middag og aften!">
-    <title>Ulla Terkelsen London - Forside</title>
+    <meta name="description" content="Ulla Terkelsen London - Her kan du nyde vores fantastiske vinmenu med alt lige fra rød og hvidvin til dejlige bobler og portvine.">
+    <title>Ulla Terkelsen London - Vinmenu</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- KILDE: Font-awesome. CDNJS. 2024. Accessed: 4/6/2024. URL: https://cdnjs.com/libraries/font-awesome -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- KILDE: Google Fonts. Google 2024. Accessed 4/6/2024. URL: https://fonts.google.com/ -->
     <script src="./assets/js/Funktions.js" defer></script>
+    <script src="./assets/js/vin.js" defer></script>
     <link rel="icon" href="./assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
 </head>
 <body>
@@ -31,7 +34,7 @@
                         <li class="activeNavA"><a href="./menuVin.html">Vin</a></li>
                     </ul>
                 </div>
-
+                
                 <li><a href="./events.html">Events</a></li>
                 <li><a href="./selskaber.html">Selskaber</a></li>
                 <li><a href="./madUdAfHuset.html">Mad ud af huset</a></li>
@@ -41,7 +44,151 @@
             </ul>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <section>
+            <ul class="breadcrumbs">
+                <li><a href="./index.html">Forside > </a></li>
+                <li><a href="./menu.html">Menu > </a></li>
+                <li><a href="./menuVin.html">Vinmenu</a></li>
+            </ul>
+        </section>
+        <section>
+            <article class="indledningMenu">
+                <div class="introTekst">
+                    <h1>Vinmenu</h1>
+                    <p>
+                        Udforsk vores store samling af vin og bobler. 
+                        Skulle du være i tvivl om dit valg af vin, står vores personale altid klar til at hjælpe dig med rådgivning.
+                    </p>
+                </div>
+                <div class="billedeRamme">
+                    <picture class="img-1">
+                        <source media="(min-width:600px)" srcset="./assets/img/tilMenukort/skaalMedVin.jpg">
+                        <img src="./assets/img/små billeder/menu/vinSkaal lille.jpeg" alt="En hyggelig middag hvor folk skåler" loading="lazy">
+                        <!-- KILDE: #821, https://www.colourbox.dk/billede/aeldre-dame-restaurant-billede-38786024. Colourbox.dk, 2024 -->
+                    </picture>
+                    <picture class="img-2">
+                        <source media="(min-width: 600px)" srcset="./assets/img/tilMenukort/roedVinsglas.jpg">
+                        <img src="./assets/img/små billeder/menu/roedVin lille.jpeg" alt="Et billede af et glas rødvin" loading="lazy">
+                        <!-- KILDE: #225143, https://www.colourbox.dk/billede/vin-par-closeup-billede-27078378. Colourbox.dk, 2024 -->
+                    </picture>
+                    <picture class="img-3">
+                        <source media="(min-width: 600px)" srcset="./assets/img/tilMenukort/vin&Skaldyr.jpg">
+                        <img src="./assets/img/små billeder/menu/vin1 lille.jpeg" alt="Et glas hvidvin placeret på et bord sammen med et let måltid" loading="lazy">
+                        <!-- KILDE: cafeullaterkelsenlondon, https://www.instagram.com/p/CtCJxTTMH2v/?img_index=1. Instagram.com, 3.Juni 2023 -->
+                    </picture>
+                </div>
+            </article>
+        </section>
+        <div class="menukortContainer">
+            <div class="spinnerContainer">
+                <div class="spinner"></div>
+                <div class="burger"><i class="fa-solid fa-burger"></i></div>
+                <div class="wineGlass"><i class="fa-solid fa-wine-glass"></i></div>
+            </div>
+            <article class="hvidvin">
+                <div class="overskrift">
+                    <h3>Hvidvin</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="hvidvinVarianter variantContainer">
+                </div>
+            </article>
+            <article class="rodvin">
+                <div class="overskrift">
+                    <h3>Rødvine</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="rodvinVarianter variantContainer">
+                </div>
+            </article>
+            <article class="alkoholfriVin">
+                <div class="overskrift">
+                    <h3>Alkoholfrie Vine</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="alkoholfrieVinVarianter variantContainer">
+                </div>
+            </article>
+            <article class="bobler">
+                <div class="overskrift">
+                    <h3>Bobler</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="bobleVarianter variantContainer">
+                </div>
+            </article>
+            <article class="rosé">
+                <div class="overskrift">
+                    <h3>Rosé</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="roséVarianter variantContainer">
+                </div>
+            </article>
+            <article class="naturvin">
+                <div class="overskrift">
+                    <h3>Naturvine</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="naturvinVarianter variantContainer">
+                </div>
+            </article>
+            <article class="vincocktails">
+                <div class="overskrift">
+                    <h3>Vincocktails</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="vincocktailsVarianter variantContainer">
+                </div>
+            </article>
+            <article class="portvin">
+                <div class="overskrift">
+                    <h3>Portvine</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="portvinVarianter variantContainer">
+                </div>
+            </article>
+            <article class="kirsebaerlikor">
+                <div class="overskrift">
+                    <h3>Kirsebærlikører</h3>
+                    <p>Glas/Flaske</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="kirsebaerlikorVarianter variantContainer">
+                </div>
+            </article>
+    </div>
+        <section class="groenSektion">
+            <div class="genvejSektion">
+            <div class="groenSektionKontakt">
+                <h4>Kan vi hjælpe dig med noget?</h4>
+                <p>Har du spørgsmål til menuen, ingredienser eller allergener, er du velkommen til at kontakte caféens personale. Se kontaktoplysninger via. nedenstående link</p>
+                <button class="btn">Gå til kontakt</button>
+            </div>
+            <div class="groenSektionBookbord">
+                <h4>Er du klar på en unik caféoplevelse?</h4>
+                <p>Vi anbefaler at I reservere bord på forhånd, så I er sikret en plads i vores behagelige og stemningsgivende omgivelser på caféen. 
+                Følg nedenstående link for at få til siden “Book Bord”</p>
+                <button class="btn">Gå til book bord</button>
+            </div>
+            </div>
+
+            <div class="engleUlla" >
+            <img id="engleUllaImg" src="./assets/img/tilMenukort/Engel Ulla.png" alt="Ulla T på et udklip af en engel">
+            <!-- KILDE: cafeullaterkelsenlondon, https://www.instagram.com/p/CmmIM1wsXXl/. Instagram.com, 25. December 2022 -->
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="kontakt">
             <p class="footerTitle">Kontakt</p>
@@ -84,15 +231,15 @@
         <div class="andetInfo">
             <div id="smiley">
                 <p class="footerTitle">Fødevarestyrelsens<br>smiley-ordning</p>
-                <img src="./assets/img/smileyRapport.png" alt="Fødevarestyrelsens kontrolrapport logo">
+                <a href="https://www.findsmiley.dk/500717" target="_blank"><img src="./assets/img/smileyRapport.png" alt="Fødevarestyrelsens kontrolrapport logo"></a>
+                <!-- KILDE: VirkSide. Ministeriet for Fødevarer, Landbrug og Fiskeri. 2024. Accessed 5/6/2024. URL: https://www.findsmiley.dk/500717 -->
             </div>
             <div id="socialeMedier">
                 <p class="footerTitle">Følg os her!</p>
-
                 <a href="https://www.facebook.com/CafeUlla" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-
+                <!-- KILDE : Cafe Ulla Terkelsen London. Facebook. Meta 2024. Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla -->
                 <a href="https://www.instagram.com/cafeullaterkelsenlondon/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                
+                <!-- KILDE: Cafe Ulla Terkelsen London. Instagram. Meta 2024. Accessed 4/6/2024. https://www.instagram.com/cafeullaterkelsenlondon/ -->
             </div>
         </div>
     </footer>
