@@ -74,7 +74,7 @@ main p {
 }
 
 img,
-video,
+
 picture,
 svg {
     vertical-align: middle;
@@ -539,6 +539,113 @@ footer {
 /*______________________FORSIDE SLUT__________________________*/
 
 /*______________________BOOKBORD___________________________*/
+
+.boookbordContainer{
+    display: flex;
+}
+.bookBordTekstContent a{
+    text-decoration: none;
+}
+.bookBordTekstContent h1{
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+}
+.bookBordTekstContent p{
+    margin: 2rem 4rem 2rem 0rem;
+
+}
+
+.bookbordVideo{
+    width: 100%;
+    min-height: 80%;
+    object-fit: cover;
+    position: absolute;
+}
+.videoContainer{
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.videoOverlay{
+    width: 100%;
+    min-height: 80%;
+    opacity: 0.4;
+    background: #933E65;
+    position: absolute;
+}
+.videoTekst{
+    z-index: 2;
+    color: var(--moerkPink);
+    text-align: center;
+    font-family: var(--h1Font);
+    font-size: 2rem;
+    background-color: rgba(253, 251, 239, 69%);
+    position: absolute;
+    padding: 1rem 1rem;
+}
+
+.bookingSystemImg{
+    max-width: 60%;
+}
+.bookingSystemContainer{
+    margin-top: var(--paddingSectionsDesktop);
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px){
+    .bookBordTekstContent{
+        display: flex;
+        flex-direction: column;
+    }
+    .bookBordTekstContent h1{
+        font-size: var(--h1Mobile);
+    }
+    .bookBordTekstContent p{
+        margin: 1rem 0rem;
+    
+    }
+    .boookbordContainer{
+        flex-direction: column-reverse;
+    }
+    .videoContainer{
+        display: none;
+    }
+    .bookingSystemImg{
+        width: 100%;
+    }
+    .bookingSystemContainer{
+        margin-top: var(--paddingSectionsMobile);
+        display: flex;
+        width: 80vw;
+        flex-direction: column;
+    }
+} 
+
+@media screen and (max-width: 900px){
+    .videoContainer{
+        display: none;
+    }
+    .bookBordTekstContent h1{
+        font-size: var(--h1Mobile);
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .videoContainer{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .videoOverlay{
+        max-height: 100%;
+    }
+}
+
 /*______________________BOOKBORD SLUT___________________________*/
 
 
