@@ -61,7 +61,7 @@ main {
 }
 
 
-main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
+main>*:not(.groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer) {
     padding: 0 8rem;
     padding-bottom: var(--paddingSectionsDesktop);
 }
@@ -539,43 +539,49 @@ footer {
 
 /*______________________BOOKBORD___________________________*/
 
-.boookbordContainer{
+.boookbordContainer {
     display: flex;
 }
-.bookBordTekstContent a{
+
+.bookBordTekstContent a {
     text-decoration: none;
 }
-.bookBordTekstContent h1{
+
+.bookBordTekstContent h1 {
     color: var(--moerkPink);
     font-family: var(--h1Font);
     font-size: var(--h1Desktop);
 }
-.bookBordTekstContent p{
+
+.bookBordTekstContent p {
     margin: 2rem 4rem 2rem 0rem;
 
 }
 
-.bookbordVideo{
+.bookbordVideo {
     width: 100%;
     min-height: 80%;
     object-fit: cover;
     position: absolute;
 }
-.videoContainer{
+
+.videoContainer {
     width: 50%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.videoOverlay{
+
+.videoOverlay {
     width: 100%;
     min-height: 80%;
     opacity: 0.4;
     background: #933E65;
     position: absolute;
 }
-.videoTekst{
+
+.videoTekst {
     z-index: 2;
     color: var(--moerkPink);
     text-align: center;
@@ -586,61 +592,69 @@ footer {
     padding: 1rem 1rem;
 }
 
-.bookingSystemImg{
+.bookingSystemImg {
     max-width: 60%;
 }
-.bookingSystemContainer{
+
+.bookingSystemContainer {
     margin-top: var(--paddingSectionsDesktop);
     display: flex;
     justify-content: center;
 }
 
-@media screen and (max-width: 600px){
-    .bookBordTekstContent{
+@media screen and (max-width: 600px) {
+    .bookBordTekstContent {
         display: flex;
         flex-direction: column;
     }
-    .bookBordTekstContent h1{
+
+    .bookBordTekstContent h1 {
         font-size: var(--h1Mobile);
     }
-    .bookBordTekstContent p{
+
+    .bookBordTekstContent p {
         margin: 1rem 0rem;
-    
+
     }
-    .boookbordContainer{
+
+    .boookbordContainer {
         flex-direction: column-reverse;
     }
-    .videoContainer{
+
+    .videoContainer {
         display: none;
     }
-    .bookingSystemImg{
+
+    .bookingSystemImg {
         width: 100%;
     }
-    .bookingSystemContainer{
+
+    .bookingSystemContainer {
         margin-top: var(--paddingSectionsMobile);
         display: flex;
         width: 80vw;
         flex-direction: column;
     }
-} 
+}
 
-@media screen and (max-width: 900px){
-    .videoContainer{
+@media screen and (max-width: 900px) {
+    .videoContainer {
         display: none;
     }
-    .bookBordTekstContent h1{
+
+    .bookBordTekstContent h1 {
         font-size: var(--h1Mobile);
     }
 }
 
-@media screen and (max-width: 1400px){
-    .videoContainer{
+@media screen and (max-width: 1400px) {
+    .videoContainer {
         display: none;
     }
 }
 
-@media screen and (min-width: 1400px){
-    .videoOverlay{
+@media screen and (min-width: 1400px) {
+    .videoOverlay {
         max-height: 100%;
     }
 }
@@ -802,6 +816,7 @@ footer {
         font-size: var(--tekstStrMobil);
         line-height: 1rem;
     }
+
     /* ÔBS SLETTES INDEN MECH */
 
     .beskrivelseSelskaber h2,
