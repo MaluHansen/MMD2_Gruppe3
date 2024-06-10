@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ulla Terkelsen I London - Den hyggeligste cafe i Vestbyen. Vi lover en uforglemmelig oplevelse, både morgen, middag og aften!">
-    <title>Ulla Terkelsen London - Forside</title>
+    <title>Ulla Terkelsen London - Drikkevare</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./assets/js/Funktions.js" defer></script>
+    <script src="./assets/js/drikke.js" defer></script>
     <link rel="icon" href="./assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
 </head>
 <body>
@@ -41,7 +42,98 @@
             </ul>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <section>
+            <article class="indledningMenu">
+                <div class="introTekst">
+                    <section>
+                        <ul class="breadcrumbs">
+                            <li><a href="/index.html">Forside > </a></li>
+                            <li><a href="/menuDrikke.html">Kolde & varme drikke</a></li>
+                        </ul>
+                    </section>
+                    <h1>KOLDE & VARME DRIKKE</h1>
+                    <p>
+                        Koldt eller varmt, vi har lige det du skal bruge til at slukke tørsten. Vi tilbyder en bredt udvalg af drikkevarer, lige fra røde sodavand til varm kakao og kaffe.                 
+                    </p>
+                </div>
+                <div class="billedeRamme">
+                    <picture class="img-1">
+                        <source media="(min-width:600px)" srcset="./assets/img/Til Menukort/kaffe.jpeg">
+                        <img src="./assets/img/små billeder/menu/kaffe lille.jpeg" alt="kaffe i en rød kop" loading="lazy">
+                        <!-- KILDE: UllaT. 2024. Accessed 05/06/24. URL:https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/3644100675668484/?type=3 -->
+                    </picture>
+                    <picture class="img-2">
+                        <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/kakao.jpeg">
+                        <img src="./assets/img/små billeder/menu/kakao lille.jpeg" alt="varm kakao med flødeskum på" loading="lazy">
+                         <!-- KILDE: UllaT. 2024. Accessed 05/06/24. URL:https://www.instagram.com/cafeullaterkelsenlondon/ -->
+                    </picture>
+                    <picture class="img-3">
+                        <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/saft.jpeg">
+                        <img src="./assets/img/små billeder/menu/saft lille.jpeg" alt="Et glas med rødt saftevand" loading="lazy"> 
+                        <!-- KILDE: UllaT. 2024. Accessed 05/06/24. URL:https:https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/4191305484281331/?type=3 -->
+                    </picture>
+                </div>
+            </article>
+        </section>
+        <div class="menukortContainer">
+            <div class="spinnerContainer">
+                <div class="spinner"></div>
+                <div class="burger"><i class="fa-solid fa-burger"></i></div>
+                <div class="wineGlass"><i class="fa-solid fa-wine-glass"></i></div>
+            </div>
+            <article class="juice">
+                <div class="overskrift">
+                    <h3>Juice & Smoothie</h3>
+                </div>
+                <hr class="tyndStreg">
+                <div class="juiceVarianter variantContainer">
+                </div>
+            </article>
+            <article class="saft">
+                <div class="overskrift">
+                    <h3>Saft & Sodavand</h3>
+                    <p>lille / stor</p>
+                </div>
+                <hr class="tyndStreg">
+                <div class="saftVarianter variantContainer">
+                </div>
+            </article>
+            <article class="kaffe">
+                <div class="overskrift">
+                    <h3>Katte, The & Kakao</h3>
+                </div>
+                <hr class="tyndStreg">
+                <div class="kaffeVarianter variantContainer">
+                </div>
+            </article>
+            <article class="ovrige">
+                <div class="overskrift">
+                    <h3>Øvrige drikkevare</h3>
+                </div>
+                <hr class="tyndStreg">
+                <div class="ovrigeVarianter variantContainer">
+                </div>
+            </article>
+    </div>
+        <section class="groenSektion">
+            <div class="groenSektionKontakt">
+                <h4>Kan vi hjælpe dig med noget?</h4>
+                <p>Har du spørgsmål til menuen, ingredienser eller allergener, er du velkommen til at kontakte caféens personale. Se kontaktoplysninger via. nedenstående link</p>
+                <button class="btn">Gå til kontakt</button>
+            </div>
+            <div class="groenSektionBookbord">
+                <h4>Er du klar på en unik caféoplevelse?</h4>
+                <p>Vi anbefaler at I reservere bord på forhånd, så I er sikret en plads i vores behagelige og stemningsgivende omgivelser på caféen. 
+                Følg nedenstående link for at få til siden “Book Bord”</p>
+                <button class="btn">Gå til book bord</button>
+            </div>
+
+            <div class="engleUlla" >
+            <img id="engleUllaImg" src="./assets/img/tilMenukort/Engel Ulla.png" alt="Ulla T på et udklip af en engel">
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="kontakt">
             <p class="footerTitle">Kontakt</p>
@@ -97,4 +189,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html>ß
