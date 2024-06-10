@@ -90,6 +90,7 @@ svg {
     border-radius: 50px;
     width: 10rem;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 16%);
+
 }
 
 .btn:hover {
@@ -148,6 +149,7 @@ svg {
     padding: 0.8rem 0rem;
 }
 
+
 .engleUlla {
     position: absolute;
     top: -100px;
@@ -158,10 +160,7 @@ svg {
     width: 200px;
     transform: rotate(25deg);
     margin-top: 1rem;
-
 }
-
-
 
 /*--------------Groen Sektion Slut-----------------*/
 
@@ -670,6 +669,198 @@ footer {
 }
 
 
+
+/*______________________MENU SELSKABER__________________________*/
+
+.beskrivelseSelskaber {
+    margin-bottom: 4rem;
+}
+
+.beskrivelseSelskaber h1 {
+    font-size: var(--h1Desktop);
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+}
+
+.beskrivelseSelskaber h2,
+.groenSelskaberContainer h2 {
+    font-size: var(--h2Desktop);
+    color: var(--tekstFarve);
+    margin-bottom: 2rem;
+}
+
+.contentSelskaber {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 60vw;
+}
+
+.containerSelskaber {
+    display: flex;
+    max-height: 75vh;
+}
+
+.containerSelskaber picture {
+    width: 40%;
+}
+
+.imgSelskaber {
+    border-radius: 20px 0px 0px 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eventImg {
+    object-position: center;
+}
+
+.selskabImg {
+    object-position: left center;
+}
+
+.brunchImg {
+    object-position: center 80%;
+}
+
+.facadeImg {
+    object-position: 10% 60%;
+}
+
+.medarbejderImg {
+    object-position: 10% 10%;
+}
+
+.blaaSektionSelskaber {
+    padding: 2rem 4rem;
+    border-radius: 0px 20px 20px 0px;
+    background-color: var(--lysBlaa);
+}
+
+.blaaSektionSelskaber h2 {
+    margin-bottom: 2rem;
+}
+
+.blaaSektionSelskaber a {
+    color: var(--tekstFarve);
+    font-size: 1.125rem;
+    ;
+    line-height: 1.7rem;
+}
+
+.personaleImg {
+    width: 100%;
+}
+
+#personalePaaUlla {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.groenSelskaberContainer {
+    background-color: var(--groen);
+    width: 100vw;
+    max-height: 70vh;
+    display: flex;
+    /* width skal måske ændres ift. padding på main */
+}
+
+.groenTxtContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 8rem;
+}
+
+.btnSelskaber {
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .contentSelskaber {
+        max-width: 90vw;
+    }
+
+    .groenSelskaberContainer h2 {
+        font-size: var(--h3MenuKort);
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .beskrivelseSelskaber h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    main p {
+        font-size: var(--tekstStrMobil);
+        line-height: 1rem;
+    }
+    /* ÔBS SLETTES INDEN MECH */
+
+    .beskrivelseSelskaber h2,
+    .blaaSektionSelskaber h2,
+    .groenSelskaberContainer h2 {
+        font-size: var(--h2Mobile);
+        margin-bottom: 0.5rem;
+    }
+
+    .blaaSektionSelskaber a {
+        font-size: var(--tekstStrMobil);
+    }
+
+    .groenTxtContainer {
+        padding: 1rem 4rem;
+    }
+
+    .groenSelskaberContainer {
+        max-height: 50vh;
+    }
+
+    #personalePaaUlla {
+        max-height: 50vh;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .beskrivelseSelskaber {
+        margin-bottom: 2rem;
+    }
+
+    .containerSelskaber {
+        display: unset;
+    }
+
+    .imgSelskaber {
+        border-radius: 20px 20px 0px 0px;
+        height: 30vh;
+    }
+
+    .blaaSektionSelskaber {
+        border-radius: 0px 0px 20px 20px;
+        padding: 1rem 2rem;
+    }
+
+    .selskabImg {
+        object-position: left;
+    }
+
+    .personaleImg {
+        display: none;
+    }
+}
+
+
+
+/*______________________MENU SELSKABER SLUT__________________________*/
+
 .eventCardcontainer {
     display: flex;
     flex-direction: row;
@@ -677,6 +868,7 @@ footer {
     padding-bottom: var(--paddingSectionsDesktop);
     gap: 2rem;
 }
+
 
 
 .eventCard img {
