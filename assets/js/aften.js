@@ -1,4 +1,4 @@
-const baseUrl ="https://ullat.marianoergaard.dk/wp-json/wp/v2/posts"
+const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts"
 
 
 let variationData;
@@ -16,18 +16,23 @@ function getAllvariations() {
             return (variations);
         })
         .catch(err => console.log("Fejl", err));
-    }
+}
 
-    function showAllvariations(containerToFill, variations) { 
-        variations.forEach(variation => {
+function showAllvariations(containerToFill, variations) {
+    variations.forEach(variation => {
         containerToFill.innerHTML += `
-                <p class="aftenMenutitle">${variation.acf.navn_pa_ret} ${variation.acf.detaljer_om_retten}${variation.acf.diaet_praeference}</p>
-                <p class="aftenMenupris">${variation.acf.pris}</p>
+        <div class="middagsContainer">
+            <div class="titelOgPris">
+                <p class="title">${variation.acf.navn_pa_ret}${variation.acf.diaet_praeference ? `<i class="material-symbols-outlined">eco</i></p>` : ``}</p>
+                <p class="pris">${variation.acf.pris},-</p>
             </div>
-        </div>
+            <div class="detaljerOgSupplerende">
+            ${variation.acf.detaljer_om_retten ? `<p>${variation.acf.detaljer_om_retten}</p>` : ``}
+            </div>
         `;
-    });}
-       
+    });
+}
+
 
 getAllvariations()
     .then(variations => showAllvariations(menuCardEL, variations))  
