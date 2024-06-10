@@ -76,7 +76,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     // Indsætter første del af vores array i første kolonne. Til at starte med undersøger vi hvilke data vi har i de forskellige stier. Alt efter om der befinder sig noget eller ej så gemmes det i en variabel. 
     firstHalf.forEach(drink => {
         // Eks. Her undersøger vi om der befinder sig noget i pris_for_lille_storrelse hvis der gør det så skal det gemmes i en variable sammen med ",-/" hvis der ikke er noget. Så gemmer vi intet i vores variabel. 
-       
+
         let prisLille = drink.acf.pris_for_lille_storrelse ? `${drink.acf.pris_for_lille_storrelse},-/` : '';
         let prisMellem = drink.acf.pris_for_mellem_storrelse ? `${drink.acf.pris_for_mellem_storrelse},-/` : '';
         let prisStor = drink.acf.pris_for_stor_storrelse ? `${drink.acf.pris_for_stor_storrelse},-` : '';
@@ -84,7 +84,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
         let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
-        
+
         // Vi ændre vores HTML (DOM-MANIPULATION) med InnerHTML. Her placere vi navnet på drikkevaren og vores variabler. 
         drinksHalf1El.innerHTML += `
         <div class="drinkEnhed">
@@ -95,7 +95,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         <p class="drinkBeskrivelse">${drinkInfo}</p>
         </div>
    `;
-   
+
     });
 
     // Her sker nøjagtig det samme som for den første del af vores array. Nu sker det bare for det andet array. 
@@ -107,7 +107,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         let prisFlaske = drink.acf.pris_pr_flaske ? `${drink.acf.pris_pr_flaske},-` : '';
         let drinkInfo = drink.acf.detaljerbeskrivelse_om_drikkevaren ? `${drink.acf.detaljerbeskrivelse_om_drikkevaren}` : '';
         let alkoholProcent = drink.acf.alkoholprocent ? `${drink.acf.alkoholprocent}%` : '';
-        
+
         drinksHalf2El.innerHTML += `
         <div class="drinkEnhed">
             <div class="titelOgPris">
