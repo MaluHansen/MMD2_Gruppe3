@@ -1437,8 +1437,9 @@ footer {
 
     .billedeRamme {
         max-height: 50vh;
-      
-       .menukortContainer p {
+    }
+
+    .menukortContainer p {
         font-size: 1rem;
     }
 
@@ -1479,8 +1480,6 @@ footer {
         gap: 3rem;
     }
 
-    .groenSektionKontakt,
-    .groenSektionBookbord {
 
     /* main p {
         font-size: var(--tekstStrMobil);
@@ -1793,11 +1792,6 @@ footer {
         padding: 1rem 2rem;
     }
 
-    /* main {
-    padding:0;
-} */
-    /* ^OBS VED MERCHING */
-
     .logo {
         width: 6rem;
     }
@@ -1885,5 +1879,3 @@ footer {
         width: 30%;
     }
 }
-
-;
