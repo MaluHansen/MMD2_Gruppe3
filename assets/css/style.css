@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url("https://use.typekit.net/fdc7bql.css");
 
-:root{
+:root {
     --broedFont: 'roboto';
     --h1Font: 'active', sans-serif;
     --menuKortFont: 'roboto Slab';
@@ -35,7 +35,8 @@
     --paddingSectionsMobile: 3.125rem;
 
 }
-*{
+
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: var(--broedFont);
@@ -46,15 +47,25 @@
         scroll-behavior: smooth;
     }
 }
+
 /*__________________Generel styling_______________*/
-body{
+body,
+html {
     height: 100svh;
+    margin: 0;
+    overflow: hidden;
 }
-main{
+
+main {
     background-color: var(--baggrund);
-    padding: 6rem 8rem;
 }
-main p{
+
+main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
+    padding: 0 8rem;
+    padding-bottom: var(--paddingSectionsDesktop);
+}
+
+main p {
     font-size: var(--tekstStrDesktop);
     max-width: 75ch;
     text-wrap: pretty;
@@ -65,12 +76,11 @@ img,
 video,
 picture,
 svg {
-    height: auto;
     vertical-align: middle;
     font-style: italic;
 }
- 
-.btn{
+
+.btn {
     background-color: var(--moerkPink);
     color: white;
     padding: 0.5rem 1rem;
@@ -79,70 +89,75 @@ svg {
     border-radius: 50px;
     width: 10rem;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 16%);
-    
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #b54b7c;
     transition: 0.2s ease;
 }
-.btn:active{
+
+.btn:active {
     background-color: var(--moerkPink);
 }
 
 /*-----------ikoner-------------*/
-.card{
+.card {
     color: red;
     font-weight: 100;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 200,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 24
 }
+
 /*-------------ikoner slut--------------*/
 
 /*--------------Groen Sektion-----------------*/
-.groenSektion{
+.groenSektion {
     background-color: var(--groen);
-    display: flex;
-    width: 100vw;
-    margin-left: -8rem;
-    margin-bottom: -8rem;
+    padding: 5rem;
 }
-.groenSektionKontakt, .groenSektionBookbord{
+
+.genvejSektion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.groenSektionKontakt,
+.groenSektionBookbord {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 5rem;
+    gap: 0.5rem;
+    max-width: 40%;
 }
-.groenSektionKontakt, .groenSektionBookbord h4{
+
+.groenSektionKontakt,
+.groenSektionBookbord h4 {
     font-size: var(--h4MenuKort);
 }
-.groenSektionKontakt p, .groenSektionBookbord p{
+
+.groenSektionKontakt p,
+.groenSektionBookbord p {
     padding: 0.8rem 0rem;
 }
 
-
-
-.engleUlla{
-    aspect-ratio: 2/3;
-    
-    position: relative;
-    left: -80px;
+.engleUlla {
+    position: absolute;
+    top: -100px;
+    right: 20px;
 }
-#engleUllaImg{
+
+#engleUllaImg {
     width: 200px;
     transform: rotate(25deg);
     margin-top: 1rem;
-    
-    
-    /* position: relative;
-    z-index: 1;
-    left: -40px; */
+
 }
+
 /*--------------Groen Sektion Slut-----------------*/
 
 /*____________________Generel styling slut_____________________*/
@@ -152,30 +167,35 @@ svg {
 
 
 /*______________________NAV________________________*/
-nav{
+nav {
     background-color: var(--pink);
     padding: 35px 50px;
     position: relative;
 }
-.logo{
+
+.logo {
     width: 10rem;
     position: absolute;
     top: 10px;
     left: 10px;
+    z-index: 9;
 }
-nav ul{
+
+nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     border-bottom: #EFA1D0;
     color: var(--tekstFarve);
     position: relative;
 }
-.activeNavA{
+
+.activeNavA {
     text-decoration: underline;
     color: var(--moerkPink);
     text-underline-position: under;
@@ -184,7 +204,7 @@ nav a{
 }
 
 /*---------linje under punkterne i nav------------*/
-nav a::after{
+nav a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -196,13 +216,15 @@ nav a::after{
     transform: scale(0, 1);
     transition: 0.3s ease;
 }
-nav a:hover::after{
+
+nav a:hover::after {
     transform: scale(1, 1);
 }
+
 /*-------------------Slut-------------------*/
 
 /*------------Sub Nav-------------------*/
-.subNavContent{
+.subNavContent {
     float: left;
     overflow: hidden;
     background-color: var(--pink);
@@ -212,10 +234,12 @@ nav a:hover::after{
     padding: 0.5rem 0;
     font-size: 14px;
 }
-.subNav:hover .subNavContent{
+
+.subNav:hover .subNavContent {
     display: flex;
 }
-#subNavActive{
+
+#subNavActive {
     display: flex;
 }
 
@@ -226,46 +250,287 @@ nav a:hover::after{
 
 
 /*_______________________FOOTER_______________________*/
-footer{
+footer {
     background-color: var(--pink);
-    padding: 35px 50px;
+    padding: 35px 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.footerTitle{
+.footerTitle {
     font-weight: 700;
 }
 
-.kontakt p, .aabningstider p{
-  margin-bottom: 1rem;
+.kontakt p,
+.aabningstider p {
+    margin-bottom: 1rem;
 }
-.aabningstiderContainer{
+
+.aabningstiderContainer {
     display: flex;
     gap: 1rem;
 }
-.andetInfo{
+
+.andetInfo {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-#socialeMedier p, #smiley p{
+
+#socialeMedier p,
+#smiley p {
     margin-bottom: 1rem;
 }
-#email, #mobil, #lokation{
+
+#email,
+#mobil,
+#lokation {
     display: flex;
     gap: 1rem;
 }
-#socialeMedier a{
+
+#socialeMedier a {
     color: var(--tekstFarve);
     font-size: 36px;
     margin-right: 1rem;
 }
 
+
+
 /*_______________________FOOTER SLUT_______________________*/
 
 /*______________________FORSIDE__________________________*/
+
+.animationsContainer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transition: transform 1s ease;
+}
+
+.half img {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) translateY(50%) scale(1);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(50%) scale(1.1);
+    }
+}
+
+.top {
+    top: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.bottom {
+    bottom: 0;
+    background-color: var(--pink);
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.split .top {
+    transform: translateY(-150%);
+}
+
+.split .bottom {
+    transform: translateY(150%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+.forsideHero img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+.ForsideOverskrift {
+    text-align: center;
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+    color: var(--moerkPink);
+}
+
+.fade-out {
+    mask-image: linear-gradient(to bottom, rgba(253, 251, 239, 1) 0%, rgba(253, 251, 239, 1) 40%, rgba(253, 251, 239, 0) 100%);
+}
+
+.forsideOverskriftBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centerBtn {
+    text-align: center;
+}
+
+.indledningForside {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
+    margin-top: 5rem;
+}
+
+.introTekstForside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 75ch;
+}
+
+.forordForside h3 {
+    font-size: var(--h3MenuKort)
+}
+
+.forordForside p {
+    font-weight: 600;
+}
+
+.billedeRammeForside {
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+.billedeRammeForside img {
+    max-width: 100%;
+    border-radius: 40px;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.forsideEntryPoints {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 5rem;
+}
+
+.entryPoint {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: var(--baggrund);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: var(--moerkPink);
+}
+
+
+.entryPoint img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p {
+    transition: unset;
+}
+
+.entryPoint p:first-of-type {
+    position: relative;
+    background-color: transparent;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint p:last-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: #f8ecf2;
+    color: var(--tekstFarve);
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.entryPoint:hover img,
+.entryPoint:hover p:first-of-type {
+    opacity: 0;
+}
+
+.entryPoint:hover {
+    background-color: #f8ecf2;
+}
+
+.entryPoint:hover p:last-of-type {
+    opacity: 1;
+}
+
+.UllaTImg {
+    max-height: 130%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    object-fit: contain;
+
+}
+
+.groenSektionTekst {
+    width: 50%;
+    padding: var(--paddingSectionsMobile) 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.groenSektionUlla {
+    background-color: var(--groen);
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+    padding-left: 128px;
+    padding-right: 1rem;
+}
+
+
+
 /*______________________FORSIDE SLUT__________________________*/
 
 /*______________________BOOKBORD___________________________*/
@@ -309,10 +574,129 @@ footer{
 /*______________________MENU SOEDESAGER SLUT__________________________*/
 
 /*______________________MENU VIN__________________________*/
+
 /*______________________MENU VIN SLUT__________________________*/
 
 /*______________________MENU SELSKABER__________________________*/
 /*______________________MENU SELSKABER SLUT__________________________*/
 
 
-/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm
+/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
+
+@media only screen and (max-width: 1400px) {
+    .UllaTImg {
+        max-height: 100%;
+        width: 40%;
+    }
+
+    .forsideEntryPoints {
+        margin-bottom: 0;
+    }
+
+    .groenSektionUlla {
+        height: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .indledningForside {
+        grid-template-columns: 1fr;
+    }
+
+    .billedeRammeForside {
+        grid-row: 1;
+    }
+
+    .forsideEntryPoints {
+        grid-template-columns: 1fr;
+    }
+
+    .entryPoint {
+        position: unset;
+        height: fit-content;
+    }
+
+    .entryPoint img {
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+    }
+
+
+    .entryPoint p:first-of-type {
+        position: unset;
+        opacity: unset;
+        padding-bottom: 0;
+    }
+
+    .entryPoint p:last-of-type {
+        position: unset;
+        opacity: unset;
+        background-color: unset;
+        color: var(--baggrund);
+        padding: 1rem;
+    }
+
+    .entryPoint:hover img,
+    .entryPoint:hover p:first-of-type {
+        opacity: unset;
+    }
+
+    .entryPoint:hover {
+        background-color: var(--moerkPink);
+    }
+
+    .entryPoint:hover p:last-of-type {
+        opacity: unset;
+    }
+
+    .UllaTImg {
+        position: unset;
+        width: 50%;
+    }
+
+    .groenSektionUlla {
+        position: unset;
+        height: unset;
+        padding: var(--paddingSectionsMobile);
+    }
+
+    .groenSektionTekst {
+        width: 100%;
+        padding: 0;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .groenSektionUlla {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .groenSektionTekst {
+        padding: 1rem 2rem;
+    }
+
+    .UllaTImg {
+        width: 100%;
+    }
+
+    .indledningssektion {
+        margin-bottom: var(--paddingSectionsMobile);
+    }
+
+    .forsideEntryPoints {
+        padding-bottom: var(--paddingSectionsMobile);
+    }
+
+    main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
+        padding: 1rem 2rem;
+    }
+
+
+}
+
+;
