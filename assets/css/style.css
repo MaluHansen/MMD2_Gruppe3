@@ -301,6 +301,7 @@ footer{
     display: flex;
      flex-direction: row;
      flex-wrap: wrap;
+     padding-bottom: var(--paddingSectionsDesktop);
 }
 
 
@@ -344,6 +345,20 @@ footer{
     margin-left: 2rem;
 }
 
+.eventsgroenSektion{
+    display: flex;
+    width: auto;
+    background-color: var(--groen);
+}
+
+.eventsgroenSektion h3{
+    font-size: var(--h3MenuKort);
+    padding-bottom: 1rem;
+}
+
+.eventsgroenSektion p{
+    padding-bottom: 1rem;
+}
 /*---------------------EVENTS MEDIA QUERIES---------------------*/
 @media screen and (max-width: 1920px) {
     .eventCard{
