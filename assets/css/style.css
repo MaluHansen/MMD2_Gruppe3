@@ -550,6 +550,226 @@ footer {
 /*______________________MAD UD SLUT__________________________*/
 
 /*______________________MENU__________________________*/
+.breadcrumbs {
+    list-style-type: none;
+    display: flex;
+    font-size: var(--breadCrumbs);
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--tekstFarve);
+}
+
+.breadcrumbs li {
+    padding: 3px;
+}
+
+.descriptionContainer {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "title menuImg"
+        "descriptionTxt menuImg";
+    grid-template-rows: min-content 1fr;
+    margin-right: 15rem;
+}
+
+.titleMenu {
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+    grid-area: title;
+}
+
+.description {
+    grid-area: descriptionTxt;
+}
+
+.menukortImg {
+    grid-area: menuImg;
+    height: 60vh;
+}
+
+.fatOne {
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.menuContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.menuContainer a {
+    text-decoration: none;
+    font-family: var(--h3Menukort);
+    font-size: 1.8rem;
+    color: var(--baggrund);
+    text-align: center;
+}
+
+.menuContainer h3 {
+    font-size: var(--h3MenuKort);
+    padding-bottom: 2rem;
+}
+
+#morgenMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/morgenmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#middagMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/burger.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#aftenMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/aftensmad.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/4376756692402875/?type=3 */
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#soedeSagerMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/dessert.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Instagram.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.instagram.com/p/CDvFVwBjq9B/ */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#cocktailMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/cocktail.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5079860502092487/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#drikkeMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/kakao.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/1622773511134554/?type=3 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#oelMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/ol.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/photo.php?fbid=605207891647018&set=pb.100064734366849.-2207520000&type=3 */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+#vinMenu {
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/tilMenukort/vin1.jpeg");
+    /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/photo.php?fbid=641191611381979&set=pb.100064734366849.-2207520000&type=3 */
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+}
+
+.groenSektionMenuTxt {
+    display: grid;
+    grid-template-areas:
+        "headline img"
+        "content img"
+        "button img";
+    height: 465px;
+    background-color: var(--groen);
+    grid-template-columns: 1fr 1fr;
+}
+
+.groenSektionMenuTxt h2 {
+    font-size: var(--h2Desktop);
+    grid-area: headline;
+    padding-left: 8rem;
+    padding-top: 4rem;
+}
+
+.groenSektionMenuTxt p {
+    grid-area: content;
+    padding-left: 8rem;
+}
+
+#kaffeToGo {
+    max-height: 465px;
+    object-fit: cover;
+}
+
+.imgKaffe {
+    grid-area: img;
+    max-height: 465px;
+}
+
+.btnTakeaway {
+    width: 14rem;
+    height: 3rem;
+    grid-area: button;
+    margin-left: 8rem;
+}
+
 /*______________________MENU SLUT__________________________*/
 
 /*______________________MENU AFTEN__________________________*/
