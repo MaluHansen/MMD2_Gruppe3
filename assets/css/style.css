@@ -552,9 +552,9 @@ footer{
 
 
 @media screen and (max-width: 900px) {
-    main p {
+    /* main p {
         font-size: var(--tekstStrMobil);
-    }
+    } */
 
     i.menuIkon {
         display: inline;
@@ -667,9 +667,9 @@ footer{
 }
 
 @media screen and (max-width: 600px) {
-main {
+/* main {
     padding:0;
-}
+} */
 /* ^OBS VED MERCHING */
 
 .logo{
