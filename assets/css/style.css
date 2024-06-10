@@ -990,6 +990,79 @@ footer {
 /*______________________KONTAKT SLUT__________________________*/
 
 /*______________________MAD UD__________________________*/
+
+.madUdAfHuset{
+    display: flex;
+    gap: 2rem;
+}
+.madUdAfHuset a{
+    text-decoration: none;
+}
+.madUdAfHuset h1{
+    color: var(--moerkPink);
+    font-family: var(--h1Font);
+    font-size: var(--h1Desktop);
+}
+.madUdTekstContent p{
+    margin: 4rem 12rem 4rem 0rem;
+}
+.madUdImg{
+    width: 30rem;
+    height: 25rem;
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: 100% 100%;
+}
+
+@media screen and (max-width: 600px){
+    .madUdAfHuset{
+        flex-direction: column;
+    }
+    .madUdAfHuset h1{
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+    .madUdTekstContent p{
+        margin: 2rem 0rem 2rem 0rem;
+    }
+    .madUdImg{
+        
+        margin-left: -8rem;
+        width: 100vw;
+        height: 25rem;
+        border-radius: 0px;
+        object-fit: cover;
+        object-position: 100% 80%;
+    }
+} 
+
+@media screen and (max-width: 900px){
+
+    .madUdAfHuset{
+        flex-direction: column;
+    }
+    .madUdAfHuset h1{
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+    .madUdTekstContent p{
+        margin: 2rem 0rem 2rem 0rem;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .madUdAfHuset h1{
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+    .madUdTekstContent p{
+        margin: 2rem 0rem 2rem 0rem;
+    }
+}
+
 /*______________________MAD UD SLUT__________________________*/
 
 /*______________________MENU__________________________*/
