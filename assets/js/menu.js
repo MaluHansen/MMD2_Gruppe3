@@ -1,7 +1,4 @@
 // ----- Variabler -----
-
-const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100"
-
 const menucardEls = document.querySelectorAll('.menuContainer');
 const cardTitleEl = document.querySelector('h3');
 
@@ -18,8 +15,7 @@ const backgroundImageMap = {
     "cocktailMenu": "url('/assets/img/tilMenukort/cocktail.jpeg')",
     "drikkeMenu": "url('/assets/img/tilMenukort/kakao.jpeg')",
     "oelMenu": "url('/assets/img/tilMenukort/ol.jpeg')",
-    "vinMenu": "url('/assets/img/tilMenukort/vin1.jpeg')",
-
+    "vinMenu": "url('/assets/img/tilMenukort/vin1.jpeg')"
 }
 
 // ------ Eventlisteners ------

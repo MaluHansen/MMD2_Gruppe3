@@ -1,4 +1,3 @@
-const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100";
 const hvidvinVarianterEl = document.querySelector(".hvidvinVarianter");
 const rodvinVarianterEl = document.querySelector(".rodvinVarianter");
 const alkoholfrieVinVarianterEl = document.querySelector(".alkoholfrieVinVarianter");
