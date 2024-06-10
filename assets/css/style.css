@@ -49,6 +49,7 @@
 }
 
 /*__________________Generel styling_______________*/
+
 body,
 html {
     height: 100svh;
@@ -58,6 +59,7 @@ html {
 main {
     background-color: var(--baggrund);
 }
+
 
 main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
     padding: 0 8rem;
@@ -796,6 +798,7 @@ footer {
     min-width: 50ch;
 }
 
+
 .billedeRamme {
     border-radius: 12px;
     object-fit: cover;
@@ -1434,11 +1437,51 @@ footer {
 
     .billedeRamme {
         max-height: 50vh;
+      
+       .menukortContainer p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer {
+        margin: 0 35px;
+        margin-bottom: var(--paddingSectionsDesktop);
+    }
+
+    .indledningMenu {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--paddingSectionsMobile);
+    }
+
+    .billedeRamme {
+        max-height: 306px;
     }
 
 }
 
 @media only screen and (max-width: 900px) {
+
+    .variantContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .introTekst {
+        min-width: unset;
+    }
+
+    .indledningMenu h1 {
+        font-size: var(--h1Mobile);
+    }
+
+    .genvejSektion {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .groenSektionKontakt,
+    .groenSektionBookbord {
+
     /* main p {
         font-size: var(--tekstStrMobil);
     } */
@@ -1700,6 +1743,30 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+
+
+    nav {
+        display: none
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    .menukortContainer h3 {
+        font-size: 1.2rem;
+    }
+
+
+    .groenSektion {
+        padding: 3rem;
+    }
 
     .groenSektionUlla {
         padding: 0;
