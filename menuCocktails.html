@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ulla Terkelsen I London - Den hyggeligste cafe i Vestbyen. Vi lover en uforglemmelig oplevelse, både morgen, middag og aften!">
+    <meta name="description" content="Ulla Terkelsen London - Serverer flotte og smagsfulde cocktails">
+    <meta name="keywords" content="Ulla Terkelsen London, Café, Menu, Cocktails, Drinks, Aalborg vestby">
     <title>Ulla Terkelsen London - Cocktail Menu</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://use.typekit.net">
+    <!-- KILDE: Adobe Fonts. Adobe. 2024. Accessed: 10/6/2024. URL: https://use.typekit.net -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- KILDE: Cloudeflare. CDNJS. 2024. Accessed: 10/6/2024. URL: https://cdnjs.cloudflare.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./assets/js/Funktions.js" defer></script>
     <script src="./assets/js/cocktails.js" defer></script>
+    <script src="./assets/js/forside.js" defer></script>
     <link rel="icon" href="./assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
 </head>
 <body>
     <header>
         <nav>
-            <img class="logo" src="./assets/img/logoUllaT.svg" alt="Ulla Terkelsen I London Logo">
+            <div class="animationsContainer">
+                <div class="half top"><img src="./assets/img/logoUllaT.svg" alt=""></div>
+                <div class="half bottom"></div>
+            </div>
             <ul>
                 <li><a href="./index.html">Forside</a></li>
                 
@@ -44,14 +53,15 @@
     </header>
     <main>
         <section>
+            <ul class="breadcrumbs">
+                <li><a href="./index.html">Forside > </a></li>
+                <li><a href="./menu.html">Menu > </a></li>
+                <li><a href="./menuCocktails.html">Cocktail menu</a></li>
+            </ul>
+        </section>
+        <section>
             <article class="indledningMenu">
                 <div class="introTekst">
-                    <section>
-                        <ul class="breadcrumbs">
-                            <li><a href="/index.html">Forside > </a></li>
-                            <li><a href="menuCocktails.html">Cocktail menu</a></li>
-                        </ul>
-                    </section>
                     <h1>COCKTAIL MENU</h1>
                     <p>
                         Ingen fest uden cocktails - Vores dygtige personale leverer de flotteste og mest velsmagende cocktails. Uanset om du er en “Cosmopolitan girl” eller en “Gin Hazz guy” så er der noget for enhver smag.
@@ -59,16 +69,16 @@
                 </div>
                 <div class="billedeRamme">
                     <picture class="img-1">
-                        <source media="(min-width:600px)" srcset="./assets/img/Til Menukort/cocktail.jpeg">
+                        <source media="(min-width:600px)" srcset="./assets/img/Til Menukort/gin.jpeg">
                         <img src="./assets/img/små billeder/menu/cocktail lille.jpeg" alt="En hånd der holder en faverig cocktail" loading="lazy">
                     </picture>
                     <picture class="img-2">
                         <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/drinkAppelsin.jpeg">
-                        <img src="./assets/img/små billeder/menu/drinkAppelsin lille.jpeg" alt="En orange drink i solen" loading="lazy">
+                        <img src="./assets/img/små billeder/menu/gin lille.jpeg" alt="En orange drink i solen" loading="lazy">
                     </picture>
                     <picture class="img-3">
-                        <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort/saft.jpeg">
-                        <img src="./assets/img/små billeder/menu/saft lille.jpeg" alt="En mojito i solen" loading="lazy">
+                        <source media="(min-width: 600px)" srcset="./assets/img/Til Menukort">
+                        <img src="./assets/img/små billeder/menu/" alt="En mojito i solen" loading="lazy">
                     </picture>
                 </div>
             </article>
