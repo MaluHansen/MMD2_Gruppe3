@@ -8,7 +8,7 @@ const cardTitleEl = document.querySelector('h3');
 // Venstre side (key) er en reference til et id fra et element i HTML-dokumentet.
 // Højre side (value) er en reference til en URL, der peger på en jpeg-fil.
 const backgroundImageMap = {
-    "morgenMenu": "url('assets/img/tilMenukort/morgenmad.jpeg')",
+    "morgenMenu": "url('./assets/img/tilMenukort/morgenmad.jpeg')",
     "middagMenu": "url('assets/img/tilMenukort/burger.jpeg')",
     "aftenMenu": "url('/assets/img/tilMenukort/aftensmad.jpeg')",
     "soedeSagerMenu": "url('/assets/img/tilMenukort/dessert.jpeg')",

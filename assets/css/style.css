@@ -1807,10 +1807,6 @@ footer {
 
 /* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
 @media screen and (max-width: 1920px) {
-    .menukortImg {
-        display: none;
-    }
-
     .menuContainer a {
         font-size: 1.2rem;
     }
