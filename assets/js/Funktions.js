@@ -79,7 +79,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         <div class="drinkEnhed">
             <div class="titelOgPris">
                 <p class="drinkTitle">${drink.acf.navn_pa_drik} ${alkoholProcent}</p>
-                <p>${prisLille}${prisMellem}${prisStor}${prisGlas}${prisFlaske}</p>
+                <p>${prisGlas}${prisLille}${prisMellem}${prisStor}${prisFlaske}</p>
             </div>
         <p class="drinkBeskrivelse">${drinkInfo}</p>
         </div>
@@ -189,12 +189,14 @@ function showMorgenData(data) {
     // KILDE til ternary operator: Conditional (ternary) operator. Mozilla Corporations. 2024. [online] Accessed 4/6/2024. URL: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator.
     data.forEach(function (morgenData) {
         morgenretterEl.innerHTML += `
-        <div class="titelOgPris">
-        <p class="title">${morgenData.acf.navn_pa_ret} ${morgenData.diaet_praeference.length > 0 ? `<i class="material-symbols-outlined">eco</i>` : ``}</p>
-        <p>${morgenData.acf.pris},- </p>
-        </div>
+        <div class="drinkEnhed2">
+            <div class="titelOgPris">
+            <p class="title2">${morgenData.acf.navn_pa_ret} ${morgenData.diaet_praeference.length > 0 ? `<i class="material-symbols-outlined">eco</i>` : ``}</p>
+            <p>${morgenData.acf.pris},- </p>
+            </div>
         <div class="detaljerOgSupplerende">
         ${morgenData.acf.detaljer_om_retten ? `<p class="beskrivelse">${morgenData.acf.detaljer_om_retten}</p>` : ``}
+        </div>
         </div>
         `;
     })
@@ -216,9 +218,7 @@ function showBrunchData(data) {
 
     data.forEach(function (brunchData) {
         brunchretterEl.innerHTML += `
-        <div class="pris">
-        <p>${brunchData.acf.pris},-</p>
-        </div>
+        <div class="drinkEnhed3">
         <div class="VariationerAfRetten">
             ${brunchData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten}</p>` : ``}
             ${brunchData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten}</p>` : ``}
@@ -228,6 +228,10 @@ function showBrunchData(data) {
             ${brunchData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten}</p>` : ``}
             ${brunchData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten}</p>` : ``}
             ${brunchData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten}</p>` : ``}   
+        </div>
+        <div class="pris">
+        <p>${brunchData.acf.pris},-</p>
+        </div>
         </div>
     `;
     })
@@ -254,7 +258,7 @@ function showMiddagsData(data) {
         <div class="middagsContainer">
             <div class="titelOgPris">
                 <p class="title">${middagsData.acf.navn_pa_ret}</p>
-                <p class="pris">${middagsData.acf.pris}</p>
+                <p class="pris">${middagsData.acf.pris ? `${middagsData.acf.pris} ,-` : ``}</p>
             </div>
             <div class="detaljerOgSupplerende">
             ${middagsData.acf.detaljer_om_retten ? `<p>${middagsData.acf.detaljer_om_retten}</p>` : ``}
