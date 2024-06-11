@@ -61,7 +61,7 @@ main {
 }
 
 
-main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer) {
+main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer, .groenSektionMenuTxt) {
     padding: 0rem 8rem;
     padding-bottom: var(--paddingSectionsMobile);
 }
@@ -93,11 +93,12 @@ svg {
 .btn {
     background-color: var(--moerkPink);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 3rem;
     font-size: 1rem;
     border: none;
     border-radius: 50px;
-    width: 10rem;
+    width: fit-content;
+    height: fit-content;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 16%);
     text-decoration: none;
     text-align: center;
@@ -481,7 +482,7 @@ footer {
 }
 
 .entryPoint p {
-    margin: 0;
+    margin: 0 auto;
     padding: 10px;
     width: 100%;
     text-align: center;
@@ -1177,43 +1178,35 @@ footer {
 }
 
 .groenSektionMenuTxt {
-    display: grid;
-    grid-template-areas:
-        "headline img"
-        "content img"
-        "button img";
-    height: 465px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: var(--groen);
     grid-template-columns: 1fr 1fr;
+    padding: 0rem 2rem;
 }
 
 .groenSektionMenuTxt h2 {
     font-size: var(--h2Desktop);
     grid-area: headline;
-    padding-left: 8rem;
-    padding-top: 4rem;
 }
 
 .groenSektionMenuTxt p {
     grid-area: content;
-    padding-left: 8rem;
 }
 
 #kaffeToGo {
-    max-height: 465px;
+    height: 100%;
     object-fit: cover;
 }
 
 .imgKaffe {
     grid-area: img;
-    max-height: 465px;
+    height: 400px
 }
 
 .btnTakeaway {
-    width: 14rem;
     grid-area: button;
-    margin-left: 8rem;
-    height: 2.5rem;
     text-align: center;
 }
 
@@ -2038,19 +2031,15 @@ footer {
     .groenSektionMenuTxt h2 {
         font-size: var(--h2Mobile);
         margin-bottom: 0.5rem;
-        padding-top: 2rem;
     }
 
     .btnTakeaway {
         font-size: var(--tekstStrMobil);
-        margin-left: 10rem;
-        margin-bottom: 3rem;
     }
 
     .imgKaffe {
         width: 184px;
         height: 215px;
-        margin-left: 10rem;
     }
 
     footer {
@@ -2315,7 +2304,7 @@ footer {
         padding-bottom: var(--paddingSectionsMobile);
     }
 
-    main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla) {
+    main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer, .groenSektionMenuTxt) {
         padding: 1rem 2rem;
     }
 
