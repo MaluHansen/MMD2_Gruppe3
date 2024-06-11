@@ -801,10 +801,6 @@ footer {
 
 @media screen and (max-width: 900px) {
 
-    main p {
-        font-size: var(--tekstStrMobil);
-        line-height: 1rem;
-    }
 
     /* ÔBS SLETTES INDEN MECH */
 
@@ -1538,12 +1534,21 @@ footer {
 .aftenEnhed {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .middagsmenuContainer {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+}
+
+.middagsContainer {
+    padding: 1rem 0;
+}
+
+.middagsContainer p {
+    font-family: var(--menuKortFont);
 }
 
 
@@ -1627,7 +1632,6 @@ footer {
 }
 
 .soedeSagermenuContainer {
-    width: 40rem;
     max-width: 100%;
     background-color: var(--lysGul);
     border-radius: 15px;
@@ -1642,12 +1646,12 @@ footer {
 }
 
 .soedesagerMenutop p {
-    padding-bottom: 1rem;
+    font-family: var(--menuKortFont);
 }
 
 .soedesagerEnhed {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .soedesagerTitle {
