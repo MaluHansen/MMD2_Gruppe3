@@ -61,9 +61,8 @@ main {
 }
 
 
-main>*:not(.groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer) {
-    padding: 0 8rem;
-    padding-bottom: var(--paddingSectionsDesktop);
+main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer) {
+    padding: 4rem 8rem;
 }
 
 main p {
@@ -73,8 +72,14 @@ main p {
     line-height: 1.7rem;
 }
 
-img,
+main h1 {
+    font-family: var(--h1Font);
+    color: var(--moerkPink);
+    font-size: var(--h1Desktop);
+}
 
+
+img,
 picture,
 svg {
     vertical-align: middle;
@@ -178,12 +183,29 @@ nav {
     position: relative;
 }
 
+i.menuIkon {
+    font-size: 25px;
+}
+
+.burgerMenu {
+    display: none;
+}
+
+.topNavigation {
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo {
     width: 10rem;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: -10px;
+    left: -30px;
     z-index: 9;
+}
+
+.LogoUlla {
+    position: absolute;
 }
 
 nav ul {
@@ -375,9 +397,6 @@ footer {
 
 .ForsideOverskrift {
     text-align: center;
-    font-family: var(--h1Font);
-    font-size: var(--h1Desktop);
-    color: var(--moerkPink);
 }
 
 .fade-out {
@@ -548,12 +567,6 @@ footer {
     text-decoration: none;
 }
 
-.bookBordTekstContent h1 {
-    color: var(--moerkPink);
-    font-family: var(--h1Font);
-    font-size: var(--h1Desktop);
-}
-
 .bookBordTekstContent p {
     margin: 2rem 4rem 2rem 0rem;
 
@@ -609,10 +622,6 @@ footer {
         flex-direction: column;
     }
 
-    .bookBordTekstContent h1 {
-        font-size: var(--h1Mobile);
-    }
-
     .bookBordTekstContent p {
         margin: 1rem 0rem;
 
@@ -642,10 +651,6 @@ footer {
     .videoContainer {
         display: none;
     }
-
-    .bookBordTekstContent h1 {
-        font-size: var(--h1Mobile);
-    }
 }
 
 @media screen and (max-width: 1400px) {
@@ -664,11 +669,6 @@ footer {
 
 
 /*______________________EVENTS___________________________*/
-.eventHeading {
-    font-size: var(--h1Desktop);
-    font-style: var(--h1Font);
-    color: #933E65
-}
 
 .eventVideoSection {
     display: flex;
@@ -689,12 +689,6 @@ footer {
 
 .beskrivelseSelskaber {
     margin-bottom: 4rem;
-}
-
-.beskrivelseSelskaber h1 {
-    font-size: var(--h1Desktop);
-    color: var(--moerkPink);
-    font-family: var(--h1Font);
 }
 
 .beskrivelseSelskaber h2,
@@ -809,9 +803,6 @@ footer {
 
 
 @media screen and (max-width: 900px) {
-    .beskrivelseSelskaber h1 {
-        font-size: var(--h1Mobile);
-    }
 
     main p {
         font-size: var(--tekstStrMobil);
@@ -959,12 +950,6 @@ footer {
 
 /*______________________KONTAKT__________________________*/
 
-.kontaktMain h1 {
-    color: var(--moerkPink);
-    font-family: var(--h1Font);
-    font-size: var(--h1Desktop);
-}
-
 .kontaktMain h4 {
     font-size: 1.3rem;
     font-weight: 700;
@@ -1006,12 +991,6 @@ footer {
     text-decoration: none;
 }
 
-.madUdAfHuset h1 {
-    color: var(--moerkPink);
-    font-family: var(--h1Font);
-    font-size: var(--h1Desktop);
-}
-
 .madUdTekstContent p {
     margin: 4rem 12rem 4rem 0rem;
 }
@@ -1032,8 +1011,8 @@ footer {
     list-style-type: none;
     display: flex;
     font-size: var(--breadCrumbs);
-    margin-bottom: 2rem;
-    padding: 0;
+    padding: 0rem 8rem;
+    padding-top: 7rem;
 }
 
 .breadcrumbs a {
@@ -1056,9 +1035,6 @@ footer {
 }
 
 .titleMenu {
-    color: var(--moerkPink);
-    font-family: var(--h1Font);
-    font-size: var(--h1Desktop);
     grid-area: title;
 }
 
@@ -1243,9 +1219,10 @@ footer {
 
 .btnTakeaway {
     width: 14rem;
-    height: 3rem;
     grid-area: button;
     margin-left: 8rem;
+    height: 2.5rem;
+    text-align: center;
 }
 
 /*______________________MENU SLUT__________________________*/
@@ -1256,20 +1233,11 @@ footer {
 
 /*______________________MENU COCKTAILS__________________________*/
 
-.breadcrumbs {
-    padding-top: 6rem;
-}
 
 .indledningMenu {
     display: flex;
     gap: 138px;
     justify-content: space-between;
-}
-
-.indledningMenu h1 {
-    font-family: var(--h1Font);
-    font-size: var(--h1Desktop);
-    color: var(--moerkPink);
 }
 
 .introTekst {
@@ -1791,11 +1759,6 @@ footer {
     display: flex;
 }
 
-.eventHeading {
-    font-size: var(--h1Desktop);
-    font-style: var(--h1Font);
-    color: #933E65
-}
 
 .topsoedeSagertekst p {
     margin-bottom: 1rem;
@@ -1971,16 +1934,21 @@ footer {
         min-width: 340px;
     }
 
-    .madUdAfHuset h1 {
-        color: var(--moerkPink);
-        font-family: var(--h1Font);
-        font-size: var(--h1Mobile);
-    }
 
     .madUdTekstContent p {
         margin: 2rem 0rem 2rem 0rem;
     }
 
+}
+
+@media only screen and (max-width: 1000px) {
+    .burgerMenu {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -1994,9 +1962,6 @@ footer {
         min-width: unset;
     }
 
-    .indledningMenu h1 {
-        font-size: var(--h1Mobile);
-    }
 
     .genvejSektion {
         flex-direction: column;
@@ -2007,8 +1972,9 @@ footer {
         font-size: var(--tekstStrMobil);
     } */
 
-    i.menuIkon {
-        display: inline;
+
+    .burgerMenu {
+        display: block;
     }
 
     nav ul {
@@ -2021,9 +1987,6 @@ footer {
         gap: 0;
     }
 
-    .descriptionContainer h1 {
-        font-size: var(--h1Mobile);
-    }
 
     .fatOne {
         margin-bottom: 0.5rem;
@@ -2188,9 +2151,6 @@ footer {
         padding-right: 2rem;
     }
 
-    h1 {
-        font-size: var(--h1Mobile);
-    }
 
     .indledningmenu h2 {
         font-size: var(--h2Mobile);
@@ -2300,19 +2260,11 @@ footer {
         flex-direction: column;
     }
 
-    .kontaktMain h1 {
-        font-size: var(--h1Mobile);
-    }
 
     .madUdAfHuset {
         flex-direction: column;
     }
 
-    .madUdAfHuset h1 {
-        color: var(--moerkPink);
-        font-family: var(--h1Font);
-        font-size: var(--h1Mobile);
-    }
 
     .madUdTekstContent p {
         margin: 2rem 0rem 2rem 0rem;
@@ -2323,8 +2275,12 @@ footer {
 @media only screen and (max-width: 600px) {
 
 
-    nav {
-        display: none
+    .logo {
+        width: 10rem;
+        position: absolute;
+        top: -10px;
+        left: -30px;
+        z-index: 9;
     }
 
     footer {
@@ -2367,7 +2323,7 @@ footer {
         padding-bottom: var(--paddingSectionsMobile);
     }
 
-    main>*:not(.groenSektion, .forsideHero, .groenSektionUlla) {
+    main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla) {
         padding: 1rem 2rem;
     }
 
@@ -2385,14 +2341,10 @@ footer {
 
     .breadcrumbs {
         font-size: var(--tekstStrMobil);
-        margin-top: 2.5rem;
-        margin-left: 1rem;
+        padding: 0rem 2rem;
+        padding-top: 2rem;
     }
 
-    .titleMenu {
-        font-size: var(--h1Mobile);
-        margin-left: 1rem;
-    }
 
     .descriptionContainer p {
         margin-left: 1rem;
@@ -2436,6 +2388,10 @@ footer {
         font-size: var(--tekstStrMobil);
     }
 
+    main h1 {
+        font-size: var(--h1Mobile);
+    }
+
     /* obs ved merch ^ */
 
     .billedeRamme {
@@ -2472,12 +2428,6 @@ footer {
         display: none;
     }
 
-    .eventHeading {
-        font-size: var(--h1Mobile);
-        font-style: var(--h1Font);
-        color: #933E65
-    }
-
 
     .eventCard {
         background-color: var(--lysBlaa);
@@ -2501,19 +2451,10 @@ footer {
         flex-direction: column;
     }
 
-    .kontaktMain h1 {
-        font-size: var(--h1Mobile);
-    }
-
     .madUdAfHuset {
         flex-direction: column;
     }
 
-    .madUdAfHuset h1 {
-        color: var(--moerkPink);
-        font-family: var(--h1Font);
-        font-size: var(--h1Mobile);
-    }
 
     .madUdTekstContent p {
         margin: 2rem 0rem 2rem 0rem;
@@ -2528,5 +2469,6 @@ footer {
         object-fit: cover;
         object-position: 100% 80%;
     }
+
 
 }
