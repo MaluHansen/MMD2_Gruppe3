@@ -394,3 +394,13 @@ function showAllevents(containerToFill, events) {
     `
     });
 }
+
+
+const navMobil = document.querySelector('.navMobil');
+//tilføjer en eventlistner til burgermenu ikonet der lytter efter et click
+burgerMenu.addEventListener('click', () => {
+    navMobil.classList.toggle('showNav');
+    navMobil.classList.toggle('navMobil'); 
+    //Når der trykkes på ikonet får mobileNav classen show og bliver ved hjælp af css nu vist
+    
+});
