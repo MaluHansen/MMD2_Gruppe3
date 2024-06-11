@@ -185,6 +185,20 @@ svg {
 #burgerMenu{
     display: none;
 }
+
+
+/*____________________Generel styling slut_____________________*/
+
+
+
+
+
+/*______________________NAV________________________*/
+nav {
+    background-color: var(--pink);
+    padding: 2rem 3rem;
+    position: relative;
+}
 @media screen and (max-width: 1000px) {
     #burgerMenu{
         display: block;
@@ -206,22 +220,10 @@ svg {
         left: 1rem;
         gap: 0.1rem;
     }
-    
+    nav{
+        padding: 1rem 2rem;
+    }
 }
-
-/*____________________Generel styling slut_____________________*/
-
-
-
-
-
-/*______________________NAV________________________*/
-nav {
-    background-color: var(--pink);
-    padding: 35px 50px;
-    position: relative;
-}
-
 i.menuIkon {
     font-size: 25px;
 }
@@ -2297,7 +2299,7 @@ footer {
     .logo {
         width: 10rem;
         position: absolute;
-        top: -10px;
+        top: -15px;
         left: -30px;
         z-index: 9;
     }
