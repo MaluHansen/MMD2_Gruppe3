@@ -950,7 +950,7 @@ footer {
 
 /*______________________GAVEKORT__________________________*/
 
-.gavekortMainImg{
+.gavekortMainImg {
     width: 100%;
 }
 
@@ -996,22 +996,26 @@ footer {
 
 /*______________________MAD UD__________________________*/
 
-.madUdAfHuset{
+.madUdAfHuset {
     display: flex;
     gap: 2rem;
 }
-.madUdAfHuset a{
+
+.madUdAfHuset a {
     text-decoration: none;
 }
-.madUdAfHuset h1{
+
+.madUdAfHuset h1 {
     color: var(--moerkPink);
     font-family: var(--h1Font);
     font-size: var(--h1Desktop);
 }
-.madUdTekstContent p{
+
+.madUdTekstContent p {
     margin: 4rem 12rem 4rem 0rem;
 }
-.madUdImg{
+
+.madUdImg {
     width: 30rem;
     height: 25rem;
     border-radius: 25px;
@@ -1019,54 +1023,6 @@ footer {
     object-position: 100% 100%;
 }
 
-@media screen and (max-width: 600px){
-    .madUdAfHuset{
-        flex-direction: column;
-    }
-    .madUdAfHuset h1{
-        color: var(--moerkPink);
-        font-family: var(--h1Font);
-        font-size: var(--h1Mobile);
-    }
-    .madUdTekstContent p{
-        margin: 2rem 0rem 2rem 0rem;
-    }
-    .madUdImg{
-        
-        margin-left: -8rem;
-        width: 100vw;
-        height: 25rem;
-        border-radius: 0px;
-        object-fit: cover;
-        object-position: 100% 80%;
-    }
-} 
-
-@media screen and (max-width: 900px){
-
-    .madUdAfHuset{
-        flex-direction: column;
-    }
-    .madUdAfHuset h1{
-        color: var(--moerkPink);
-        font-family: var(--h1Font);
-        font-size: var(--h1Mobile);
-    }
-    .madUdTekstContent p{
-        margin: 2rem 0rem 2rem 0rem;
-    }
-}
-
-@media screen and (max-width: 1400px){
-    .madUdAfHuset h1{
-        color: var(--moerkPink);
-        font-family: var(--h1Font);
-        font-size: var(--h1Mobile);
-    }
-    .madUdTekstContent p{
-        margin: 2rem 0rem 2rem 0rem;
-    }
-}
 
 /*______________________MAD UD SLUT__________________________*/
 
@@ -2014,6 +1970,16 @@ footer {
         min-width: 340px;
     }
 
+    .madUdAfHuset h1 {
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+
+    .madUdTekstContent p {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
 }
 
 @media only screen and (max-width: 900px) {
@@ -2337,6 +2303,20 @@ footer {
         font-size: var(--h1Mobile);
     }
 
+    .madUdAfHuset {
+        flex-direction: column;
+    }
+
+    .madUdAfHuset h1 {
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+
+    .madUdTekstContent p {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -2523,4 +2503,29 @@ footer {
     .kontaktMain h1 {
         font-size: var(--h1Mobile);
     }
+
+    .madUdAfHuset {
+        flex-direction: column;
+    }
+
+    .madUdAfHuset h1 {
+        color: var(--moerkPink);
+        font-family: var(--h1Font);
+        font-size: var(--h1Mobile);
+    }
+
+    .madUdTekstContent p {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
+    .madUdImg {
+
+        margin-left: -8rem;
+        width: 100vw;
+        height: 25rem;
+        border-radius: 0px;
+        object-fit: cover;
+        object-position: 100% 80%;
+    }
+
 }
