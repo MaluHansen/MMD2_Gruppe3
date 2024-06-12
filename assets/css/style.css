@@ -674,20 +674,8 @@ footer {
 /*______________________BOOKBORD SLUT___________________________*/
 
 
-/*______________________EVENTS___________________________*/
 
-.eventVideoSection {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: var(--paddingSectionsDesktop)
-}
 
-.eventVideoSection video {
-    max-width: 100%;
-    max-height: auto;
-}
 
 
 
@@ -861,6 +849,24 @@ footer {
 
 /*______________________MENU SELSKABER SLUT__________________________*/
 
+
+.eventVideoSection {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: var(--paddingSectionsDesktop)
+}
+
+.eventVideoSection video {
+
+   width: 40%;
+   height: 30%;
+   object-fit: fill;
+  
+}
+
+
 .eventCardcontainer {
     display: flex;
     flex-direction: row;
@@ -868,7 +874,6 @@ footer {
     padding-bottom: var(--paddingSectionsDesktop);
     gap: 2rem;
 }
-
 
 
 .eventCard img {
