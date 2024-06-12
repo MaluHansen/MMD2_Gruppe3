@@ -1,5 +1,9 @@
 const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100"
 const spinnerEl = document.querySelector(".spinner");
+const navMobil = document.querySelector('.navMobil');
+const logoUllaEl = document.querySelector('#logoUlla');
+const burgerMenu = document.querySelector('#burgerMenu');
+const body = document.body;
 
 // Vi opretter en funktion som kan hente drikkevarer ud fra et specifik ID som sættes som et parameter. 
 function getDrinksByID(Id) {
@@ -119,7 +123,6 @@ function fetchAndRenderDrinks(containerToFill, id) {
     });
 }
 
-
 //function som henter data fra API. 
 function getAllvariations(id) {
     spinnerEl.classList.add("show");
@@ -173,9 +176,7 @@ function fetchMorgendata() {
             spinnerEl.classList.remove("show");
         })
         .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
-    console.log(baseUrl + `&type-af-maltid=` + 23)
 }
-
 
 // Funktion til at vise data i HTML'en
 function showMorgenData(data) {
@@ -265,7 +266,6 @@ function showMiddagsData(data) {
 
         // Hent variationerne fra middagsdata
         const variations = middagsData.acf.variationer_af_retten;
-        console.log('variations:', variations)
 
         // Løkke fra 1 til 8 for at gennemgå alle mulige variationer
         for (let i = 1; i <= 8; i++) {
@@ -411,12 +411,7 @@ function showAllevents(containerToFill, events) {
     });
 }
 
-
-const navMobil = document.querySelector('.navMobil');
-const logoUllaEl = document.querySelector('#logoUlla');
-const burgerMenu = document.querySelector('#burgerMenu');
-const body = document.body;
-
+// Burgermenu:
 // tilføjer en event listener til burgerMenu-ikonet, der lytter efter et klik
 burgerMenu.addEventListener('click', () => {
     logoUllaEl.classList.toggle('hidden');
@@ -426,27 +421,3 @@ burgerMenu.addEventListener('click', () => {
     // Tilføj eller fjern overFlowHidden-klassen fra body som gør at man ikke kan scrolle
     body.classList.toggle('overFlowHidden');
 });
-
-
-// --- Til top knap --- 
-// først erklærer vi en variabel ud fra vores HTML dokument som har klassen ".topBtn".
-// Herefter tilføjer vi en eventlistener, som lytter efter scroll.
-// Vi laver et if/else statement, som siger at hvis scrollY er større end 500, så skal knappen vises.
-// Vi tilføjer også en eventlistener, som lytter efter et klik på knappen.
-// Når der klikkes på knappen, skal der scrolles til toppen af siden.
-let toTopBtn = document.querySelector(".topBtn");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-        toTopBtn.classList.add("active");
-    } else {
-        toTopBtn.classList.remove("active");
-    }
-
-    toTopBtn.addEventListener("click", () => {
-        document.body.scrollTop = 0; // Safari
-        document.documentElement.scrollTop = 0; // til Chrome, Firefix, IE og Opera
-    });
-});
-// Til top-funktion er udarbejdet med inspiration fra følgende kilde: 
-// How TO - Scroll Back To Top Button. W3School. 2024. [online] Accessed 9/6/2024. URL: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp

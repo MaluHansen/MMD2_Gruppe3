@@ -69,21 +69,26 @@ main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla, .groenS
 
 
 
-main p {
+body p {
     font-size: var(--tekstStrDesktop);
     max-width: 75ch;
     text-wrap: pretty;
     line-height: 1.7rem;
 }
 
-main h1 {
+body h1 {
     font-family: var(--h1Font);
     color: var(--moerkPink);
     font-size: var(--h1Desktop);
 }
 
-main h2 {
+body h2 {
     font-family: var(--broedFont);
+}
+
+body h3 {
+    font-weight: var(--h3MenukortWeight);
+    font-size: var(--h3MenuKort);
 }
 
 
@@ -213,9 +218,6 @@ svg {
 /*____________________Generel styling slut_____________________*/
 
 
-
-
-
 /*______________________NAV________________________*/
 nav {
     background-color: var(--pink);
@@ -314,8 +316,6 @@ nav a:hover::after {
 /*______________________NAV SLUT________________________*/
 
 
-
-
 /*_______________________FOOTER_______________________*/
 footer {
     background-color: var(--pink);
@@ -362,8 +362,6 @@ footer {
     margin-right: 1rem;
 }
 
-
-
 /*_______________________FOOTER SLUT_______________________*/
 
 /*______________________FORSIDE__________________________*/
@@ -389,10 +387,10 @@ footer {
     height: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(50%);
-    animation: pulse 1s infinite alternate;
+    animation: pulseTranslate 1s infinite alternate;
 }
 
-@keyframes pulse {
+@keyframes pulseTranslate {
     0% {
         transform: translateX(-50%) translateY(50%) scale(1);
     }
@@ -466,10 +464,6 @@ footer {
     max-width: 75ch;
 }
 
-.forordForside h3 {
-    font-size: var(--h3MenuKort)
-}
-
 .forordForside p {
     font-weight: 600;
 }
@@ -504,7 +498,6 @@ footer {
     border-radius: 10px;
     background-color: var(--moerkPink);
 }
-
 
 .entryPoint img {
     width: 100%;
@@ -592,8 +585,6 @@ footer {
     padding-right: 1rem;
 }
 
-
-
 /*______________________FORSIDE SLUT__________________________*/
 
 /*______________________BOOKBORD___________________________*/
@@ -608,7 +599,6 @@ footer {
 
 .bookBordTekstContent p {
     margin: 2rem 4rem 2rem 0rem;
-
 }
 
 .bookbordVideo {
@@ -690,12 +680,7 @@ footer {
     .videoContainer {
         display: none;
     }
-}
 
-@media screen and (max-width: 1400px) {
-    .videoContainer {
-        display: none;
-    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -707,11 +692,6 @@ footer {
 /*______________________BOOKBORD SLUT___________________________*/
 
 
-
-
-
-
-
 /*______________________MENU SELSKABER__________________________*/
 
 .beskrivelseSelskaber h2,
@@ -721,19 +701,20 @@ footer {
 }
 
 .contentSelskaber {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 60vw;
+    width: 100%;
 }
 
 .containerSelskaber {
     display: flex;
-    max-height: 75vh;
+    justify-content: center;
+    width: 100%;
 }
 
 .containerSelskaber picture {
-    width: 40%;
+    width: 70%;
 }
 
 .imgSelskaber {
@@ -764,11 +745,15 @@ footer {
 }
 
 .blaaSektionSelskaber {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
     padding: 2rem 4rem;
     border-radius: 0px 20px 20px 0px;
     background-color: var(--lysBlaa);
+    height: 100%;
 }
-
 
 .blaaSektionSelskaber a {
     color: var(--tekstFarve);
@@ -808,78 +793,6 @@ footer {
     height: 3rem;
     margin-top: 1rem;
 }
-
-
-@media screen and (max-width: 1400px) {
-    .contentSelskaber {
-        max-width: 90vw;
-    }
-
-    .groenSelskaberContainer h2 {
-        font-size: var(--h3MenuKort);
-    }
-}
-
-
-@media screen and (max-width: 900px) {
-
-
-    /* ÔBS SLETTES INDEN MECH */
-
-    .beskrivelseSelskaber h2,
-    .blaaSektionSelskaber h2,
-    .groenSelskaberContainer h2 {
-        font-size: var(--h2Mobile);
-        margin-bottom: 0.5rem;
-    }
-
-    .blaaSektionSelskaber a {
-        font-size: var(--tekstStrMobil);
-    }
-
-    .groenTxtContainer {
-        padding: 1rem 4rem;
-    }
-
-    .groenSelskaberContainer {
-        max-height: 50vh;
-    }
-
-    #personalePaaUlla {
-        max-height: 50vh;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-    .beskrivelseSelskaber {
-        margin-bottom: 2rem;
-    }
-
-    .containerSelskaber {
-        display: unset;
-    }
-
-    .imgSelskaber {
-        border-radius: 20px 20px 0px 0px;
-        height: 30vh;
-    }
-
-    .blaaSektionSelskaber {
-        border-radius: 0px 0px 20px 20px;
-        padding: 1rem 2rem;
-    }
-
-    .selskabImg {
-        object-position: left;
-    }
-
-    .personaleImg {
-        display: none;
-    }
-}
-
-
 
 /*______________________MENU SELSKABER SLUT__________________________*/
 /*______________________EVENTS START___________________________*/
@@ -933,7 +846,6 @@ footer {
     justify-content: space-evenly;
 }
 
-
 .eventCardinfo {
     display: flex;
     font-size: 20px;
@@ -944,22 +856,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-
-.eventsgroenSektion {
-    display: flex;
-    width: auto;
-    background-color: var(--groen);
-}
-
-.eventsgroenSektion h3 {
-    font-size: var(--h3MenuKort);
-    padding-bottom: 1rem;
-}
-
-.eventsgroenSektion p {
-    padding-bottom: 1rem;
 }
 
 /*______________________EVENTS SLUT___________________________*/
@@ -979,7 +875,6 @@ footer {
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
-
 
 .kontaktContent {
     display: grid;
@@ -1212,7 +1107,7 @@ footer {
     gap: 0;
     grid-template-columns: 1fr 1fr;
     background-color: var(--groen);
-    padding: 0rem 2rem;
+    padding: 0rem 8rem;
 }
 
 .groenSektionMenuTxt h2 {
@@ -1231,7 +1126,9 @@ footer {
 
 .imgKaffe {
     grid-area: img;
-    height: 400px
+    height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .btnMenu {
@@ -1242,13 +1139,7 @@ footer {
 
 /*______________________MENU SLUT__________________________*/
 
-
-/*______________________MENU AFTEN__________________________*/
-
-/*______________________MENU AFTEN SLUT__________________________*/
-
 /*______________________MENU COCKTAILS__________________________*/
-
 
 .indledningmenu {
     display: flex;
@@ -1376,7 +1267,6 @@ footer {
     max-width: 80%;
 }
 
-
 .spinnerContainer {
     position: relative;
     display: flex;
@@ -1386,30 +1276,8 @@ footer {
     padding-top: 2rem;
 }
 
-.burger,
-.wineGlass {
-    display: none;
-    font-size: 2rem;
-    /* Gør ikonet øverst */
-}
-
-
-.burger {
-    position: absolute;
-    z-index: 3;
-    animation: iconAnimation0 1.5s infinite;
-}
-
-.wineGlass {
-    position: absolute;
-    z-index: 2;
-    animation: iconAnimation1 1.5s infinite;
-}
-
-
 .spinner {
     display: none;
-    /* Skjult som standard */
     width: 100px;
     height: 100px;
     border: 5px solid var(--pink);
@@ -1434,79 +1302,16 @@ footer {
     }
 }
 
-@keyframes iconAnimation0 {
-    0% {
-        display: none;
-    }
-
-    20% {
-        display: flex;
-    }
-
-    40% {
-        display: none;
-    }
-
-    60% {
-        display: none;
-    }
-
-    80% {
-        display: none;
-    }
-
-    100% {
-        display: none;
-    }
-}
-
-@keyframes iconAnimation1 {
-    0% {
-        display: none;
-    }
-
-    20% {
-        display: none;
-    }
-
-    40% {
-        display: none;
-    }
-
-    60% {
-        display: none;
-    }
-
-    80% {
-        display: flex;
-    }
-
-    100% {
-        display: none;
-    }
-}
-
 .show {
     display: flex;
-    /* Vises, når klassen "show" tilføjes */
 }
 
 /*______________________MENU COCKTAILS SLUT__________________________*/
 
-/*______________________MENU DRIKKE__________________________*/
-/*______________________MENU DRIKKE SLUT__________________________*/
 
 /*______________________MENU MIDDAG__________________________*/
-
-
 .topBtn {
     display: none;
-}
-
-.menukortContainer h3 {
-    font-weight: var(--h3MenukortWeight);
-    font-size: var(--h3MenuKort);
-    font-family: var(--menuKortFont);
 }
 
 .morgenmenuContainer {
@@ -1535,13 +1340,6 @@ footer {
     font-family: var(--menuKortFont);
     font-size: var(--tekstStrDesktop);
     font-weight: 600;
-}
-
-.tyndStreg {
-    border: none;
-    height: 1px;
-    background-color: black;
-    margin: 10px 0;
 }
 
 .detaljerOgSupplerende {
@@ -1576,9 +1374,6 @@ footer {
     font-family: var(--menuKortFont);
 }
 
-
-
-
 /*______________________MENU MIDDAG SLUT__________________________*/
 
 /*______________________MENU MORGEN__________________________*/
@@ -1604,13 +1399,6 @@ footer {
     max-width: 100%;
     display: flex;
     justify-content: space-between;
-}
-
-.tyndStreg {
-    border: none;
-    height: 1px;
-    background-color: black;
-    margin: 10px 0;
 }
 
 .detaljerOgSupplerende {
@@ -1657,8 +1445,6 @@ footer {
 }
 
 .overskrift h3 {
-    font-weight: var(--h3MenukortWeight);
-    font-size: var(--h3MenuKort);
     font-family: var(--menuKortFont);
 }
 
@@ -1689,17 +1475,6 @@ footer {
 
 /*______________________MENU SOEDESAGER SLUT__________________________*/
 
-/*______________________MENU VIN__________________________*/
-
-/*______________________MENU VIN SLUT__________________________*/
-
-/*______________________MENU SELSKABER__________________________*/
-/*______________________MENU SELSKABER SLUT__________________________*/
-
-
-/* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
-
-
 @media screen and (max-width: 1920px) {
     .menuContainer a {
         font-size: 1.2rem;
@@ -1711,6 +1486,18 @@ footer {
 
     #kaffeToGo {
         padding-right: 0.5rem;
+    }
+
+    .contentSelskaber {
+        grid-template-columns: 1fr;
+    }
+
+    .containerSelskaber {
+        height: 40vh;
+    }
+
+    .containerSelskaber picture {
+        width: 40%;
     }
 
 }
@@ -1750,10 +1537,6 @@ footer {
         gap: 1rem;
     }
 
-    /* .menukortContainer p {
-        font-size: 1rem;
-    } */
-
     .menukortContainer {
         margin: 0 35px;
         margin-bottom: var(--paddingSectionsDesktop);
@@ -1763,12 +1546,16 @@ footer {
         max-height: 306px;
     }
 
-    .eventVideoSection video {
-        width: 600px;
-    }
-
     .madUdTekstContent p {
         margin: 2rem 0rem 2rem 0rem;
+    }
+
+    .groenSelskaberContainer h2 {
+        font-size: var(--h3MenuKort);
+    }
+
+    .groenSektionMenuTxt {
+        padding: 0rem 2rem;
     }
 
 }
@@ -1801,7 +1588,6 @@ footer {
         gap: 0.1rem;
         padding: 0rem;
     }
-
 
     nav {
         padding: 1rem 2rem;
@@ -1836,9 +1622,27 @@ footer {
         gap: 0;
     }
 
-
     .fatOne {
         margin-bottom: 0.5rem;
+    }
+
+    .contentSelskaber {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerSelskaber {
+        flex-direction: column;
+        height: unset;
+    }
+
+    .containerSelskaber picture {
+        width: 100%;
+        height: 250px;
+    }
+
+    .imgSelskaber {
+        border-radius: 20px 20px 0px 00px;
     }
 
     .menuContainer {
@@ -2014,8 +1818,6 @@ footer {
         font-size: var(--h3MenuKort);
     }
 
-    /* obs ved merch på disse tre ^^^ */
-
     .topBtn {
         display: block;
         padding: 1rem;
@@ -2089,17 +1891,6 @@ footer {
         margin-bottom: 0.3rem;
     }
 
-    .eventVideoSection video {
-        width: 100%;
-    }
-
-    .eventVideoSection {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: var(--paddingSectionsDesktop);
-        padding-top: 0;
-    }
-
     .eventCardSection {
         justify-content: center;
     }
@@ -2123,6 +1914,33 @@ footer {
         margin: 2rem 0rem 2rem 0rem;
     }
 
+    .beskrivelseSelskaber h2,
+    .blaaSektionSelskaber h2,
+    .groenSelskaberContainer h2 {
+        font-size: var(--h2Mobile);
+        margin-bottom: 0.5rem;
+    }
+
+    .blaaSektionSelskaber a {
+        font-size: var(--tekstStrMobil);
+    }
+
+    .groenTxtContainer {
+        padding: 1rem 4rem;
+    }
+
+    .groenSelskaberContainer {
+        max-height: 50vh;
+    }
+
+    #personalePaaUlla {
+        max-height: 50vh;
+    }
+
+    .madUdImg {
+        width: 100%;
+        object-position: center;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -2280,11 +2098,8 @@ footer {
     }
 
     .madUdImg {
-
-        margin-left: -8rem;
-        width: 100vw;
+        width: 100%;
         height: 25rem;
-        border-radius: 0px;
         object-fit: cover;
         object-position: 100% 80%;
     }
@@ -2308,5 +2123,26 @@ footer {
 
     .engleUlla {
         top: -50px;
+    }
+
+    .beskrivelseSelskaber {
+        margin-bottom: 2rem;
+    }
+
+    .imgSelskaber {
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .blaaSektionSelskaber {
+        border-radius: 0px 0px 20px 20px;
+        padding: 1rem 2rem;
+    }
+
+    .selskabImg {
+        object-position: left;
+    }
+
+    .personaleImg {
+        display: none;
     }
 }
