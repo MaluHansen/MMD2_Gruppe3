@@ -34,6 +34,9 @@
     --paddingSectionsDesktop: 6.25rem;
     --paddingSectionsMobile: 3.125rem;
 
+    --lineHeightMobile: 18px;
+
+
 }
 
 * {
@@ -106,6 +109,16 @@ svg {
 
 .btn:active {
     background-color: var(--moerkPink);
+}
+
+@media screen and (max-width: 600px) {
+    main p {
+        font-size: var(--tekstStrDesktop);
+        max-width: 75ch;
+        text-wrap: pretty;
+        line-height: var(--lineHeightMobile);
+    }
+    
 }
 
 /*-----------ikoner-------------*/
