@@ -82,6 +82,10 @@ main h1 {
     font-size: var(--h1Desktop);
 }
 
+main h2 {
+    font-family: var(--broedFont);
+}
+
 
 img,
 picture,
@@ -183,7 +187,7 @@ svg {
 
 /*--------------Groen Sektion Slut-----------------*/
 
-.showNav{
+.showNav {
     display: block;
     position: absolute;
     background-color: var(--pink);
@@ -192,11 +196,13 @@ svg {
     right: 0px;
     z-index: 1;
 }
-.showNav li{
+
+.showNav li {
     margin-top: 0.5rem;
     font-size: 0.75rem;
 }
-#burgerMenu{
+
+#burgerMenu {
     display: none;
 }
 
@@ -1327,6 +1333,10 @@ footer {
     object-position: center;
 }
 
+.billedeRamme .bottomPicture img {
+    object-position: bottom;
+}
+
 .menukortContainer {
     background-color: var(--lysGul);
     padding: 2% 7%;
@@ -1386,10 +1396,6 @@ footer {
 .drinkBeskrivelse {
     font-style: italic;
     max-width: 80%;
-}
-
-.drinkEnhed {
-    margin-bottom: 20px;
 }
 
 
@@ -1519,15 +1525,6 @@ footer {
     display: none;
 }
 
-
-.menukortContainer {
-    background-color: var(--lysGul);
-    padding: 2% 10%;
-    margin: 0 138px;
-    border-radius: 12px;
-    margin-bottom: var(--paddingSectionsDesktop);
-}
-
 .menukortContainer h3 {
     font-weight: var(--h3MenukortWeight);
     font-size: var(--h3MenuKort);
@@ -1610,14 +1607,6 @@ footer {
 
 .topBtn {
     display: none;
-}
-
-.menukortContainer {
-    background-color: var(--lysGul);
-    padding: 2% 10%;
-    margin: 0 138px;
-    border-radius: 12px;
-    margin-bottom: var(--paddingSectionsDesktop);
 }
 
 .menukortContainer h3 {
@@ -1753,7 +1742,6 @@ footer {
     .eventCard img {
         object-fit: cover;
         width: 100%;
-        max-height: 50%;
     }
 
 }
@@ -1790,14 +1778,11 @@ footer {
         font-size: var(--h3MenuKort);
     }
 
-    .menukortContainer {
-        margin: 2rem 4rem;
-    }
+
 
 
     .indledningmenu {
-        flex-direction: column;
-        align-items: center;
+        gap: 1rem;
     }
 
     /* .menukortContainer p {
@@ -1825,7 +1810,6 @@ footer {
 
     .eventCard {
         background-color: var(--lysBlaa);
-        min-height: 400px;
         min-width: 340px;
     }
 
@@ -1858,10 +1842,6 @@ footer {
         flex-direction: column;
         gap: 3rem;
     }
-
-    /* main p {
-        font-size: var(--tekstStrMobil);
-    } */
 
 
     .descriptionContainer {
@@ -2034,6 +2014,11 @@ footer {
         padding: 0;
     }
 
+    .groenSektionBookbord,
+    .groenSektionKontakt {
+        max-width: unset;
+    }
+
 
     .indledningmenu h2 {
         font-size: var(--h2Mobile);
@@ -2067,15 +2052,14 @@ footer {
     }
 
     .billedeRamme .img-1 img {
-        height: 50vh;
-    }
-
-    .billedeRamme .img-2 img {
-        height: 50vh;
-        border-radius: 0 40px 40px 0;
+        border-radius: 40px;
     }
 
     .billedeRamme .img-3 {
+        display: none;
+    }
+
+    .billedeRamme .img-2 {
         display: none;
     }
 
@@ -2188,11 +2172,8 @@ footer {
         padding: 1rem 2rem;
     }
 
-    main p {
-        font-size: 1rem;
-    }
 
-    .menukortContainer h3 {
+    main h3 {
         font-size: 1.2rem;
     }
 
@@ -2214,6 +2195,10 @@ footer {
         width: 100%;
     }
 
+    .indledningmenu {
+        flex-direction: column;
+    }
+
     .indledningssektion {
         margin-bottom: var(--paddingSectionsMobile);
     }
@@ -2223,7 +2208,7 @@ footer {
     }
 
     main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer, .groenSektionMenuTxt) {
-        padding: 1rem 2rem;
+        padding: 1rem 1rem;
     }
 
     .logo {
@@ -2254,6 +2239,7 @@ footer {
         gap: 1rem;
     }
 
+
     #morgenMenu,
     #middagMenu,
     #aftenMenu,
@@ -2272,6 +2258,7 @@ footer {
 
     main p {
         font-size: var(--tekstStrMobil);
+        line-height: 1.1rem;
     }
 
     main h1 {
@@ -2281,16 +2268,12 @@ footer {
     /* obs ved merch ^ */
 
     .billedeRamme {
-        width: 100vw;
+        width: 100%;
         height: 40vh;
         margin: 2rem 0;
+        display: unset;
     }
 
-    .billedeRamme .img-1 img,
-    .billedeRamme .img-2 img {
-        border-radius: 0;
-        height: 40vh;
-    }
 
     .billedeRamme .img-1 {
         width: 70%;
@@ -2307,18 +2290,18 @@ footer {
     .eventCard {
         background-color: var(--lysBlaa);
         max-width: 30%;
-        height: 100%;
-    }
-
-    .eventCard h4 {
-        margin: 0.5rem;
     }
 
     .eventCard p {
         display: flex;
         font-size: var(--tekstStrMobil);
-        margin: 1rem;
     }
+
+    .eventCard img {
+        height: 60%;
+        max-height: 0;
+    }
+
 
     .kontaktContent {
         display: flex;
@@ -2344,5 +2327,24 @@ footer {
         object-position: 100% 80%;
     }
 
+    .soedesagerEnhed {
+        grid-template-columns: 1fr;
+    }
 
+    .titelOgPris {
+        margin: 0;
+    }
+
+    .menukortContainer {
+        margin: 0rem 1rem 3rem 1rem;
+
+    }
+
+    #engleUllaImg {
+        width: 100px;
+    }
+
+    .engleUlla {
+        top: -50px;
+    }
 }
