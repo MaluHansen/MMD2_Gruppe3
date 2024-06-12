@@ -757,8 +757,9 @@ footer {
 .groenSelskaberContainer {
     background-color: var(--groen);
     width: 100%;
-    max-height: 350px;
+    max-height: 400px;
     display: flex;
+    justify-content: space-between;
     /* width skal måske ændres ift. padding på main */
 }
 
@@ -848,24 +849,14 @@ footer {
 
 
 /*______________________MENU SELSKABER SLUT__________________________*/
+/*______________________EVENTS START___________________________*/
 
-
-.eventVideoSection {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: var(--paddingSectionsDesktop)
+.eventsVideo {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    object-position: bottom;
 }
-
-.eventVideoSection video {
-
-   width: 40%;
-   height: 30%;
-   object-fit: fill;
-  
-}
-
 
 .eventCardcontainer {
     display: flex;
@@ -875,48 +866,54 @@ footer {
     gap: 2rem;
 }
 
-
 .eventCard img {
     object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
     height: 60%;
+    object-position: top;
 }
 
 .eventCard {
     background-color: var(--lysBlaa);
     border-radius: 15px;
-    max-width: 30%;
-    max-height: 100%;
+    width: 30%;
+    height: 500px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.eventCard h4 {
-    margin: 0.5rem;
+.eventCard picture {
+    height: 50%;
+    display: unset;
 }
+
+.beskrivelseEvent {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.infoEvent {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 
 .eventCardinfo {
     display: flex;
     font-size: 20px;
-    margin: 1.5rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
-.eventCardinfo .material-symbols-outlined {
-    margin-left: 1rem;
-}
-
-.eventCard p {
+.infoEnhed .material-symbols-outlined {
     display: flex;
-    margin: 1rem;
-
+    flex-direction: column;
+    align-items: center;
 }
 
-.eventCard h4 {
-    margin-left: 2rem;
-}
 
 .eventsgroenSektion {
     display: flex;
@@ -932,9 +929,6 @@ footer {
 .eventsgroenSektion p {
     padding-bottom: 1rem;
 }
-
-
-
 
 /*______________________EVENTS SLUT___________________________*/
 
@@ -1702,7 +1696,6 @@ footer {
     .eventCard {
         background-color: var(--lysBlaa);
         max-width: 30%;
-        margin: 20px;
         height: 500px;
     }
 
@@ -1721,6 +1714,9 @@ footer {
         padding: 1rem 2rem;
     }
 
+    .breadcrumbs {
+        padding: 7rem 8rem 2rem 2rem;
+    }
 
     .UllaTImg {
         max-height: 100%;
@@ -1770,10 +1766,6 @@ footer {
         width: 600px;
     }
 
-    .eventCardcontainer {
-        justify-content: center;
-    }
-
     .eventCard img {
         object-fit: cover;
         width: 100%;
@@ -1782,7 +1774,6 @@ footer {
 
     .eventCard {
         background-color: var(--lysBlaa);
-        margin: 20px;
         min-height: 400px;
         min-width: 340px;
     }
@@ -1805,6 +1796,10 @@ footer {
 }
 
 @media only screen and (max-width: 900px) {
+
+    .introTekstForside {
+        margin-bottom: 1rem;
+    }
 
     .variantContainer {
         grid-template-columns: 1fr;
@@ -2206,15 +2201,6 @@ footer {
         padding-top: 2rem;
     }
 
-
-    .descriptionContainer p {
-        margin-left: 1rem;
-    }
-
-    .fatOne {
-        margin-left: 1rem;
-    }
-
     .menukortImg {
         display: none;
     }
@@ -2271,20 +2257,9 @@ footer {
         width: 30%;
     }
 
-    .eventVideoSection {
-        display: flex;
-        padding-bottom: var(--paddingSectionsMobile);
-    }
-
-    .eventVideoSection p {
-        font-size: var(--tekstStrMobil);
-    }
-
-    .eventVideoSection video {
-        display: block;
+    .eventsVideo {
         display: none;
     }
-
 
     .eventCard {
         background-color: var(--lysBlaa);
@@ -2300,7 +2275,6 @@ footer {
         display: flex;
         font-size: var(--tekstStrMobil);
         margin: 1rem;
-
     }
 
     .kontaktContent {

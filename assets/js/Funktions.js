@@ -374,31 +374,34 @@ function getAllevents() {
 function showAllevents(containerToFill, events) {
     events.forEach(event => {
         containerToFill.innerHTML += `
+
         
-       <div class="eventCard"> 
-         <picture>
-         <source media="(min-width: 600px)" srcset="${event.acf.billede_af_begivenhed.sizes.large}">
-          <img src="${event.acf.billede_af_begivenhed.sizes.medium} loading="lazy">
-         </picture>
+        <div class="eventCard"> 
+        <picture>
+        <source media="(min-width: 600px)" srcset="${event.acf.billede_af_begivenhed.sizes.large}">
+        <img src="${event.acf.billede_af_begivenhed.sizes.medium}" loading="lazy">
+        </picture>
+        
+        <div class="beskrivelseEvent">
          <h4>${event.acf.titel_pa_begivenhed}</h4>
         <p>${event.acf.beskrivelse_af_begivenhed}</p>
-        <div class="eventCardinfo">
 
-            <div class="infoEnhed">
-                <i class="material-symbols-outlined">credit_card
-              <p>${event.acf.pris}</p></i>
-         </div>
-            <div class="infoEnhed">
-              <i class="material-symbols-outlined">schedule
-              <p>${event.acf.starttidspunkt}</p></i>
-         </div>
-         <div class="infoEnhed">
+        <div class="infoEvent">
+        <div class="infoEnhed">
+            <i class="material-symbols-outlined">credit_card
+            <p>${event.acf.pris}</p></i>
+        </div>
+        <div class="infoEnhed">
+            <i class="material-symbols-outlined">schedule
+            <p>${event.acf.starttidspunkt}</p></i>
+        </div>
+        <div class="infoEnhed">
              <i class="material-symbols-outlined">calendar_month
              <p>${event.acf.dato_for_begivenhed}</p></i>
-         </div>
-
         </div>
         </div>
+        </div>
+        <div class="eventCardinfo">
         
     `
     });
