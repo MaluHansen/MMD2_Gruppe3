@@ -668,20 +668,8 @@ footer {
 /*______________________BOOKBORD SLUT___________________________*/
 
 
-/*______________________EVENTS___________________________*/
 
-.eventVideoSection {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: var(--paddingSectionsDesktop)
-}
 
-.eventVideoSection video {
-    max-width: 100%;
-    max-height: auto;
-}
 
 
 
@@ -755,7 +743,6 @@ footer {
 .blaaSektionSelskaber a {
     color: var(--tekstFarve);
     font-size: 1.125rem;
-    ;
     line-height: 1.7rem;
 }
 
@@ -806,7 +793,6 @@ footer {
 
     main p {
         font-size: var(--tekstStrMobil);
-        line-height: 1rem;
     }
 
     /* ÔBS SLETTES INDEN MECH */
@@ -868,6 +854,24 @@ footer {
 
 /*______________________MENU SELSKABER SLUT__________________________*/
 
+
+.eventVideoSection {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: var(--paddingSectionsDesktop)
+}
+
+.eventVideoSection video {
+
+   width: 40%;
+   height: 30%;
+   object-fit: fill;
+  
+}
+
+
 .eventCardcontainer {
     display: flex;
     flex-direction: row;
@@ -875,7 +879,6 @@ footer {
     padding-bottom: var(--paddingSectionsDesktop);
     gap: 2rem;
 }
-
 
 
 .eventCard img {
