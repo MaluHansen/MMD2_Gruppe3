@@ -2227,7 +2227,7 @@ footer {
     .breadcrumbs {
         font-size: var(--tekstStrMobil);
         padding: 0rem 2rem;
-        padding-top: 2rem;
+        padding-top: 3rem;
     }
 
     .menukortImg {
