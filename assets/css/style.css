@@ -2034,19 +2034,18 @@ footer {
 
     .topBtn {
         display: block;
-        position: fixed;
-        bottom: 2rem;
-        right: 1.5rem;
-        z-index: 1;
         padding: 1rem;
+        position: fixed;
+        bottom: -20vh;
+        right: 1.5rem;
         border: none;
         background-color: transparent;
-        opacity: 0;
-        transition: opacity 0.5s ease;
+        transition: bottom 0.5s ease-in-out;
+        z-index: 15;
     }
 
     .topBtn.active {
-        opacity: 1;
+        bottom: 2rem;
     }
 
     .topBtn .material-symbols-outlined {
