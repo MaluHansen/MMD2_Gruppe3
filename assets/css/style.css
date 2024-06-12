@@ -177,6 +177,7 @@ svg {
     color: var(--tekstFarve);
     padding: 1rem;
     right: 0px;
+    z-index: 1;
 }
 .showNav li{
     margin-top: 0.5rem;
