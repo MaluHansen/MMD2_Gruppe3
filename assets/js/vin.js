@@ -7,9 +7,7 @@ const naturvinVarianterEl = document.querySelector(".naturvinVarianter");
 const kirsebaerlikorVarianterEl = document.querySelector(".kirsebaerlikorVarianter");
 const portvinVarianterEl = document.querySelector(".portvinVarianter");
 const bobleVarianterEl = document.querySelector(".bobleVarianter");
-const spinnerEl = document.querySelector(".spinner");
-const wineGlassEl = document.querySelector(".wineGlass");
-const burgerEl = document.querySelector(".burger");
+
 
 
 fetchAndRenderDrinks(rodvinVarianterEl, 12);

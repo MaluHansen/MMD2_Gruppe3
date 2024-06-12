@@ -1,11 +1,8 @@
 const baseUrl = "https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100"
+const spinnerEl = document.querySelector(".spinner");
 
 // Vi opretter en funktion som kan hente drikkevarer ud fra et specifik ID som sættes som et parameter. 
 function getDrinksByID(Id) {
-    // Vi tilføjer klassen show så vores animation kan vises. 
-    spinnerEl.classList.add("show"); // Tilføj klassen "show" til spinnerEl
-    burgerEl.classList.add("show"); // Tilføj klassen "show" til burgerEl
-    wineGlassEl.classList.add("show"); // Tilføj klassen "show" til wineGlassEl
     // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i dette tilfælde en query parameter som hedder &type-af-drikkevarer= + vores Id. Url'en vil derfor se således ud: https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100&type-af-drikkevarer=(Indsat Id)
     return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
         // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt til et JavaScript-objekt. 
@@ -107,23 +104,25 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     });
 }
 
-// Funktion der henter og indlæser vores drikkevarer.
 function fetchAndRenderDrinks(containerToFill, id) {
-    // Henter drikkevarer med funktionen "getDrinksByID" og returnere et array med drikkevarer.
+    // Vis spinneren mens data hentes
+    spinnerEl.classList.add("show");
+    // Henter drikkevarer med funktionen "getDrinksByID" og returnerer et array med drikkevarer.
     getDrinksByID(id).then(drinks => {
-        // Der anvendes setTimeout metode der forsinker funktionen med 2 sekunder. Den funktion der forsinkes er "renderDrinksWithAnyPrice", samt at burgerEl, wineGlassEl og spinnerEl skjules. Dette gør vi for at vores animation kan nå at kører. 
-        setTimeout(() => {
-            renderDrinksWithAnyPrice(containerToFill, drinks);
-            burgerEl.classList.remove("show");
-            wineGlassEl.classList.remove("show");
-            spinnerEl.classList.remove("show");
-            // Skjul burgerEl, wineGlassEl og spinnerEl ved at fjerne klassen "show"
-        }, 2200);
-    }).catch(err => console.error("Fejl:", err));
+        // Render drinks og skjul spinneren når data er hentet
+        renderDrinksWithAnyPrice(containerToFill, drinks);
+        spinnerEl.classList.remove("show");
+    }).catch(err => {
+        console.error("Fejl:", err);
+        // Skjul spinneren i tilfælde af en fejl
+        spinnerEl.classList.remove("show");
+    });
 }
+
 
 //function som henter data fra API. 
 function getAllvariations(id) {
+    spinnerEl.classList.add("show");
     return fetch(baseUrl + `&type-af-maltid=` + id)
         .then((res) => res.json())
         .then((variations) => {
@@ -134,6 +133,7 @@ function getAllvariations(id) {
 
 //function som viser dataen hentet igennem GetAllVariations funktion.(vælger cont)
 function showAllvariations(containerToFill, variations) {
+    spinnerEl.classList.add("show");
     variations.forEach(variation => {
         containerToFill.innerHTML += `
         <div class="titleOgPris">
@@ -143,6 +143,7 @@ function showAllvariations(containerToFill, variations) {
                
         `;
     });
+    spinnerEl.classList.remove("show");
 }
 
 function showAllvariationsForEvening(containerToFill, variations) {
@@ -158,14 +159,19 @@ function showAllvariationsForEvening(containerToFill, variations) {
             </div>
         `;
     });
+    spinnerEl.classList.remove("show");
 }
 
 // --- MORGENRETTER ---
 // Funktion til at hente data fra Wordpress API'en
 function fetchMorgendata() {
+    spinnerEl.classList.add("show");
     fetch(baseUrl + `&type-af-maltid=` + 23)
         .then(res => res.json())
-        .then(data => showMorgenData(data))
+        .then(data => {
+            showMorgenData(data);
+            spinnerEl.classList.remove("show");
+        })
         .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
     console.log(baseUrl + `&type-af-maltid=` + 23)
 }
@@ -237,9 +243,13 @@ function showBrunchData(data) {
 // --- MIDDAGSRETTER ---
 // Funktion til at hente middags-data fra Wordpress API'en
 function fetchMiddagsdata() {
+    spinnerEl.classList.add("show");
     fetch(baseUrl + `&type-af-maltid=` + 24)
         .then(res => res.json())
-        .then(data => showMiddagsData(data))
+        .then(data => {
+            showMiddagsData(data);
+            spinnerEl.classList.remove("show");
+        })
         .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
 }
 

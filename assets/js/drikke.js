@@ -3,9 +3,6 @@ const saftVarianterEl = document.querySelector(".saftVarianter");
 const kaffeVarianterEl = document.querySelector(".kaffeVarianter");
 const ovrigeVarianterEl = document.querySelector(".ovrigeVarianter");
 
-const spinnerEl = document.querySelector(".spinner");
-const wineGlassEl = document.querySelector(".wineGlass");
-const burgerEl = document.querySelector(".burger");
 
 fetchAndRenderDrinks(juiceVarianterEl, 29);
 fetchAndRenderDrinks(saftVarianterEl, 30);
