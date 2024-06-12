@@ -377,31 +377,35 @@ function showAllevents(containerToFill, events) {
 
         
         <div class="eventCard"> 
-        <picture>
-        <source media="(min-width: 600px)" srcset="${event.acf.billede_af_begivenhed.sizes.large}">
-        <img src="${event.acf.billede_af_begivenhed.sizes.medium}" loading="lazy">
-        </picture>
+            <picture>
+                <source media="(min-width: 600px)" srcset="${event.acf.billede_af_begivenhed.sizes.large}">
+                <img src="${event.acf.billede_af_begivenhed.sizes.medium}" loading="lazy">
+            </picture>
         
-        <div class="beskrivelseEvent">
-         <h4>${event.acf.titel_pa_begivenhed}</h4>
-        <p>${event.acf.beskrivelse_af_begivenhed}</p>
+            <div class="beskrivelseEvent">
+                <div>
+                    <h4>${event.acf.titel_pa_begivenhed}</h4>
+                    <p>${event.acf.beskrivelse_af_begivenhed}</p>
+                </div>
+                <div class="infoEvent">
 
-        <div class="infoEvent">
-        <div class="infoEnhed">
-            <i class="material-symbols-outlined">credit_card
-            <p>${event.acf.pris}</p></i>
-        </div>
-        <div class="infoEnhed">
-            <i class="material-symbols-outlined">schedule
-            <p>${event.acf.starttidspunkt}</p></i>
-        </div>
-        <div class="infoEnhed">
-             <i class="material-symbols-outlined">calendar_month
-             <p>${event.acf.dato_for_begivenhed}</p></i>
-        </div>
-        </div>
-        </div>
-        <div class="eventCardinfo">
+                    <div class="infoEnhed">
+                        <i class="material-symbols-outlined">credit_card
+                        <p>${event.acf.pris},-</p></i>
+                    </div>
+
+                    <div class="infoEnhed">
+                        <i class="material-symbols-outlined">schedule
+                        <p>${event.acf.starttidspunkt}</p></i>
+                    </div>
+                    
+                    <div class="infoEnhed">
+                        <i class="material-symbols-outlined">calendar_month
+                        <p>${event.acf.dato_for_begivenhed}</p></i>
+                    </div>
+                </div>
+            </div>
+        </div>  
         
     `
     });
@@ -409,12 +413,18 @@ function showAllevents(containerToFill, events) {
 
 
 const navMobil = document.querySelector('.navMobil');
-//tilføjer en eventlistner til burgermenu ikonet der lytter efter et click
+const logoUllaEl = document.querySelector('#logoUlla');
+const burgerMenu = document.querySelector('#burgerMenu');
+const body = document.body;
+
+// tilføjer en event listener til burgerMenu-ikonet, der lytter efter et klik
 burgerMenu.addEventListener('click', () => {
+    logoUllaEl.classList.toggle('hidden');
     navMobil.classList.toggle('showNav');
     navMobil.classList.toggle('navMobil');
-    //Når der trykkes på ikonet får mobileNav classen show og bliver ved hjælp af css nu vist
 
+    // Tilføj eller fjern overFlowHidden-klassen fra body som gør at man ikke kan scrolle
+    body.classList.toggle('overFlowHidden');
 });
 
 
