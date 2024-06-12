@@ -1693,6 +1693,8 @@ footer {
 
 
 /* 600 og ned, telefoner, 900 og op, tablets, 1400 og op, laptops, 1920 og op, stor skærm */
+
+
 @media screen and (max-width: 1920px) {
     .menuContainer a {
         font-size: 1.2rem;
@@ -1719,8 +1721,7 @@ footer {
 
 }
 
-
-@media only screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
 
     main>*:not(.breadcrumbs, .groenSektion, .forsideHero, .groenSektionUlla, .groenSelskaberContainer, .groenSektionMenuTxt) {
         padding: 1rem 2rem;
@@ -1823,8 +1824,7 @@ footer {
     }
 }
 
-
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
 
     .introTekstForside {
         margin-bottom: 1rem;
@@ -2156,7 +2156,7 @@ footer {
 
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
 
     .logo {
