@@ -79,7 +79,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
         <div class="drinkEnhed">
             <div class="titelOgPris">
                 <p class="drinkTitle">${drink.acf.navn_pa_drik} ${alkoholProcent}</p>
-                <p>${prisLille}${prisMellem}${prisStor}${prisGlas}${prisFlaske}</p>
+                <p>${prisGlas}${prisLille}${prisMellem}${prisStor}${prisFlaske}</p>
             </div>
         <p class="drinkBeskrivelse">${drinkInfo}</p>
         </div>
@@ -189,12 +189,14 @@ function showMorgenData(data) {
     // KILDE til ternary operator: Conditional (ternary) operator. Mozilla Corporations. 2024. [online] Accessed 4/6/2024. URL: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator.
     data.forEach(function (morgenData) {
         morgenretterEl.innerHTML += `
-        <div class="titelOgPris">
-        <p class="title">${morgenData.acf.navn_pa_ret} ${morgenData.diaet_praeference.length > 0 ? `<i class="material-symbols-outlined">eco</i>` : ``}</p>
-        <p>${morgenData.acf.pris},- </p>
-        </div>
+        <div class="drinkEnhed2">
+            <div class="titelOgPris">
+            <p class="title2">${morgenData.acf.navn_pa_ret} ${morgenData.diaet_praeference.length > 0 ? `<i class="material-symbols-outlined">eco</i>` : ``}</p>
+            <p>${morgenData.acf.pris},- </p>
+            </div>
         <div class="detaljerOgSupplerende">
         ${morgenData.acf.detaljer_om_retten ? `<p class="beskrivelse">${morgenData.acf.detaljer_om_retten}</p>` : ``}
+        </div>
         </div>
         `;
     })
@@ -216,9 +218,7 @@ function showBrunchData(data) {
 
     data.forEach(function (brunchData) {
         brunchretterEl.innerHTML += `
-        <div class="pris">
-        <p>${brunchData.acf.pris},-</p>
-        </div>
+        <div class="drinkEnhed3">
         <div class="VariationerAfRetten">
             ${brunchData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten}</p>` : ``}
             ${brunchData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten}</p>` : ``}
@@ -228,6 +228,10 @@ function showBrunchData(data) {
             ${brunchData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten}</p>` : ``}
             ${brunchData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten}</p>` : ``}
             ${brunchData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten}</p>` : ``}   
+        </div>
+        <div class="pris">
+        <p>${brunchData.acf.pris},-</p>
+        </div>
         </div>
     `;
     })
@@ -247,55 +251,54 @@ function showMiddagsData(data) {
     middagsmenuEl.innerHTML += `
         `;
 
-
-    // forEach loop til at loope igennem dataen fra Wordpress, og indsætte det i HTML'en vha. innerHTML
+    // Gennemgår hver middagsdata i vores array med forEach
     data.forEach(function (middagsData) {
-        middagsmenuEl.innerHTML += `
-        <div class="middagsContainer">
-            <div class="titelOgPris">
-                <p class="title">${middagsData.acf.navn_pa_ret}</p>
-                <p class="pris">${middagsData.acf.pris}</p>
+        // Skaber en tom string til opbevarer vores HTML for de forskellige variationer
+        let variationsHTML = '';
+
+        // Hent variationerne fra middagsdata
+        const variations = middagsData.acf.variationer_af_retten;
+        console.log('variations:', variations)
+
+        // Løkke fra 1 til 8 for at gennemgå alle mulige variationer
+        for (let i = 1; i <= 8; i++) {
+            // Gemmer variationen og dens diætpræference for hver loop den kører igennem. 
+            const variation = variations[`variation_${i}`];
+            const diaetPraeference = variations[`diaet_praeference_${i}`];
+
+            // Hvis variationen og dens beskrivelse findes, så skal der tilføjes følgende HTML til vores variabel variationHTML. Vi får derfor for hvert tal i vores for loope en string ind med HTML så længe der findes en variation og en beskrivelse af retten. Vi kan maks få 8 string ind da vores forloop ikke tæller til mere. 
+            if (variation && variation.beskrivelse_af_retten) {
+                variationsHTML += `
+                <div class="variationContainer">
+                    <p> - ${variation.beskrivelse_af_retten} ${diaetPraeference ? `<i class="material-symbols-outlined">eco</i></p>` : ''}</p>
+                    ${variation.pris ? `<p>${variation.pris},-</p>` : ''}
+                </div>
+            `;
+            }
+        }
+
+        // Hvis variationsHTML indeholder nogen string/strings så skal der tilføjes middagsContainer med tilhørende html til vores middagsmenuEl.
+        if (variationsHTML) {
+            middagsmenuEl.innerHTML += `
+            <div class="middagsContainer">
+                <!-- Titel og pris på retten -->
+                <div class="titelOgPris">
+                    <p class="title">${middagsData.acf.navn_pa_ret}</p>
+                    <p class="pris">${middagsData.acf.pris ? `${middagsData.acf.pris},-` : ''}</p>
+                </div>
+                <!-- Detaljer om retten -->
+                <div class="detaljerOgSupplerende">
+                    ${middagsData.acf.detaljer_om_retten ? `<p>${middagsData.acf.detaljer_om_retten}</p>` : ''}
+                </div>
+                <!-- Variationer af retten -->
+                <div class="variationer">
+                    ${variationsHTML}
+                </div>
             </div>
-            <div class="detaljerOgSupplerende">
-            ${middagsData.acf.detaljer_om_retten ? `<p>${middagsData.acf.detaljer_om_retten}</p>` : ``}
-            </div>
-            <div class="variationer">
-                <div class="variationContainer">
-                    ${middagsData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_1 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-                    ${middagsData.acf.variationer_af_retten.variation_1.pris ? `<p>${middagsData.acf.variationer_af_retten.variation_1.pris} ,- </p>` : ``}
-                </div>
-                <div class="variationContainer">    
-                    ${middagsData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_2 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-                    ${middagsData.acf.variationer_af_retten.variation_2.pris ? `<p >${middagsData.acf.variationer_af_retten.variation_2.pris} ,- </p>` : ``}
-                </div>
-                <div class="variationContainer">
-                    ${middagsData.acf.variationer_af_retten.variation_3.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_3.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_3 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-                    ${middagsData.acf.variationer_af_retten.variation_3.pris ? `<p>${middagsData.acf.variationer_af_retten.variation_3.pris} ,- </p>` : ``}
-                </div>
-                <div class="variationContainer">
-                    ${middagsData.acf.variationer_af_retten.variation_4.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_4.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_4 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}             
-                    ${middagsData.acf.variationer_af_retten.variation_4.pris ? `<p>${middagsData.acf.variationer_af_retten.variation_4.pris} ,- </p>` : ``}
-                    </div>
-                <div class="variationContainer">
-                    ${middagsData.acf.variationer_af_retten.variation_5.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_5.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_5 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-                    ${middagsData.acf.variationer_af_retten.variation_5.pris ? `<p>${middagsData.acf.variationer_af_retten.variation_5.pris} ,- </p>` : ``}
-                </div>
-                <div class="variationContainer">
-                    ${middagsData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_6 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-                    ${middagsData.acf.variationer_af_retten.variation_6.pris ? `<p>${middagsData.acf.variationer_af_retten.variation_6.pris} ,- </p>` : ``}
-                </div>
-                <div class="variationContainer">
-                    ${middagsData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_7 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-                    ${middagsData.acf.variationer_af_retten.variation_7.pris ? `<p>${middagsData.acf.variationer_af_retten.variation_7.pris} ,- </p>` : ``}
-                </div>
-                <div class="variationContainer">
-                    ${middagsData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten ? `<p> - ${middagsData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten} ${middagsData.acf.variationer_af_retten.diaet_praeference_8 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-                    ${middagsData.acf.variationer_af_retten.variation_8.pris ? `<p>${middagsData.acf.variationer_af_retten.variation_8.pris} ,- </p>` : ``}
-                </div>
-            </div>
-        </div>
         `;
-    })
+        }
+    });
+
 }
 
 // --- SNACK RETTER ---
@@ -317,35 +320,35 @@ function showSnackData(data) {
         <div class="variationer">
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_1 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-            ${snackData.acf.variationer_af_retten.variation_1.pris ? `<p>${snackData.acf.variationer_af_retten.variation_1.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_1.pris ? `<p>${snackData.acf.variationer_af_retten.variation_1.pris},- </p>` : ``}
         </div>
         <div class="variationContainer">    
             ${snackData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_2.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_2 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-            ${snackData.acf.variationer_af_retten.variation_2.pris ? `<p >${snackData.acf.variationer_af_retten.variation_2.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_2.pris ? `<p >${snackData.acf.variationer_af_retten.variation_2.pris},- </p>` : ``}
         </div>
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_3.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_3.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_3 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-            ${snackData.acf.variationer_af_retten.variation_3.pris ? `<p>${snackData.acf.variationer_af_retten.variation_3.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_3.pris ? `<p>${snackData.acf.variationer_af_retten.variation_3.pris},- </p>` : ``}
         </div>
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_4.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_4.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_4 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}             
-            ${snackData.acf.variationer_af_retten.variation_4.pris ? `<p>${snackData.acf.variationer_af_retten.variation_4.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_4.pris ? `<p>${snackData.acf.variationer_af_retten.variation_4.pris},- </p>` : ``}
             </div>
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_5.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_5.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_5 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-            ${snackData.acf.variationer_af_retten.variation_5.pris ? `<p>${snackData.acf.variationer_af_retten.variation_5.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_5.pris ? `<p>${snackData.acf.variationer_af_retten.variation_5.pris},- </p>` : ``}
         </div>
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_6.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_6 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-            ${snackData.acf.variationer_af_retten.variation_6.pris ? `<p>${snackData.acf.variationer_af_retten.variation_6.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_6.pris ? `<p>${snackData.acf.variationer_af_retten.variation_6.pris},- </p>` : ``}
         </div>
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_7.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_7 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-            ${snackData.acf.variationer_af_retten.variation_7.pris ? `<p>${snackData.acf.variationer_af_retten.variation_7.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_7.pris ? `<p>${snackData.acf.variationer_af_retten.variation_7.pris},- </p>` : ``}
         </div>
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_8.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_8 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
-            ${snackData.acf.variationer_af_retten.variation_8.pris ? `<p>${snackData.acf.variationer_af_retten.variation_8.pris} ,- </p>` : ``}
+            ${snackData.acf.variationer_af_retten.variation_8.pris ? `<p>${snackData.acf.variationer_af_retten.variation_8.pris},- </p>` : ``}
         </div>
     </div>
         `;
