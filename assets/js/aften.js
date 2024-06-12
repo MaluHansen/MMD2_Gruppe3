@@ -1,5 +1,3 @@
-let variationData;
-
 const menuCardEL = document.querySelector(".aftenEnhed")
 console.log(`menuCardEL:`, menuCardEL)
 

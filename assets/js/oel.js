@@ -4,8 +4,6 @@ const spinnerEl = document.querySelector(".spinner");
 const wineGlassEl = document.querySelector(".wineGlass");
 const burgerEl = document.querySelector(".burger");
 
-let drinkData;
-
 fetchAndRenderDrinks(fadolFlaskeolVarianterEl, 11);
 fetchAndRenderDrinks(alkoholfrieOlVarianterEl, 13);
 

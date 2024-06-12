@@ -1,4 +1,3 @@
-let variationData;
 const menuCardEL = document.querySelector(".soedesagerEnhed")
 
 getAllvariations(27)

@@ -12,7 +12,6 @@ function getDrinksByID(Id) {
         .then((res) => res.json())
         // Når ovenstående er færdig så gemmer vi vores data i en variabel som er deklaret uden for funktionen. Vi kan dermed bruge vores data andre steder i scriptet. Hvis dette skulle blive nødvendigt. 
         .then((drinks) => {
-            drinkData = drinks;
             return (drinks);
         })
         // I tilfælde af fejl under vores fetch vil der blive logget en besked i konsollen.
@@ -128,8 +127,6 @@ function getAllvariations(id) {
     return fetch(baseUrl + `&type-af-maltid=` + id)
         .then((res) => res.json())
         .then((variations) => {
-            variationData = variations;
-            console.log('variationData:', variationData)
             return (variations);
         })
         .catch(err => console.log("Fejl", err));
@@ -359,7 +356,6 @@ function getAllevents() {
     return fetch(baseUrl + `&categories=5`)
         .then((res) => res.json())
         .then((events) => {
-            eventdata = events;
             return (events);
         })
         .catch(err => console.log("Fejl", err));

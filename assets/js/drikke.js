@@ -7,8 +7,6 @@ const spinnerEl = document.querySelector(".spinner");
 const wineGlassEl = document.querySelector(".wineGlass");
 const burgerEl = document.querySelector(".burger");
 
-let drinkData;
-
 fetchAndRenderDrinks(juiceVarianterEl, 29);
 fetchAndRenderDrinks(saftVarianterEl, 30);
 fetchAndRenderDrinks(kaffeVarianterEl, 31);

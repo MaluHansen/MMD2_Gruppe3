@@ -11,8 +11,6 @@ const spinnerEl = document.querySelector(".spinner");
 const wineGlassEl = document.querySelector(".wineGlass");
 const burgerEl = document.querySelector(".burger");
 
-let drinkData;
-
 
 fetchAndRenderDrinks(rodvinVarianterEl, 12);
 fetchAndRenderDrinks(hvidvinVarianterEl, 14);

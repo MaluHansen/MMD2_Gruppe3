@@ -1,6 +1,3 @@
-
-let eventdata;
-
 const eventCardEL = document.querySelector(".eventCardcontainer")
 
 
