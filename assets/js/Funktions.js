@@ -11,10 +11,7 @@ function getDrinksByID(Id) {
     return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
         // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt til et JavaScript-objekt. 
         .then((res) => res.json())
-        // Når ovenstående er færdig så gemmer vi vores data i en variabel som er deklaret uden for funktionen. Vi kan dermed bruge vores data andre steder i scriptet. Hvis dette skulle blive nødvendigt. 
-        .then((drinks) => {
-            return (drinks);
-        })
+        .then((drinks) => drinks)
         // I tilfælde af fejl under vores fetch vil der blive logget en besked i konsollen.
         .catch(err => console.log("Fejl! Der er desværre sket en fejl..", err));
 }
@@ -128,9 +125,7 @@ function getAllvariations(id) {
     spinnerEl.classList.add("show");
     return fetch(baseUrl + `&type-af-maltid=` + id)
         .then((res) => res.json())
-        .then((variations) => {
-            return (variations);
-        })
+        .then((variations) => variations)
         .catch(err => console.log("Fejl", err));
 }
 
@@ -365,9 +360,7 @@ function showSnackData(data) {
 function getAllevents() {
     return fetch(baseUrl + `&categories=5`)
         .then((res) => res.json())
-        .then((events) => {
-            return (events);
-        })
+        .then((events) => events)
         .catch(err => console.log("Fejl", err));
 }
 
