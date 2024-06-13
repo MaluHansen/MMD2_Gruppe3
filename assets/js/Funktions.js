@@ -421,3 +421,13 @@ burgerMenu.addEventListener('click', () => {
     // Tilføj eller fjern overFlowHidden-klassen fra body som gør at man ikke kan scrolle
     body.classList.toggle('overFlowHidden');
 });
+
+//tilføjer en eventlistener til hele dokumentet der skal reagere på et klik
+document.addEventListener('click', function (event) {
+    //tjekker om der bliver trykket uden for mobilNav og at det ikke er burgerMenu ikonet der bliver trykket på
+    if (!navMobil.contains(event.target) && event.target !== burgerMenu) {
+        // Fjerner shownav så menuen bliver gemt væk og tilføjer mobilnav igen
+        navMobil.classList.remove('showNav');
+        navMobil.classList.add('navMobil');
+    }
+});
