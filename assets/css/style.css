@@ -987,7 +987,7 @@ footer {
 }
 
 #morgenMenu {
-    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("../assets/img/til_Menukort/morgenmad.jpeg");
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("morgenmad.jpeg");
     /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
     background-repeat: no-repeat;
     background-position: center;
