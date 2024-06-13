@@ -1891,10 +1891,6 @@ footer {
         margin-bottom: 0.3rem;
     }
 
-    .eventCardSection {
-        justify-content: center;
-    }
-
     .eventCardcontainer {
         grid-template-columns: repeat(2, 1fr);
     }
