@@ -1001,7 +1001,7 @@ footer {
 }
 
 #middagMenu {
-    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("../assets/img/til_Menukort/burger.jpeg");
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("./assets/img/til_Menukort/burger.jpeg");
     /* KILDE: Cafe Ulla Terkelsen London. Facebook.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5717039985041199/?type=3 */
     background-repeat: no-repeat;
     background-position: bottom;
@@ -1029,7 +1029,7 @@ footer {
 }
 
 #soedeSagerMenu {
-    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("../assets/img/til_Menukort/dessert.jpeg");
+    background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/til_Menukort/dessert.jpeg");
     /* KILDE: Cafe Ulla Terkelsen London. Instagram.com. Meta 2024. [online] Accessed 4/6/2024. URL: https://www.instagram.com/p/CDvFVwBjq9B/ */
     background-repeat: no-repeat;
     background-position: center;
@@ -1654,7 +1654,7 @@ footer {
     }
 
     #morgenMenu {
-        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("../assets/img/smaa_Billeder/menu/morgenmad_lille.jpeg");
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("./assets/img/smaa_Billeder/menu/morgenmad_lille.jpeg");
     }
 
     #middagMenu {
@@ -1662,7 +1662,7 @@ footer {
     }
 
     #aftenMenu {
-        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("../assets/img/smaa_Billeder/menu/aftensmad_lille.jpeg");
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaa_Billeder/menu/aftensmad_lille.jpeg");
     }
 
     #soedeSagerMenu {
