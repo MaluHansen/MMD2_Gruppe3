@@ -9,13 +9,13 @@ const cardTitleEl = document.querySelector('h3');
 // Højre side (value) er en reference til en URL, der peger på en jpeg-fil.
 const backgroundImageMap = {
     "morgenMenu": "url('./assets/img/til_Menukort/morgenmad.jpeg')",
-    "middagMenu": "url('/assets/img/til_Menukort/burger.jpeg')",
-    "aftenMenu": "url('../assets/img/til_Menukort/aftensmad.jpeg')",
-    "soedeSagerMenu": "url('../assets/img/til_Menukort/dessert.jpeg')",
-    "cocktailMenu": "url('../assets/img/til_Menukort/cocktail.jpeg')",
-    "drikkeMenu": "url('../assets/img/til_Menukort/kakao.jpeg')",
-    "oelMenu": "url('../assets/img/til_Menukort/ol.jpeg')",
-    "vinMenu": "url('../assets/img/til_Menukort/vin1.jpeg')"
+    "middagMenu": "url('./assets/img/til_Menukort/burger.jpeg')",
+    "aftenMenu": "url('./assets/img/til_Menukort/aftensmad.jpeg')",
+    "soedeSagerMenu": "url('./assets/img/til_Menukort/dessert.jpeg')",
+    "cocktailMenu": "url('./assets/img/til_Menukort/cocktail.jpeg')",
+    "drikkeMenu": "url('./assets/img/til_Menukort/kakao.jpeg')",
+    "oelMenu": "url('./assets/img/til_Menukort/ol.jpeg')",
+    "vinMenu": "url('./assets/img/til_Menukort/vin1.jpeg')"
 }
 
 // ------ Eventlisteners ------
