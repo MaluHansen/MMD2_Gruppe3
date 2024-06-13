@@ -379,7 +379,7 @@ function showAllevents(containerToFill, events) {
         <div class="eventCard"> 
             <picture>
                 <source media="(min-width: 600px)" srcset="${event.acf.billede_af_begivenhed.sizes.large}">
-                <img src="${event.acf.billede_af_begivenhed.sizes.medium}" loading="lazy">
+                <img src="${event.acf.billede_af_begivenhed.sizes.medium}" alt="${event.acf.billede_af_begivenhed.alt}" loading="lazy">
             </picture>
         
             <div class="beskrivelseEvent">
