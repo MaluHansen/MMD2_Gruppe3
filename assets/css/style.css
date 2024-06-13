@@ -349,9 +349,9 @@ footer {
     margin-bottom: 1rem;
 }
 
-#email,
-#mobil,
-#lokation {
+.email,
+.mobil,
+.lokation {
     display: flex;
     gap: 1rem;
 }
@@ -1655,7 +1655,7 @@ footer {
     }
 
     #morgenMenu {
-        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("/assets/img/smaa_Billeder/menu/morgenmad_lille.jpeg");
+        background-image: linear-gradient(rgba(124, 124, 124, 0) 50%, rgba(30, 30, 30, 0.8)), url("../assets/img/smaa_Billeder/menu/morgenmad_lille.jpeg");
     }
 
     #middagMenu {
