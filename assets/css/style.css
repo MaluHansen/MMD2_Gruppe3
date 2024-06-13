@@ -192,18 +192,17 @@ svg {
 
 /*--------------Groen Sektion Slut-----------------*/
 
+
 .showNav {
     display: block;
-    position: static;
+    position: absolute;
     background-color: var(--pink);
     color: var(--tekstFarve);
     padding: 1rem;
     top: 50px;
-    left: 0;
-    height: calc(100vh - 50px);
+    right: 0;
     z-index: 1;
 }
-
 
 .showNav li {
     margin-top: 0.5rem;
@@ -1952,6 +1951,12 @@ footer {
         top: -15px;
         left: -30px;
         z-index: 9;
+    }
+
+    .showNav {
+        position: static;
+        left: 0;
+        height: calc(100vh - 50px);
     }
 
     footer {
