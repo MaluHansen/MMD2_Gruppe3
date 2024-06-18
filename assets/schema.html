@@ -1,0 +1,79 @@
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "Restaurant",
+
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "streetAddress": "740 Park Avenue"
+        },
+    "description": "Best pizza in New York, guaranteed!",
+
+    "name": "Restaurant Pronto",
+
+    "telephone": "+12345678900",
+
+    "openingHours": {
+        "Mo-Su 13:00-19:00"
+    },
+    
+    "priceRange": "$$",
+
+    "priceCurrency": "DKK",
+
+    "servesCuisine": {
+        "Italian",
+        "Pizza"
+    },
+
+    "acceptsReservations": "https://mmd.ucn.dk/class/MMD-CSD-S23/10414032/MMD1/Multimedieproduktion2_Sem2_Gruppe3/bookBord.html"
+}
+</script>
+
+
+
+<script type="application/ld+json">
+    "hasMenu":{
+        "@type":"Menu",
+
+        "name":"Dine-In Menu",
+
+        "description":"Menu for in-restaurant dining only.",
+
+        "hasMenuSection":
+        {
+        "@type":"MenuSection",
+
+        "name":"Dinner",
+
+        "description":"Dinner dishes",
+
+        "image":"https://pronto-ny.com/dinner_dishes.jpg",
+
+        "offers":{
+            "@type":"Offer",
+            "availabilityEnds":"T8:21:00",
+            "availabilityStarts":"T8:21:00"
+            }
+        },
+
+        "hasMenuItem": {
+            "@type": "MenuItem",
+            "name": "Chips",
+            "description": "Small serving of potato chips.",
+            "offers": {
+                "@type": "Offer",
+                "price": "5.49",
+                "priceCurrency": "USD"
+            },
+            "suitableForDiet": "http://schema.org/GlutenFreeDiet"
+        },
+
+
+    
+    }
+</script>
+
+
