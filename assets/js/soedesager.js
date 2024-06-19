@@ -1,4 +1,4 @@
 const menuCardEL = document.querySelector(".soedesagerEnhed")
 
-getAllvariations(27)
-    .then(variations => showAllvariations(menuCardEL, variations));
+getPostsByID(`&type-af-maltid=`, 27)
+    .then(data => showAllvariationsOfSweets(menuCardEL, data));

@@ -1,8 +1,8 @@
 const eventCardEL = document.querySelector(".eventCardcontainer")
 
 
-getAllevents()
-    .then(events => showAllevents(eventCardEL, events))
+getPostsByID(`&categories=`, 5)
+    .then(data => showAllevents(eventCardEL, data))
 
 
 

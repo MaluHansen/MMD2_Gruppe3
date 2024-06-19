@@ -1,4 +1,4 @@
 const menuCardEL = document.querySelector(".aftenEnhed")
 
-getAllvariations(26)
-    .then(variations => showAllvariationsForEvening(menuCardEL, variations))  
+getPostsByID(`&type-af-maltid=`, 26)
+    .then(data => showAllCoursesWithDescribtion(menuCardEL, data));

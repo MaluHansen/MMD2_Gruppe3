@@ -5,18 +5,19 @@ const logoUllaEl = document.querySelector('#logoUlla');
 const burgerMenu = document.querySelector('#burgerMenu');
 const body = document.body;
 
-// Vi opretter en funktion som kan hente drikkevarer ud fra et specifik ID som sættes som et parameter. 
-function getDrinksByID(Id) {
-    // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i dette tilfælde en query parameter som hedder &type-af-drikkevarer= + vores Id. Url'en vil derfor se således ud: https://ullat.marianoergaard.dk/wp-json/wp/v2/posts?per_page=100&type-af-drikkevarer=(Indsat Id)
-    return fetch(baseUrl + `&type-af-drikkevarer=` + Id)
-        // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt til et JavaScript-objekt. 
+// Vi opretter en funktion som kan hente posts ud fra et specifik ID som sættes som et parameter. Derudover kan vi tilføje et bestemt query parameter i form af en string
+function getPostsByID(parameterString, Id) {
+    // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i et query parameter og et id.
+    return fetch(baseUrl + parameterString + Id)
+        // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt/array til et JavaScript-objekt/array. 
         .then((res) => res.json())
-        .then((drinks) => drinks)
+        // Derudover returner vi vores data til hvor det er blevet kaldt henne. 
+        .then((data) => data)
         // I tilfælde af fejl under vores fetch vil der blive logget en besked i konsollen.
         .catch(err => console.log("Fejl! Der er desværre sket en fejl..", err));
 }
 
-function renderDrinksWithAnyPrice(containerToFill, drinks) {
+function renderDrinksWithAnyPrice(containerToFill, data) {
     // Funktion der tæller antallet af priser som gør at vi kan stille dem op senere efter hvor mange priser de enkelte drikkevare har. 
     function countPrices(drink) {
         let count = 0;
@@ -30,7 +31,7 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     }
 
     // Sorter drikkevare efter antallet af priser i faldende rækkefølge. dvs. dem med flest priser først og hvis nogle har lige mange priser så skal de sorteres efter alfabetisk rækkefølge ud fra deres titel
-    drinks.sort((a, b) => {
+    data.sort((a, b) => {
         // Beregn forskellen i antallet af priser mellem drikkevare 'b' og 'a'
         const priceCountDiff = countPrices(b) - countPrices(a);
 
@@ -44,11 +45,11 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     });
 
     // Opdel vores array i to halvdele ved først at finde halvdelen af vores array. Det sker ved at dividere vores array med 2. Math.ceil runder op til nærmeste hele tal. 
-    const midIndex = Math.ceil(drinks.length / 2);
+    const midIndex = Math.ceil(data.length / 2);
     // Vi danner nu et nyt array ved at sige det skal indeholde alle drikkevare der er placeret fra index 0 til vores midIndex tal. 
-    const firstHalf = drinks.slice(0, midIndex);
+    const firstHalf = data.slice(0, midIndex);
     // // Vi danner nu et andet array ved at sige det skal indeholde alle drikkevare der er placeret i de index der går fra vores midIndex og op efter. 
-    const secondHalf = drinks.slice(midIndex);
+    const secondHalf = data.slice(midIndex);
 
     // Opretter 2 nye elementer med innerHTML. 
     containerToFill.innerHTML = `
@@ -105,33 +106,8 @@ function renderDrinksWithAnyPrice(containerToFill, drinks) {
     });
 }
 
-function fetchAndRenderDrinks(containerToFill, id) {
-    // Vis spinneren mens data hentes
-    spinnerEl.classList.add("show");
-    // Henter drikkevarer med funktionen "getDrinksByID" og returnerer et array med drikkevarer.
-    getDrinksByID(id).then(drinks => {
-        // Render drinks og skjul spinneren når data er hentet
-        renderDrinksWithAnyPrice(containerToFill, drinks);
-        spinnerEl.classList.remove("show");
-    }).catch(err => {
-        console.error("Fejl:", err);
-        // Skjul spinneren i tilfælde af en fejl
-        spinnerEl.classList.remove("show");
-    });
-}
-
-//function som henter data fra API. 
-function getAllvariations(id) {
-    spinnerEl.classList.add("show");
-    return fetch(baseUrl + `&type-af-maltid=` + id)
-        .then((res) => res.json())
-        .then((variations) => variations)
-        .catch(err => console.log("Fejl", err));
-}
-
 //function som viser dataen hentet igennem GetAllVariations funktion.(vælger cont)
-function showAllvariations(containerToFill, variations) {
-    spinnerEl.classList.add("show");
+function showAllvariationsOfSweets(containerToFill, variations) {
     variations.forEach(variation => {
         containerToFill.innerHTML += `
         <div class="titleOgPris">
@@ -141,10 +117,9 @@ function showAllvariations(containerToFill, variations) {
                
         `;
     });
-    spinnerEl.classList.remove("show");
 }
 
-function showAllvariationsForEvening(containerToFill, variations) {
+function showAllCoursesWithDescribtion(containerToFill, variations) {
     variations.forEach(variation => {
         containerToFill.innerHTML += `
         <div class="middagsContainer">
@@ -157,66 +132,16 @@ function showAllvariationsForEvening(containerToFill, variations) {
             </div>
         `;
     });
-    spinnerEl.classList.remove("show");
-}
-
-// --- MORGENRETTER ---
-// Funktion til at hente data fra Wordpress API'en
-function fetchMorgendata() {
-    spinnerEl.classList.add("show");
-    fetch(baseUrl + `&type-af-maltid=` + 23)
-        .then(res => res.json())
-        .then(data => {
-            showMorgenData(data);
-            spinnerEl.classList.remove("show");
-        })
-        .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
-}
-
-// Funktion til at vise data i HTML'en
-function showMorgenData(data) {
-    morgenretterEl.innerHTML += `
-    `;
-
-    // forEach loop til at loope igennem dataen fra Wordpress, og indsætte det i HTML'en vha. innerHTML
-    // i loopet anvendes en function til at indsætte data i en variabel kaldet "morgenData"
-    // Vi anvender en ternary operator til at tjekke om der er yderligere data der skal indsættes i HTML'en. 
-    //  Det anvendes eftersom vi vil lave en filtrering midt i InnerHTML'en.
-    // Konkret har vi brugt en ternary operator til at tjekke om der er data i felterne "detaljer_om_retten", "variationer_af_retten" og "diaet_praeference".
-    // Hvis der er data i felterne, skal det indsættes i HTML'en. Hvis ikke, skal det ikke indsættes.
-    // Fx. betyder: morgenData.acf.detaljer_om_retten ? (HVIS der er data) : så indsættes dataen under class"beskrivelse" : (hvis ikke) så indsættes intet ``.
-    // KILDE til ternary operator: Conditional (ternary) operator. Mozilla Corporations. 2024. [online] Accessed 4/6/2024. URL: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator.
-    data.forEach(function (morgenData) {
-        morgenretterEl.innerHTML += `
-        <div class="drinkEnhed2">
-            <div class="titelOgPris">
-            <p class="title2">${morgenData.acf.navn_pa_ret} ${morgenData.diaet_praeference.length > 0 ? `<i class="material-symbols-outlined">eco</i>` : ``}</p>
-            <p>${morgenData.acf.pris},- </p>
-            </div>
-        <div class="detaljerOgSupplerende">
-        ${morgenData.acf.detaljer_om_retten ? `<p class="beskrivelse">${morgenData.acf.detaljer_om_retten}</p>` : ``}
-        </div>
-        </div>
-        `;
-    })
 }
 
 // --- BRUNCH RETTER ---
-// Funktion til at hente data fra Wordpress API'en
-function fetchBrunchdata() {
-    fetch(baseUrl + `&type-af-maltid=` + 22)
-        .then(res => res.json())
-        .then(data => showBrunchData(data))
-        .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
-}
-
 // Funktion til at vise data i HTML'en
-function showBrunchData(data) {
-    brunchretterEl.innerHTML += `
+function showBrunchData(containerToFill, data) {
+    containerToFill.innerHTML += `
     `;
 
     data.forEach(function (brunchData) {
-        brunchretterEl.innerHTML += `
+        containerToFill.innerHTML += `
         <div class="drinkEnhed3">
         <div class="VariationerAfRetten">
             ${brunchData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten ? `<p class="beskrivelse">${brunchData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten}</p>` : ``}
@@ -237,21 +162,9 @@ function showBrunchData(data) {
 }
 
 // --- MIDDAGSRETTER ---
-// Funktion til at hente middags-data fra Wordpress API'en
-function fetchMiddagsdata() {
-    spinnerEl.classList.add("show");
-    fetch(baseUrl + `&type-af-maltid=` + 24)
-        .then(res => res.json())
-        .then(data => {
-            showMiddagsData(data);
-            spinnerEl.classList.remove("show");
-        })
-        .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
-}
-
 // Funktion til at vise middags-data i HTML'en
-function showMiddagsData(data) {
-    middagsmenuEl.innerHTML += `
+function showMiddagsData(containerToFill, data) {
+    containerToFill.innerHTML += `
         `;
 
     // Gennemgår hver middagsdata i vores array med forEach
@@ -281,7 +194,7 @@ function showMiddagsData(data) {
 
         // Hvis variationsHTML indeholder nogen string/strings så skal der tilføjes middagsContainer med tilhørende html til vores middagsmenuEl.
         if (variationsHTML) {
-            middagsmenuEl.innerHTML += `
+            containerToFill.innerHTML += `
             <div class="middagsContainer">
                 <!-- Titel og pris på retten -->
                 <div class="titelOgPris">
@@ -304,21 +217,13 @@ function showMiddagsData(data) {
 }
 
 // --- SNACK RETTER ---
-// Funktion til at snack-hente data fra Wordpress API'en
-function fetchSnackdata() {
-    fetch(baseUrl + `&type-af-maltid=` + 25)
-        .then(res => res.json())
-        .then(data => showSnackData(data))
-        .catch(err => console.log("Fejl! Der er desværre sket en fejl.. Vi undskylder mange gange", err));
-}
-
 // Funktion til at vise snack-data i HTML'en
-function showSnackData(data) {
-    snacksEl.innerHTML += `
+function showSnackData(containerToFill, data) {
+    containerToFill.innerHTML += `
     `;
 
     data.forEach(function (snackData) {
-        snacksEl.innerHTML += `
+        containerToFill.innerHTML += `
         <div class="variationer">
         <div class="variationContainer">
             ${snackData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten ? `<p> - ${snackData.acf.variationer_af_retten.variation_1.beskrivelse_af_retten} ${snackData.acf.variationer_af_retten.diaet_praeference_1 ? `<i class="material-symbols-outlined">eco</i></p>` : ``}` : ``}
@@ -357,15 +262,9 @@ function showSnackData(data) {
     })
 }
 
-function getAllevents() {
-    return fetch(baseUrl + `&categories=5`)
-        .then((res) => res.json())
-        .then((events) => events)
-        .catch(err => console.log("Fejl", err));
-}
-
-function showAllevents(containerToFill, events) {
-    events.forEach(event => {
+// --- EVENTS ---
+function showAllevents(containerToFill, data) {
+    data.forEach(event => {
         containerToFill.innerHTML += `
 
         

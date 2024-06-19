@@ -1,8 +1,12 @@
 const fadolFlaskeolVarianterEl = document.querySelector(".fadolFlaskeolVarianter")
 const alkoholfrieOlVarianterEl = document.querySelector(".alkoholfrieOlVarianter")
 
-fetchAndRenderDrinks(fadolFlaskeolVarianterEl, 11);
-fetchAndRenderDrinks(alkoholfrieOlVarianterEl, 13);
+
+getPostsByID(`&type-af-drikkevarer=`, 11)
+    .then(data => renderDrinksWithAnyPrice(fadolFlaskeolVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 13)
+    .then(data => renderDrinksWithAnyPrice(alkoholfrieOlVarianterEl, data));
 
 // --- Til top knap --- 
 // først erklærer vi en variabel ud fra vores HTML dokument som har klassen ".topBtn".

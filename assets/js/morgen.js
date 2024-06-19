@@ -3,7 +3,9 @@ const morgenretterEl = document.querySelector(".morgenretter");
 const brunchretterEl = document.querySelector(".brunchretter");
 
 // --- MORGENRETTER ---
-fetchMorgendata();
+getPostsByID(`&type-af-maltid=`, 23)
+    .then(data => showAllCoursesWithDescribtion(morgenretterEl, data));
 
 // --- BRUNCH RETTER ---
-fetchBrunchdata();
+getPostsByID(`&type-af-maltid=`, 22)
+    .then(data => showBrunchData(brunchretterEl, data));
