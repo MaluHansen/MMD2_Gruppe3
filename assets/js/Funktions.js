@@ -7,6 +7,7 @@ const body = document.body;
 
 // Vi opretter en funktion som kan hente posts ud fra et specifik ID som sættes som et parameter. Derudover kan vi tilføje et bestemt query parameter i form af en string
 function getPostsByID(parameterString, Id) {
+    spinnerEl.classList.add("show");
     // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i et query parameter og et id.
     return fetch(baseUrl + parameterString + Id)
         // Når fetch er færdig og ikke før, så tager vi det data vi har modtaget og omdanner det fra JSON-objekt/array til et JavaScript-objekt/array. 
@@ -104,6 +105,7 @@ function renderDrinksWithAnyPrice(containerToFill, data) {
         </div>
    `;
     });
+    spinnerEl.classList.remove("show");
 }
 
 //function som viser dataen hentet igennem GetAllVariations funktion.(vælger cont)
@@ -117,6 +119,7 @@ function showAllvariationsOfSweets(containerToFill, variations) {
                
         `;
     });
+    spinnerEl.classList.remove("show");
 }
 
 function showAllCoursesWithDescribtion(containerToFill, variations) {
@@ -132,6 +135,7 @@ function showAllCoursesWithDescribtion(containerToFill, variations) {
             </div>
         `;
     });
+    spinnerEl.classList.remove("show");
 }
 
 // --- BRUNCH RETTER ---
@@ -158,7 +162,8 @@ function showBrunchData(containerToFill, data) {
         </div>
         </div>
     `;
-    })
+    });
+    spinnerEl.classList.remove("show");
 }
 
 // --- MIDDAGSRETTER ---
@@ -213,7 +218,7 @@ function showMiddagsData(containerToFill, data) {
         `;
         }
     });
-
+    spinnerEl.classList.remove("show");
 }
 
 // --- SNACK RETTER ---
@@ -259,15 +264,14 @@ function showSnackData(containerToFill, data) {
         </div>
     </div>
         `;
-    })
+    });
+    spinnerEl.classList.remove("show");
 }
 
 // --- EVENTS ---
 function showAllevents(containerToFill, data) {
     data.forEach(event => {
         containerToFill.innerHTML += `
-
-        
         <div class="eventCard"> 
             <picture>
                 <source media="(min-width: 600px)" srcset="${event.acf.billede_af_begivenhed.sizes.large}">
@@ -298,9 +302,9 @@ function showAllevents(containerToFill, data) {
                 </div>
             </div>
         </div>  
-        
     `
     });
+    spinnerEl.classList.remove("show");
 }
 
 // Burgermenu:

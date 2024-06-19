@@ -9,15 +9,32 @@ const portvinVarianterEl = document.querySelector(".portvinVarianter");
 const bobleVarianterEl = document.querySelector(".bobleVarianter");
 
 
-fetchAndRenderDrinks(rodvinVarianterEl, 12);
-fetchAndRenderDrinks(hvidvinVarianterEl, 14);
-fetchAndRenderDrinks(alkoholfrieVinVarianterEl, 17);
-fetchAndRenderDrinks(bobleVarianterEl, 19);
-fetchAndRenderDrinks(roséVarianterEl, 16);
-fetchAndRenderDrinks(naturvinVarianterEl, 15);
-fetchAndRenderDrinks(vincocktailsVarianterEl, 20);
-fetchAndRenderDrinks(portvinVarianterEl, 18);
-fetchAndRenderDrinks(kirsebaerlikorVarianterEl, 21);
+getPostsByID(`&type-af-drikkevarer=`, 14)
+    .then(data => renderDrinksWithAnyPrice(hvidvinVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 12)
+    .then(data => renderDrinksWithAnyPrice(rodvinVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 17)
+    .then(data => renderDrinksWithAnyPrice(alkoholfrieVinVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 19)
+    .then(data => renderDrinksWithAnyPrice(bobleVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 16)
+    .then(data => renderDrinksWithAnyPrice(roséVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 15)
+    .then(data => renderDrinksWithAnyPrice(naturvinVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 20)
+    .then(data => renderDrinksWithAnyPrice(vincocktailsVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 18)
+    .then(data => renderDrinksWithAnyPrice(portvinVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 21)
+    .then(data => renderDrinksWithAnyPrice(kirsebaerlikorVarianterEl, data));
 
 
 // --- Til top knap --- 

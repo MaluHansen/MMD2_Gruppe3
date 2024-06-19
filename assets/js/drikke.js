@@ -3,7 +3,14 @@ const saftVarianterEl = document.querySelector(".saftVarianter");
 const kaffeVarianterEl = document.querySelector(".kaffeVarianter");
 const ovrigeVarianterEl = document.querySelector(".ovrigeVarianter");
 
-fetchAndRenderDrinks(juiceVarianterEl, 29);
-fetchAndRenderDrinks(saftVarianterEl, 30);
-fetchAndRenderDrinks(kaffeVarianterEl, 31);
-fetchAndRenderDrinks(ovrigeVarianterEl, 32);
+getPostsByID(`&type-af-drikkevarer=`, 29)
+    .then(data => renderDrinksWithAnyPrice(juiceVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 30)
+    .then(data => renderDrinksWithAnyPrice(saftVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 31)
+    .then(data => renderDrinksWithAnyPrice(kaffeVarianterEl, data));
+
+getPostsByID(`&type-af-drikkevarer=`, 32)
+    .then(data => renderDrinksWithAnyPrice(ovrigeVarianterEl, data));
