@@ -5,7 +5,7 @@ const logoUllaEl = document.querySelector('#logoUlla');
 const burgerMenu = document.querySelector('#burgerMenu');
 const body = document.body;
 
-// Vi opretter en funktion som kan hente posts ud fra et specifik ID som sættes som et parameter. Derudover kan vi tilføje et bestemt query parameter i form af en string
+// Vi opretter en funktion som kan hente posts ud fra et specifik ID. Derudover kan vi tilføje et bestemt query parameter i form af en string
 function getPostsByID(parameterString, Id) {
     spinnerEl.classList.add("show");
     // Vi foretager en anmodning om at modtage noget data fra api'et som består af vores baseUrl + i et query parameter og et id.
