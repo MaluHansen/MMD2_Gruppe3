@@ -17,6 +17,7 @@
     <!-- KILDE: Google Fonts. Google 2024. Accessed 4/6/2024. URL: https://fonts.google.com/ -->
     <script src="./assets/js/Funktions.js" defer></script>
     <script src="./assets/js/forside.js" defer></script>
+    <script src="./assets/js/languageSelector.js" defer></script>
     <link rel="icon" href="./assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
 </head>
 <body>
@@ -52,7 +53,15 @@
                 <li><a href="./madUdAfHuset.html">Mad ud af huset</a></li>
                 <li><a href="./bookBord.html">Book bord</a></li>
                 <li><a href="./gavekort.html">Gavekort</a></li>
-                <li><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <div class="containerLanguage">
+        <li><a class="languageSelector"><i class="material-symbols-outlined">language</i><p class="language">DA</p><i class="material-symbols-outlined">keyboard_arrow_down</i></a></li>
+            <div class="languageDropdown">
+                <li><a href="./index.html" id="lang-da">Dansk</a></li>
+                <li><a href="./en/enIndex.html" id="lang-en">English</a></li>
+            </div>
+        </div>
+
             </ul>
         </nav>
         
@@ -76,12 +85,10 @@
                         <h3>Velkommen til Café Ulla Terkelsen London</h3>
                         <p>Få en oplevelse og mærk den gode stemning i behagelige omgivelser</p>
                     </div>
-                    <p>
-                        Oplev en verden af smage og farver når du træder ind i vores café. 
+                    <p>Oplev en verden af smage og farver når du træder ind i vores café. 
                         Vores personale byder jer varmt velkommen med personlig betjening og med mulighed for at blive serviceret i vores fine lokaler eller i vores skønne gårdhave.
                     </p>
-                    <p>
-                      Er du på farten, eller vil du nyde vores retter i hjemmets trygge rammer, så har du også mulighed for at bestille din mad og drikke som take-away.
+                    <p>Er du på farten, eller vil du nyde vores retter i hjemmets trygge rammer, så har du også mulighed for at bestille din mad og drikke som take-away.
                     </p>
                 </div>
                 <div class="billedeRammeForside">
@@ -98,32 +105,28 @@
                 <img src="./assets/img/til_Menukort/tapas.jpeg" alt="En tallerken med forskellige tapasretter" loading="lazy">
                 <!-- KILDE: Cafe Ulla Terkelsen London, https://www.facebook.com/photo.php?fbid=615803680587439&set=pb.100064734366849.-2207520000&type=3. [online] Accessed 11/06/2024. Facebook.com, 22. April 2023 -->
                 <p>Farverig Mad</p>
-                <p>
-                    Vi tilbyder et spændende menukort der med brug af lokale råvarer varierer efter sæson og humør. Uanset om du besøger os i caféen eller får maden leveret direkte til døren, garanterer vi smagsoplevelser, du sent vil glemme. Prøv f.eks. vores smagsfulde aftenmenu. 
+                <p>Vi tilbyder et spændende menukort der med brug af lokale råvarer varierer efter sæson og humør. Uanset om du besøger os i caféen eller får maden leveret direkte til døren, garanterer vi smagsoplevelser, du sent vil glemme. Prøv f.eks. vores smagsfulde aftenmenu. 
                 </p>
             </a>
             <a class="entryPoint" href="./menu.html">
                 <img src="./assets/img/Forside/kaffeIndex.jpg" alt="En kop kaffe inde fra Ulla Terkelsen" loading="lazy">
                 <!-- KILDE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/3644100675668484/?type=3. [online] Accessed 11/06/2024. Facebook.com, 30. December 2020 -->
                 <p>Lækre Drikkevarer</p>
-                <p>
-                    Vi tilbyder drikkevarer for en hver smag. Hvad enten du er til kolde øl, sodavand eller kaffe og the. Vi har byens største udvalg af rød sodavand, og har en bred variation af øl og vin. 
+                <p>Vi tilbyder drikkevarer for en hver smag. Hvad enten du er til kolde øl, sodavand eller kaffe og the. Vi har byens største udvalg af rød sodavand, og har en bred variation af øl og vin. 
                 </p>
             </a>
             <a class="entryPoint" href="./events.html">
                 <img src="./assets/img/Forside/events.jpg" alt="Stemningsbillede fra vores event omkring LP-plader" loading="lazy">
                 <!-- KILDE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5758739040871293/?type=3. [online] Accessed 11/06/2024.  Facebook.com, 17. December 2022 -->
                 <p>Spændende Events</p>
-                <p>
-                    Tag dine venner med ned og få en fælles oplevelse. Hos os kan I opleve live-musik og  spændende events hele året rundt. Vores events dækker alt fra musik til kreative initiativer.
+                <p>Tag dine venner med ned og få en fælles oplevelse. Hos os kan I opleve live-musik og  spændende events hele året rundt. Vores events dækker alt fra musik til kreative initiativer.
                 </p>
             </a>
             <a class="entryPoint" href="./menuCocktails.html">
                 <img src="./assets/img/Forside/cocktailMedFrugt.jpg" alt="En tallerken med kyllingesalat og brød">
                 <!-- KILDE: Cafe Ulla Terkelsen London, https://www.instagram.com/p/B8ypZpPiJZ1/. [online] Accessed 11/06/2024. Instagram.com, 20. Februar 2020  -->
                 <p>Festlige Aftener</p>
-                <p>
-                    Fra kl. 21:00 forvandler vores hyggelige café sig fra spisested til et magisk og farverigt fest-univers med god musik. Du kan samtidig nyde vores brede udvalg af eksotiske cocktails og klassiske drinks. Vi har noget for en hver smag.
+                <p>Fra kl. 21:00 forvandler vores hyggelige café sig fra spisested til et magisk og farverigt fest-univers med god musik. Du kan samtidig nyde vores brede udvalg af eksotiske cocktails og klassiske drinks. Vi har noget for en hver smag.
                 </p>
             </a>
         </div>

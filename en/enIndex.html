@@ -8,7 +8,7 @@
         content="Ulla Terkelsen London - The coziest cafe in Vestbyen. We promise an unforgettable experience, morning, noon, and night!">
     <meta name="keywords" content="Ulla Terkelsen London, Cafe, Aalborg vestby">
     <title>Ulla Terkelsen London - Home</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="preconnect" href="https://use.typekit.net">
     <!-- SOURCE: Adobe Fonts. Adobe. 2024. Accessed: 10/6/2024. URL: https://use.typekit.net -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -20,61 +20,68 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- SOURCE: Google Fonts. Google 2024. Accessed 4/6/2024. URL: https://fonts.google.com/ -->
-    <script src="./assets/js/Functions.js" defer></script>
-    <script src="./assets/js/home.js" defer></script>
-    <link rel="icon" href="./assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
+    <script src="../assets/js/Functions.js" defer></script>
+    <script src="../assets/js/home.js" defer></script>
+    <script src="../assets/js/languageSelector.js" defer></script>
+    <link rel="icon" href="../assets/img/logoUllaT.svg" sizes="any" type="image/svg+xml">
 </head>
 
 <body>
     <header>
-        <div class="animationsContainer">
-            <div class="half top"><img src="./assets/img/logoUllaT.svg" alt=""></div>
+        <!-- <div class="animationsContainer">
+            <div class="half top"><img src="../assets/img/logoUllaT.svg" alt=""></div>
             <div class="half bottom"></div>
-        </div>
+        </div> -->
         <nav>
             <div class="topNavigation">
-                <a id="logoUlla" href="./index.html"><img class="logo" src="./assets/img/logoUllaT.svg"
+                <a id="logoUlla" href="./enIndex.html"><img class="logo" src="../assets/img/logoUllaT.svg"
                         alt="Ulla Terkelsen London Logo"></a>
                 <i class="fa-solid fa-bars menuIcon" id="burgerMenu"></i>
             </div>
             <ul class="navMobile">
-                <li class="activeNavA"><a href="./index.html">Home</a></li>
+                <li class="activeNavA"><a href="./enIndex.html">Home</a></li>
                 <li>
                     <div class="subNav">
-                        <a href="./menu.html">Menu</a>
+                        <a href="./enMenu.html">Menu</a>
                         <ul class="subNavContent">
-                            <li><a href="./menuMorning.html">Morning</a></li>
-                            <li><a href="./menuNoon.html">Noon</a></li>
-                            <li><a href="./menuEvening.html">Evening</a></li>
-                            <li><a href="./menuSweetTreats.html">Sweet Treats</a></li>
-                            <li><a href="./menuCocktails.html">Cocktails</a></li>
-                            <li><a href="./menuDrinks.html">Cold & Hot Drinks</a></li>
-                            <li><a href="./menuBeer.html">Beer</a></li>
-                            <li><a href="./menuWine.html">Wine</a></li>
+                            <li><a href="./enMenuMorning.html">Morning</a></li>
+                            <li><a href="./enMenuMiddag.html">Noon</a></li>
+                            <li><a href="./enMenuAften.html">Evening</a></li>
+                            <li><a href="./enSoedeSager.html">Sweet Treats</a></li>
+                            <li><a href="./enMenuCocktails.html">Cocktails</a></li>
+                            <li><a href="./enMenuDrikke.html">Cold & Hot Drinks</a></li>
+                            <li><a href="./enMenuOel.html">Beer</a></li>
+                            <li><a href="./enMenuVin.html">Wine</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="./events.html">Events</a></li>
-                <li><a href="./parties.html">Parties</a></li>
-                <li><a href="./takeaway.html">Takeaway</a></li>
-                <li><a href="./bookTable.html">Book a Table</a></li>
-                <li><a href="./giftCard.html">Gift Card</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./enEvents.html">Events</a></li>
+                <li><a href="./enSelskaber.html">Parties</a></li>
+                <li><a href="./enMadUdAfHuset.html">Takeaway</a></li>
+                <li><a href="./enBookBord.html">Book a Table</a></li>
+                <li><a href="./enGavekort.html">Gift Card</a></li>
+                <li><a href="./enKontakt.html">Contact</a></li>
+                <div class="containerLanguage">
+                    <li><a class="languageSelector"><i class="material-symbols-outlined">language</i><p class="language">EN</p><i class="material-symbols-outlined">keyboard_arrow_down</i></a></li>
+                    <div class="languageDropdown">
+                         <li><a href="../index.html" id="lang-da">Dansk</a></li>
+                         <li><a href="./en/enIndex.html" id="lang-en">English</a></li>
+                    </div>
+                    </div>
             </ul>
         </nav>
-
     </header>
     <main>
         <section class="forsideHero">
             <picture class="forsideHero">
-                <source class="fade-out" media="(min-width:600px)" srcset="./assets/img/forside/cocktailHero.jpg">
-                <img class="fade-out" src="./assets/img/smaa_Billeder/Forside/cocktailHero_lille.jpg"
+                <source class="fade-out" media="(min-width:600px)" srcset="../assets/img/forside/cocktailHero.jpg">
+                <img class="fade-out" src="../assets/img/smaa_Billeder/Forside/cocktailHero_lille.jpg"
                     alt="Yellow drink with straw and flowers placed with a colorful background">
                 <!-- SOURCE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/5079860502092487/?type=3. [online] Accessed 11/06/2024. Facebook.com, 23.April 2022 -->
             </picture>
             <div class="forsideOverskriftBtn">
                 <h1 class="ForsideOverskrift">CAFE ULLA TERKELSEN LONDON</h1>
-                <a href="./bookTable.html" class="btn centerBtn">Book Table</a>
+                <a href="./enBookBord.html" class="btn centerBtn">Book Table</a>
             </div>
         </section>
         <div class="indledningssektion">
@@ -84,20 +91,18 @@
                         <h3>Welcome to Café Ulla Terkelsen London</h3>
                         <p>Get an experience and feel the good atmosphere in comfortable surroundings</p>
                     </div>
-                    <p>
-                        Experience a world of tastes and colors when you step into our café.
+                    <p>Experience a world of tastes and colors when you step into our café.
                         Our staff warmly welcomes you with personalized service and the option to be served in our fine
                         premises or in our lovely courtyard.
                     </p>
-                    <p>
-                        If you are on the go, or want to enjoy our dishes in the comfort of your home, you also have the
+                    <p>If you are on the go, or want to enjoy our dishes in the comfort of your home, you also have the
                         option to order your food and drinks as take-away.
                     </p>
                 </div>
                 <div class="billedeRammeForside">
                     <picture>
-                        <source media="(min-width:600px)" srcset="./assets/img/forside/cafeIndefra.jpg">
-                        <img src="./assets/img/smaa_Billeder/Forside/cafeIndefra_lille.jpg"
+                        <source media="(min-width:600px)" srcset="../assets/img/forside/cafeIndefra.jpg">
+                        <img src="../assets/img/smaa_Billeder/Forside/cafeIndefra_lille.jpg"
                             alt="The interiors of Café Ulla Terkelsen London" loading="lazy">
                         <!-- SOURCE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/835470056531574/?type=3. [online] Accessed 11/06/2024. Facebook.com, 21. April 2015 -->
                     </picture>
@@ -105,24 +110,24 @@
             </article>
         </div>
         <div class="forsideEntryPoints">
-            <a class="entryPoint" href="./menuEvening.html">
-                <img src="./assets/img/til_Menukort/tapas.jpeg" alt="A plate with various tapas dishes" loading="lazy">
+            <a class="entryPoint" href="./enMenuAften.html">
+                <img src="../assets/img/til_Menukort/tapas.jpeg" alt="A plate with various tapas dishes" loading="lazy">
                 <!-- SOURCE: Cafe Ulla Terkelsen London, https://www.facebook.com/photo.php?fbid=615803680587439&set=pb.100064734366849.-2207520000&type=3. [online] Accessed 11/06/2024. Facebook.com, 22. April 2023 -->
                 <p>Colorful Food</p>
                 <p>We offer an exciting menu that, with the use of local ingredients, varies according to season and
                     mood. Whether you visit us in the café or have the food delivered directly to your door, we
                     guarantee taste experiences you won't forget. Try our flavorful evening menu.</p>
             </a>
-            <a class="entryPoint" href="./menu.html">
-                <img src="./assets/img/Forside/kaffeIndex.jpg" alt="A cup of coffee inside Ulla Terkelsen"
+            <a class="entryPoint" href="./enMenu.html">
+                <img src="../assets/img/Forside/kaffeIndex.jpg" alt="A cup of coffee inside Ulla Terkelsen"
                     loading="lazy">
                 <!-- SOURCE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/3644100675668484/?type=3. [online] Accessed 11/06/2024. Facebook.com, 30. December 2020 -->
                 <p>Delicious Beverages</p>
                 <p>We offer beverages for every taste. Whether you like cold beer, soda, coffee, or tea. We have the
                     city's largest selection of red soda, and have a wide variety of beer and wine.</p>
             </a>
-            <a class="entryPoint" href="./events.html">
-                <img src="./assets/img/Forside/events.jpg" alt="Atmosphere from our event about LP records"
+            <a class="entryPoint" href="./enEvents.html">
+                <img src="../assets/img/Forside/events.jpg" alt="Atmosphere from our event about LP records"
                     loading="lazy">
                 <!-- SOURCE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/575873073580499/?type=3. [online] Accessed 11/06/2024. Facebook.com, 27. February 2023 -->
                 <p>Exciting Events</p>
@@ -130,14 +135,23 @@
                     nights. Keep an eye on our calendar, so you don't miss out on the next event. It's a great way to
                     spend an evening with friends.</p>
             </a>
-            <a class="entryPoint" href="./takeaway.html">
-                <img src="./assets/img/Forside/takeaway.jpg" alt="Takeaway from Ulla Terkelsen" loading="lazy">
+            <a class="entryPoint" href="./enMadUdAfHuset.html">
+                <img src="../assets/img/Forside/cocktailMedFrugt.jpg" alt="Takeaway from Ulla Terkelsen" loading="lazy">
                 <!-- SOURCE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/706254484669378/?type=3. [online] Accessed 11/06/2024. Facebook.com, 7. June 2023 -->
-                <p>Take Away</p>
-                <p>Did you know that you can order our food and drinks as take-away? Just order through our website or
-                    call us. We also offer delivery if you don't have the time or desire to pick it up yourself.</p>
+                <p>Festive Evenings</p>
+                <p>From 9:00 PM, our cozy café transforms from a dining place into a magical and colorful party universe with great music. At the same time, you can enjoy our wide selection of exotic cocktails and classic drinks. We have something for every taste.
+                </p>
             </a>
         </div>
+        <section class="groenSektionUlla">
+            <div class="groenSektionTekst">
+                <h2>Ulla Loves Ulla</h2>
+                <p>The café's decor pays tribute to the long career of Danish journalist Ulla Terkelsen in London. Our unique premises feature a charming mix of vintage and modern decor with many colors, as well as a cozy and playful atmosphere.
+                </p>
+            </div>
+                <img class="UllaTImg" src="../assets/img/Forside/UllaTerkelsenUdenBaggrund.png" alt="Image of the tv-journalist Ulla Terkelsen">
+                <!-- KILDE: Cafe Ulla Terkelsen London, https://www.facebook.com/CafeUlla/photos/pb.100064734366849.-2207520000/1369588623119712/?type=3. [online] Accessed 11/06/2024. Facebook.com, 15. Maj 2017 -->
+        </section>
     </main>
     <footer>
         <div class="kontakt">
@@ -181,7 +195,7 @@
         <div class="otherInfo">
             <div id="smiley">
                 <p class="footerTitle">Food Authority's<br>smiley scheme</p>
-                <a href="https://www.findsmiley.dk/500717" target="_blank"><img src="./assets/img/smileyReport.png"
+                <a href="https://www.findsmiley.dk/500717" target="_blank"><img src="../assets/img/smileyRapport.png"
                         alt="Food Authority's control report logo"></a>
                 <!-- SOURCE: Official Site. Ministry of Food, Agriculture and Fisheries. 2024. [online] Accessed 5/6/2024. URL: https://www.findsmiley.dk/500717 -->
             </div>

@@ -220,8 +220,20 @@ svg {
 /*______________________NAV________________________*/
 nav {
     background-color: var(--pink);
-    padding: 2rem 3rem;
+    padding: 2rem 6rem;
     position: relative;
+}
+
+.languageSelector {
+    display: flex;
+}
+
+.languageDropdown {
+    display: none;
+}
+
+.languageDropdown li {
+    padding-bottom: 0.5rem;
 }
 
 i.menuIkon {
@@ -397,7 +409,7 @@ footer {
     100% {
         transform: translateX(-50%) translateY(50%) scale(1.1);
     }
-}
+} 
 
 .top {
     top: 0;
@@ -411,7 +423,7 @@ footer {
     background-color: var(--pink);
     transform: translateY(0);
     z-index: 1;
-}
+} 
 
 .split .top {
     transform: translateY(-150%);
@@ -419,7 +431,7 @@ footer {
 
 .split .bottom {
     transform: translateY(150%);
-}
+} 
 
 .hidden {
     visibility: hidden;
