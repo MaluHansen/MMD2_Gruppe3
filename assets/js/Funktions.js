@@ -122,16 +122,16 @@ function showAllvariationsOfSweets(containerToFill, variations) {
     spinnerEl.classList.remove("show");
 }
 
-function showAllCoursesWithDescribtion(containerToFill, variations) {
-    variations.forEach(variation => {
+function showAllCoursesWithDescribtion(containerToFill, data) {
+    data.forEach(data => {
         containerToFill.innerHTML += `
         <div class="middagsContainer">
             <div class="titelOgPris">
-                <p class="title">${variation.acf.navn_pa_ret}${variation.acf.diaet_praeference ? `<i class="material-symbols-outlined">eco</i></p>` : ``}</p>
-                <p class="pris">${variation.acf.pris},-</p>
+                <p class="title">${data.acf.navn_pa_ret}${data.acf.diaet_praeference ? `<i class="material-symbols-outlined">eco</i></p>` : ``}</p>
+                <p class="pris">${data.acf.pris},-</p>
             </div>
             <div class="detaljerOgSupplerende">
-            ${variation.acf.detaljer_om_retten ? `<p>${variation.acf.detaljer_om_retten}</p>` : ``}
+            ${data.acf.detaljer_om_retten ? `<p>${data.acf.detaljer_om_retten}</p>` : ``}
             </div>
         `;
     });
