@@ -224,6 +224,18 @@ nav {
     position: relative;
 }
 
+.languageSelector {
+    display: flex;
+}
+
+.languageDropdown {
+    display: none;
+}
+
+.languageDropdown li {
+    padding-bottom: 0.5rem;
+}
+
 i.menuIkon {
     font-size: 25px;
 }
@@ -512,6 +524,7 @@ footer {
     width: 100%;
     text-align: center;
     transition: opacity 0.3s ease;
+    font-size: 16px;
 }
 
 .entryPoint p {
